@@ -1,0 +1,46 @@
+<html><head><title>porting_spi.h</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: RELATIVE:\1_SampleCode_HAL\19_SPI\Rafael_BLE_SPI_DMA_bak3\porting\porting_spi.h</h3>
+<SCRIPT>
+defaultStatus = "File: RELATIVE:\\1_SampleCode_HAL\\19_SPI\\Rafael_BLE_SPI_DMA_bak3\\porting\\porting_spi.h";
+top.document.title  = "porting_spi.h";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="preproc">#ifndef <a href="dictionary_&.html#12966">__PORTING_SPI_H__</a></span>
+<a name="2"><font size=-1>2     </font></a><span class="preproc">#define <a href="dictionary_&.html#12966">__PORTING_SPI_H__</a></span>
+<a name="3"><font size=-1>3     </font></a><span class="preproc"></span>
+<a name="4"><font size=-1>4     </font></a><span class="preproc">#include </span><span class="string">&quot;mcu_definition.h&quot;  </span><span class="comment">//include &quot;stdint.h&quot; for uint16_t  </span>
+<a name="5"><font size=-1>5     </font></a><span class="comment"></span>
+<a name="6"><font size=-1>6     </font></a><span class="comment">/******************************************************************************</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment"> * Define</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment"> ******************************************************************************/</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment"></span>
+<a name="10"><font size=-1>10     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_S.html#3935">SPI_MASTER_TX_DMA_CH</a>    </span><span class="number">3</span>
+<a name="11"><font size=-1>11     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_S.html#3936">SPI_MASTER_RX_DMA_CH</a>    </span><span class="number">4</span>
+<a name="12"><font size=-1>12     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_S.html#3914">SPI_OPENED_CH</a>   </span><span class="default">((</span><span class="number">1 </span><span class="default">&lt;&lt; <a href="dictionary_S.html#3935">SPI_MASTER_TX_DMA_CH</a>) | (</span><span class="number">1 </span><span class="default">&lt;&lt; <a href="dictionary_S.html#3936">SPI_MASTER_RX_DMA_CH</a>))</span>
+<a name="13"><font size=-1>13     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_D.html#12967">DATA_COUNT</a>              </span><span class="number">64</span>
+<a name="14"><font size=-1>14     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_S.html#3908">SPI_CLK_FREQ</a>            </span><span class="number">12000000</span>
+<a name="15"><font size=-1>15     </font></a><span class="number"></span>
+<a name="16"><font size=-1>16     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_S.html#3913">SPI0_ClearRxFIFO</a></span><span class="default">() (SPI0-&gt;FIFOCTL |= SPI_FIFOCTL_RXFBCLR_Msk)</span>
+<a name="17"><font size=-1>17     </font></a><span class="default"></span><span class="comment">/******************************************************************************</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"> * Functions</span>
+<a name="19"><font size=-1>19     </font></a><span class="comment"> ******************************************************************************/</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment"></span><span class="keyword">void <a href="dictionary_M.html#2882">MCU_SpiInit</a></span><span class="default">(</span><span class="keyword">void</span><span class="default">);</span>
+<a name="21"><font size=-1>21     </font></a><span class="default"></span>
+<a name="22"><font size=-1>22     </font></a><span class="default"></span><span class="keyword">extern <a href="dictionary_U.html#192">uint8_t</a> <a href="dictionary_S.html#9880">SPI_1BYT_SetRx</a></span><span class="default">(<a href="dictionary_U.html#192">uint8_t</a> regAddr);</span>
+<a name="23"><font size=-1>23     </font></a><span class="default"></span><span class="keyword">extern <a href="dictionary_U.html#192">uint8_t</a> <a href="dictionary_S.html#13721">SPI_1BYT_SetRx_Isr</a></span><span class="default">(<a href="dictionary_U.html#192">uint8_t</a> regAddr);</span>
+<a name="24"><font size=-1>24     </font></a><span class="default"></span><span class="keyword">extern void <a href="dictionary_S.html#9890">SPI_1BYT_SetTx</a></span><span class="default">(<a href="dictionary_U.html#192">uint8_t</a> regAddr, <a href="dictionary_U.html#192">uint8_t</a> u8SrcData);</span>
+<a name="25"><font size=-1>25     </font></a><span class="default"></span><span class="keyword">extern void <a href="dictionary_S.html#13727">SPI_1BYT_SetTx_Isr</a></span><span class="default">(<a href="dictionary_U.html#192">uint8_t</a> regAddr, <a href="dictionary_U.html#192">uint8_t</a> u8SrcData);</span>
+<a name="26"><font size=-1>26     </font></a><span class="default"></span><span class="keyword">extern void <a href="dictionary_S.html#15202">SPI_2BYT_SetTx_Isr</a></span><span class="default">(<a href="dictionary_U.html#192">uint8_t</a> regAddr, <a href="dictionary_U.html#192">uint8_t</a> *u8SrcAddr);</span>
+<a name="27"><font size=-1>27     </font></a><span class="default"></span>
+<a name="28"><font size=-1>28     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#3943">SPI_PDMA_Init</a></span><span class="default">(</span><span class="keyword">void</span><span class="default">);</span>
+<a name="29"><font size=-1>29     </font></a><span class="default"></span><span class="keyword">extern <a href="dictionary_U.html#181">uint32_t</a> <a href="dictionary_S.html#17234">SPI_PDMA_waitFinish</a></span><span class="default">(</span><span class="keyword">void</span><span class="default">);</span>
+<a name="30"><font size=-1>30     </font></a><span class="default"></span><span class="keyword">extern void <a href="dictionary_S.html#13737">SPI_PDMA_SetRx_Isr</a></span><span class="default">(<a href="dictionary_U.html#192">uint8_t</a> regAddr, <a href="dictionary_U.html#181">uint32_t</a> u32DstAddr, <a href="dictionary_U.html#181">uint32_t</a> u32TransCount);</span>
+<a name="31"><font size=-1>31     </font></a><span class="default"></span><span class="keyword">extern void <a href="dictionary_S.html#13731">SPI_PDMA_SetTx</a></span><span class="default">(<a href="dictionary_U.html#192">uint8_t</a> regAddr, <a href="dictionary_U.html#181">uint32_t</a> u32SrcAddr, <a href="dictionary_U.html#181">uint32_t</a> u32TransCount);</span>
+<a name="32"><font size=-1>32     </font></a><span class="default"></span>
+<a name="33"><font size=-1>33     </font></a><span class="default"></span>
+<a name="34"><font size=-1>34     </font></a><span class="default"></span><span class="preproc">#endif  </span><span class="comment">//__PORTING_SPI_H__</span>
+<a name="35"><font size=-1>35     </font></a><span class="comment"></span>
+<a name="36"><font size=-1>36     </font></a><span class="comment"></span>
+</pre></body></html>

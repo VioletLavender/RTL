@@ -1,0 +1,197 @@
+<html><head><title>HAL_uart.h</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: RELATIVE:\3_Device\MM32F032xx_s\HAL_lib\inc\HAL_uart.h</h3>
+<SCRIPT>
+defaultStatus = "File: RELATIVE:\\3_Device\\MM32F032xx_s\\HAL_lib\\inc\\HAL_uart.h";
+top.document.title  = "HAL_uart.h";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment">/// @file     HAL_UART.H</span>
+<a name="3"><font size=-1>3     </font></a><span class="comment">/// @author   AE TEAM</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment">/// @brief    THIS FILE CONTAINS ALL THE FUNCTIONS PROTOTYPES FOR THE UART</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment">///           FIRMWARE LIBRARY.</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment">/// @attention</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment">///</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment">/// THE EXISTING FIRMWARE IS ONLY FOR REFERENCE, WHICH IS DESIGNED TO PROVIDE</span>
+<a name="10"><font size=-1>10     </font></a><span class="comment">/// CUSTOMERS WITH CODING INFORMATION ABOUT THEIR PRODUCTS SO THEY CAN SAVE</span>
+<a name="11"><font size=-1>11     </font></a><span class="comment">/// TIME. THEREFORE, MINDMOTION SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT OR</span>
+<a name="12"><font size=-1>12     </font></a><span class="comment">/// CONSEQUENTIAL DAMAGES ABOUT ANY CLAIMS ARISING OUT OF THE CONTENT OF SUCH</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment">/// HARDWARE AND/OR THE USE OF THE CODING INFORMATION CONTAINED HEREIN IN</span>
+<a name="14"><font size=-1>14     </font></a><span class="comment">/// CONNECTION WITH PRODUCTS MADE BY CUSTOMERS.</span>
+<a name="15"><font size=-1>15     </font></a><span class="comment">///</span>
+<a name="16"><font size=-1>16     </font></a><span class="comment">/// &lt;H2&gt;&lt;CENTER&gt;&amp;COPY; COPYRIGHT MINDMOTION &lt;/CENTER&gt;&lt;/H2&gt;</span>
+<a name="17"><font size=-1>17     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"></span>
+<a name="19"><font size=-1>19     </font></a><span class="comment">// Define to prevent recursive inclusion</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment"></span><span class="preproc">#ifndef <a href="dictionary_&.html#13742">__HAL_UART_H</a></span>
+<a name="21"><font size=-1>21     </font></a><span class="preproc">#define <a href="dictionary_&.html#13742">__HAL_UART_H</a></span>
+<a name="22"><font size=-1>22     </font></a><span class="preproc"></span>
+<a name="23"><font size=-1>23     </font></a><span class="preproc"></span><span class="comment">// Files includes</span>
+<a name="24"><font size=-1>24     </font></a><span class="comment"></span><span class="preproc">#include </span><span class="string">&quot;mm32_device.h&quot;</span>
+<a name="25"><font size=-1>25     </font></a><span class="string"></span>
+<a name="26"><font size=-1>26     </font></a><span class="string"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="27"><font size=-1>27     </font></a><span class="comment">/// @addtogroup MM32_Hardware_Abstract_Layer</span>
+<a name="28"><font size=-1>28     </font></a><span class="comment">/// @{</span>
+<a name="29"><font size=-1>29     </font></a><span class="comment"></span>
+<a name="30"><font size=-1>30     </font></a><span class="comment">/////////////////////////////////////1///////////////////////////////////////////</span>
+<a name="31"><font size=-1>31     </font></a><span class="comment">/// @defgroup UART_HAL</span>
+<a name="32"><font size=-1>32     </font></a><span class="comment">/// @brief UART HAL modules</span>
+<a name="33"><font size=-1>33     </font></a><span class="comment">/// @{</span>
+<a name="34"><font size=-1>34     </font></a><span class="comment"></span>
+<a name="35"><font size=-1>35     </font></a><span class="comment"></span>
+<a name="36"><font size=-1>36     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="37"><font size=-1>37     </font></a><span class="comment">/// @defgroup UART_Exported_Types</span>
+<a name="38"><font size=-1>38     </font></a><span class="comment">/// @{</span>
+<a name="39"><font size=-1>39     </font></a><span class="comment">///</span>
+<a name="40"><font size=-1>40     </font></a><span class="comment"></span>
+<a name="41"><font size=-1>41     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="42"><font size=-1>42     </font></a><span class="comment">/// @brief UART Word Length Enumerate definition</span>
+<a name="43"><font size=-1>43     </font></a><span class="comment">/// @anchor UART_Word_Length</span>
+<a name="44"><font size=-1>44     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="45"><font size=-1>45     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="46"><font size=-1>46     </font></a><span class="default">    UART_WordLength_5b = </span><span class="number">0U</span><span class="default">,</span>
+<a name="47"><font size=-1>47     </font></a><span class="default">    UART_WordLength_6b = </span><span class="number">1U </span><span class="default">&lt;&lt; <a href="dictionary_U.html#9561">UART_CCR_CHAR_Pos</a>,</span>
+<a name="48"><font size=-1>48     </font></a><span class="default">    UART_WordLength_7b = </span><span class="number">2U </span><span class="default">&lt;&lt; <a href="dictionary_U.html#9561">UART_CCR_CHAR_Pos</a>,</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">    UART_WordLength_8b = </span><span class="number">3U </span><span class="default">&lt;&lt; <a href="dictionary_U.html#9561">UART_CCR_CHAR_Pos</a></span>
+<a name="50"><font size=-1>50     </font></a><span class="default">} <a href="dictionary_U.html#11765">UART_WordLength_TypeDef</a>;</span>
+<a name="51"><font size=-1>51     </font></a><span class="default"></span>
+<a name="52"><font size=-1>52     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="53"><font size=-1>53     </font></a><span class="comment">/// @brief UART Stop Bits Enumerate definition</span>
+<a name="54"><font size=-1>54     </font></a><span class="comment">/// @anchor UART_Stop_Bits</span>
+<a name="55"><font size=-1>55     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="56"><font size=-1>56     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">    UART_StopBits_1 = </span><span class="number">0U</span><span class="default">,</span>
+<a name="58"><font size=-1>58     </font></a><span class="default">    UART_StopBits_2 = <a href="dictionary_U.html#9558">UART_CCR_SPB</a>,</span>
+<a name="59"><font size=-1>59     </font></a><span class="default"></span>
+<a name="60"><font size=-1>60     </font></a><span class="default">} <a href="dictionary_U.html#11766">UART_Stop_Bits_TypeDef</a>;</span>
+<a name="61"><font size=-1>61     </font></a><span class="default"></span>
+<a name="62"><font size=-1>62     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="63"><font size=-1>63     </font></a><span class="comment">/// @brief UART Parity Enumerate definition</span>
+<a name="64"><font size=-1>64     </font></a><span class="comment">/// @anchor UART_Parity</span>
+<a name="65"><font size=-1>65     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="66"><font size=-1>66     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="67"><font size=-1>67     </font></a><span class="default">    UART_Parity_No   = </span><span class="number">0U</span><span class="default">,</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">    UART_Parity_Even = <a href="dictionary_U.html#9554">UART_CCR_PEN</a> | <a href="dictionary_U.html#9556">UART_CCR_PSEL</a>,</span>
+<a name="69"><font size=-1>69     </font></a><span class="default">    UART_Parity_Odd  = <a href="dictionary_U.html#9554">UART_CCR_PEN</a></span>
+<a name="70"><font size=-1>70     </font></a><span class="default">} <a href="dictionary_U.html#11767">UART_Parity_TypeDef</a>;</span>
+<a name="71"><font size=-1>71     </font></a><span class="default"></span>
+<a name="72"><font size=-1>72     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="73"><font size=-1>73     </font></a><span class="comment">/// @brief UART Hardware Flow Control Enumerate definition</span>
+<a name="74"><font size=-1>74     </font></a><span class="comment">/// @anchor UART_Hardware_Flow_Control</span>
+<a name="75"><font size=-1>75     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="76"><font size=-1>76     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="77"><font size=-1>77     </font></a><span class="default">    UART_HWFlowControl_None    = </span><span class="number">0U</span><span class="default">,</span>
+<a name="78"><font size=-1>78     </font></a><span class="default"></span>
+<a name="79"><font size=-1>79     </font></a><span class="default">    </span><span class="comment">//    UART_HWFlowControl_RTS     = UART_GCR_AUTOFLOW,</span>
+<a name="80"><font size=-1>80     </font></a><span class="comment">    //    UART_HWFlowControl_CTS     = UART_GCR_AUTOFLOW,</span>
+<a name="81"><font size=-1>81     </font></a><span class="comment"></span>
+<a name="82"><font size=-1>82     </font></a><span class="comment">    </span><span class="default">UART_HWFlowControl_RTS_CTS = <a href="dictionary_U.html#9540">UART_GCR_AUTOFLOW</a></span>
+<a name="83"><font size=-1>83     </font></a><span class="default">} <a href="dictionary_U.html#13754">UART_HW_FLOWCONTROL_TypeDef</a>;</span>
+<a name="84"><font size=-1>84     </font></a><span class="default"></span>
+<a name="85"><font size=-1>85     </font></a><span class="default"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="86"><font size=-1>86     </font></a><span class="default">    UART_WakeUp_IdleLine    = </span><span class="number">0U</span><span class="default">,  </span><span class="comment">//</span>
+<a name="87"><font size=-1>87     </font></a><span class="comment">    </span><span class="default">UART_WakeUp_AddressMark = <a href="dictionary_U.html#9582">UART_CCR_WAKE</a></span>
+<a name="88"><font size=-1>88     </font></a><span class="default">} <a href="dictionary_U.html#12172">UART_WakeUp_TypeDef</a>;</span>
+<a name="89"><font size=-1>89     </font></a><span class="default"></span>
+<a name="90"><font size=-1>90     </font></a><span class="default"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="91"><font size=-1>91     </font></a><span class="default">    UART_9bit_Polarity_Low  = </span><span class="number">0U</span><span class="default">,  </span><span class="comment">//</span>
+<a name="92"><font size=-1>92     </font></a><span class="comment">    </span><span class="default">UART_9bit_Polarity_High = <a href="dictionary_U.html#9574">UART_CCR_B8POL</a></span>
+<a name="93"><font size=-1>93     </font></a><span class="default">} <a href="dictionary_U.html#12191">UART_9bit_Polarity_TypeDef</a>;</span>
+<a name="94"><font size=-1>94     </font></a><span class="default"></span>
+<a name="95"><font size=-1>95     </font></a><span class="default"></span>
+<a name="96"><font size=-1>96     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="97"><font size=-1>97     </font></a><span class="comment">/// @brief UART Init Structure definition</span>
+<a name="98"><font size=-1>98     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="99"><font size=-1>99     </font></a><span class="comment"></span><span class="keyword">typedef struct </span><span class="default">{</span>
+<a name="100"><font size=-1>100     </font></a><span class="default">    </span><span class="keyword">union </span><span class="default">{</span>
+<a name="101"><font size=-1>101     </font></a><span class="default">        <a href="dictionary_U.html#698">u32</a>                         <a href="dictionary_B.html#13763">BaudRate</a>;                           </span><span class="comment">///&lt; This member configures the UART communication baud rate.</span>
+<a name="102"><font size=-1>102     </font></a><span class="comment">        <a href="dictionary_U.html#698">u32</a>                         <a href="dictionary_U.html#13764">UART_BaudRate</a></span><span class="default">;</span>
+<a name="103"><font size=-1>103     </font></a><span class="default">    };</span>
+<a name="104"><font size=-1>104     </font></a><span class="default">    </span><span class="keyword">union </span><span class="default">{</span>
+<a name="105"><font size=-1>105     </font></a><span class="default">        <a href="dictionary_U.html#11765">UART_WordLength_TypeDef</a>     <a href="dictionary_W.html#13766">WordLength</a>;                         </span><span class="comment">///&lt; Specifies the number of data bits transmitted or received in a frame.</span>
+<a name="106"><font size=-1>106     </font></a><span class="comment">        <a href="dictionary_U.html#963">u16</a>                         <a href="dictionary_U.html#13767">UART_WordLength</a></span><span class="default">;</span>
+<a name="107"><font size=-1>107     </font></a><span class="default">    };</span>
+<a name="108"><font size=-1>108     </font></a><span class="default">    </span><span class="keyword">union </span><span class="default">{</span>
+<a name="109"><font size=-1>109     </font></a><span class="default">        <a href="dictionary_U.html#11766">UART_Stop_Bits_TypeDef</a>      <a href="dictionary_S.html#13769">StopBits</a>;                           </span><span class="comment">///&lt; Specifies the number of stop bits transmitted.</span>
+<a name="110"><font size=-1>110     </font></a><span class="comment">        <a href="dictionary_U.html#963">u16</a>                         <a href="dictionary_U.html#13770">UART_StopBits</a></span><span class="default">;</span>
+<a name="111"><font size=-1>111     </font></a><span class="default">    };</span>
+<a name="112"><font size=-1>112     </font></a><span class="default">    </span><span class="keyword">union </span><span class="default">{</span>
+<a name="113"><font size=-1>113     </font></a><span class="default">        <a href="dictionary_U.html#11767">UART_Parity_TypeDef</a>         <a href="dictionary_P.html#13772">Parity</a>;                             </span><span class="comment">///&lt; Specifies the parity mode.</span>
+<a name="114"><font size=-1>114     </font></a><span class="comment">        <a href="dictionary_U.html#963">u16</a>                         <a href="dictionary_U.html#13773">UART_Parity</a></span><span class="default">;</span>
+<a name="115"><font size=-1>115     </font></a><span class="default">    };</span>
+<a name="116"><font size=-1>116     </font></a><span class="default">    </span><span class="keyword">union </span><span class="default">{</span>
+<a name="117"><font size=-1>117     </font></a><span class="default">        <a href="dictionary_U.html#963">u16</a>                         <a href="dictionary_M.html#13775">Mode</a>;                               </span><span class="comment">///&lt; Specifies wether the Receive or Transmit mode is</span>
+<a name="118"><font size=-1>118     </font></a><span class="comment">        <a href="dictionary_U.html#963">u16</a>                         <a href="dictionary_U.html#13776">UART_Mode</a></span><span class="default">;</span>
+<a name="119"><font size=-1>119     </font></a><span class="default">    };</span>
+<a name="120"><font size=-1>120     </font></a><span class="default">    </span><span class="keyword">union </span><span class="default">{</span>
+<a name="121"><font size=-1>121     </font></a><span class="default">        <a href="dictionary_U.html#13754">UART_HW_FLOWCONTROL_TypeDef</a> <a href="dictionary_H.html#13778">HWFlowControl</a>;                      </span><span class="comment">///&lt; Specifies wether the hardware flow control mode is enabled or disabled.</span>
+<a name="122"><font size=-1>122     </font></a><span class="comment">        <a href="dictionary_U.html#963">u16</a>                         <a href="dictionary_U.html#13779">UART_HardwareFlowControl</a></span><span class="default">;</span>
+<a name="123"><font size=-1>123     </font></a><span class="default">    };</span>
+<a name="124"><font size=-1>124     </font></a><span class="default">} <a href="dictionary_U.html#12129">UART_InitTypeDef</a>;</span>
+<a name="125"><font size=-1>125     </font></a><span class="default"></span>
+<a name="126"><font size=-1>126     </font></a><span class="default"></span><span class="comment">/// @}</span>
+<a name="127"><font size=-1>127     </font></a><span class="comment"></span>
+<a name="128"><font size=-1>128     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="129"><font size=-1>129     </font></a><span class="comment">/// @defgroup UART_Exported_Constants</span>
+<a name="130"><font size=-1>130     </font></a><span class="comment">/// @{</span>
+<a name="131"><font size=-1>131     </font></a><span class="comment"></span>
+<a name="132"><font size=-1>132     </font></a><span class="comment">/// @}</span>
+<a name="133"><font size=-1>133     </font></a><span class="comment"></span>
+<a name="134"><font size=-1>134     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="135"><font size=-1>135     </font></a><span class="comment">/// @defgroup UART_Exported_Variables</span>
+<a name="136"><font size=-1>136     </font></a><span class="comment">/// @{</span>
+<a name="137"><font size=-1>137     </font></a><span class="comment"></span><span class="preproc">#ifdef <a href="dictionary_&.html#13781">_HAL_UART_C_</a></span>
+<a name="138"><font size=-1>138     </font></a><span class="preproc"></span>
+<a name="139"><font size=-1>139     </font></a><span class="preproc">#define <a href="dictionary_G.html#4657">GLOBAL</a></span>
+<a name="140"><font size=-1>140     </font></a><span class="preproc">#else</span>
+<a name="141"><font size=-1>141     </font></a><span class="preproc">#define <a href="dictionary_G.html#13780">GLOBAL</a> </span><span class="default">extern</span>
+<a name="142"><font size=-1>142     </font></a><span class="default"></span><span class="preproc">#endif</span>
+<a name="143"><font size=-1>143     </font></a><span class="preproc"></span>
+<a name="144"><font size=-1>144     </font></a><span class="preproc">#undef <a href="dictionary_G.html#4657">GLOBAL</a></span>
+<a name="145"><font size=-1>145     </font></a><span class="preproc"></span><span class="comment">/// @}</span>
+<a name="146"><font size=-1>146     </font></a><span class="comment"></span>
+<a name="147"><font size=-1>147     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="148"><font size=-1>148     </font></a><span class="comment">/// @defgroup UART_Exported_Functions</span>
+<a name="149"><font size=-1>149     </font></a><span class="comment">/// @{</span>
+<a name="150"><font size=-1>150     </font></a><span class="comment"></span><span class="keyword">void <a href="dictionary_U.html#12122">UART_DeInit</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx);</span>
+<a name="151"><font size=-1>151     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12126">UART_Init</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_U.html#12129">UART_InitTypeDef</a>* UART_InitStruct);</span>
+<a name="152"><font size=-1>152     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12139">UART_StructInit</a></span><span class="default">(<a href="dictionary_U.html#12129">UART_InitTypeDef</a>* UART_InitStruct);</span>
+<a name="153"><font size=-1>153     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12144">UART_Cmd</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTn, <a href="dictionary_F.html#709">FunctionalState</a> state);</span>
+<a name="154"><font size=-1>154     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12147">UART_ITConfig</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTn, <a href="dictionary_U.html#963">u16</a> UART_IT, <a href="dictionary_F.html#709">FunctionalState</a> state);</span>
+<a name="155"><font size=-1>155     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12151">UART_DMACmd</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTn, <a href="dictionary_U.html#963">u16</a> UART_DMAReq, <a href="dictionary_F.html#709">FunctionalState</a> state);</span>
+<a name="156"><font size=-1>156     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12155">UART_SendData</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTn, <a href="dictionary_U.html#963">u16</a> Data);</span>
+<a name="157"><font size=-1>157     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12166">UART_ClearITPendingBit</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTn, <a href="dictionary_U.html#963">u16</a> UART_IT);</span>
+<a name="158"><font size=-1>158     </font></a><span class="default"></span>
+<a name="159"><font size=-1>159     </font></a><span class="default"><a href="dictionary_U.html#963">u16</a>        <a href="dictionary_U.html#12158">UART_ReceiveData</a>(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTn);</span>
+<a name="160"><font size=-1>160     </font></a><span class="default"><a href="dictionary_F.html#686">FlagStatus</a> <a href="dictionary_U.html#12160">UART_GetFlagStatus</a>(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTn, <a href="dictionary_U.html#963">u16</a> UART_FLAG);</span>
+<a name="161"><font size=-1>161     </font></a><span class="default"><a href="dictionary_I.html#838">ITStatus</a>   <a href="dictionary_U.html#12163">UART_GetITStatus</a>(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTn, <a href="dictionary_U.html#963">u16</a> UART_IT);</span>
+<a name="162"><font size=-1>162     </font></a><span class="default"></span>
+<a name="163"><font size=-1>163     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12169">UART_WakeUpConfig</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_U.html#12172">UART_WakeUp_TypeDef</a> mode);</span>
+<a name="164"><font size=-1>164     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12173">UART_ReceiverWakeUpCmd</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_F.html#709">FunctionalState</a> state);</span>
+<a name="165"><font size=-1>165     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12176">UART_SetRXAddress</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_U.html#223">u8</a> address);</span>
+<a name="166"><font size=-1>166     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12179">UART_SetRXMASK</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_U.html#223">u8</a> address);</span>
+<a name="167"><font size=-1>167     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12182">UART_Enable9bit</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_F.html#709">FunctionalState</a> state);</span>
+<a name="168"><font size=-1>168     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12185">UART_Set9bitLevel</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_F.html#709">FunctionalState</a> state);</span>
+<a name="169"><font size=-1>169     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12188">UART_Set9bitPolarity</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_U.html#12191">UART_9bit_Polarity_TypeDef</a> polarity);</span>
+<a name="170"><font size=-1>170     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12192">UART_Set9bitAutomaticToggle</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_F.html#709">FunctionalState</a> state);</span>
+<a name="171"><font size=-1>171     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12195">UART_HalfDuplexCmd</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_F.html#709">FunctionalState</a> state);</span>
+<a name="172"><font size=-1>172     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12198">UART_SetGuardTime</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_U.html#223">u8</a> guardTime);</span>
+<a name="173"><font size=-1>173     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12201">UART_SmartCardCmd</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_F.html#709">FunctionalState</a> state);</span>
+<a name="174"><font size=-1>174     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12204">UART_SmartCardNACKCmd</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx, <a href="dictionary_F.html#709">FunctionalState</a> state);</span>
+<a name="175"><font size=-1>175     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_U.html#12207">UART_SendBreak</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>* UARTx);</span>
+<a name="176"><font size=-1>176     </font></a><span class="default"></span>
+<a name="177"><font size=-1>177     </font></a><span class="default"></span>
+<a name="178"><font size=-1>178     </font></a><span class="default"></span><span class="comment">/// @}</span>
+<a name="179"><font size=-1>179     </font></a><span class="comment"></span>
+<a name="180"><font size=-1>180     </font></a><span class="comment">/// @}</span>
+<a name="181"><font size=-1>181     </font></a><span class="comment"></span>
+<a name="182"><font size=-1>182     </font></a><span class="comment">/// @}</span>
+<a name="183"><font size=-1>183     </font></a><span class="comment"></span>
+<a name="184"><font size=-1>184     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="185"><font size=-1>185     </font></a><span class="comment"></span><span class="preproc">#endif </span><span class="comment">// __HAL_UART_H</span>
+<a name="186"><font size=-1>186     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="187"><font size=-1>187     </font></a><span class="comment"></span>
+</pre></body></html>

@@ -1,0 +1,32 @@
+
+T8C74 000:761 SEGGER J-Link V4.90 Log File (0001ms, 0266ms total)
+T8C74 000:761 DLL Compiled: Jul 28 2014 10:35:20 (0001ms, 0266ms total)
+T8C74 000:761 Logging started @ 2020-08-14 15:08 (0001ms, 0266ms total)
+T8C74 000:762 JLINK_SetWarnOutHandler(...) (0000ms, 0266ms total)
+T8C74 000:762 JLINK_OpenEx(...)
+Firmware: J-Link ARM V8 compiled Jul 17 2014 12:31:18
+Hardware: V8.00
+S/N: 12345678
+Feature(s): RDI,FlashDL,FlashBP,JFlash,GDBFull  returns O.K. (0261ms, 0527ms total)
+T8C74 001:023 JLINK_SetErrorOutHandler(...) (0000ms, 0527ms total)
+T8C74 001:023 JLINK_ExecCommand("ProjectFile = "E:\workspace\RT568\Mindmotion\MM32F032_s_BLE_RT568_ADV_Sample_v2.1\MM32F032_s_BLE_RT568_ADV_Sample_v2.1\1_SampleCode_HAL\19_SPI\Rafael_BLE_SPI_DMA_Reg\MDK-ARM\JLinkSettings.ini"", ...)  returns 0x00 (0008ms, 0535ms total)
+T8C74 001:031 JLINK_ExecCommand("Device = MM32F032R8T6", ...)Device "UNSPECIFIED" selected (0 KB flash, 0 KB RAM).  returns 0x00 (5130ms, 5665ms total)
+T8C74 006:162 JLINK_ExecCommand("DisableConnectionTimeout", ...)  returns 0x01 (0000ms, 5665ms total)
+T8C74 006:162 JLINK_GetHardwareVersion()  returns 0x13880 (0000ms, 5665ms total)
+T8C74 006:162 JLINK_GetDLLVersion()  returns 49000 (0000ms, 5665ms total)
+T8C74 006:162 JLINK_GetFirmwareString(...) (0000ms, 5665ms total)
+T8C74 006:162 JLINK_GetDLLVersion()  returns 49000 (0000ms, 5665ms total)
+T8C74 006:162 JLINK_GetCompileDateTime() (0000ms, 5665ms total)
+T8C74 006:162 JLINK_GetFirmwareString(...) (0000ms, 5665ms total)
+T8C74 006:162 JLINK_GetHardwareVersion()  returns 0x13880 (0000ms, 5665ms total)
+T8C74 006:162 JLINK_TIF_Select(JLINKARM_TIF_JTAG)  returns 0x00 (0019ms, 5684ms total)
+T8C74 006:181 JLINK_SetSpeed(20000) (0000ms, 5684ms total)
+T8C74 006:181 JLINK_SetResetType(JLINKARM_RESET_TYPE_NORMAL)  returns JLINKARM_RESET_TYPE_NORMAL (0000ms, 5684ms total)
+T8C74 006:181 JLINK_Reset()JLINK_GetIdData(...) (0000ms, 5685ms total)
+T8C74 006:182 JLINK_GetIdData(...) (0001ms, 5686ms total)
+T8C74 006:186 JLINK_GetFirmwareString(...) (0000ms, 5686ms total)
+T7F38 006:186 
+  ***** Error: Connection to emulator lost! (7738ms, 13424ms total)
+T8C74 019:744 JLINK_Close() (0000ms, 5686ms total)
+T8C74 019:744  (0000ms, 5686ms total)
+T8C74 019:744 Closed (0000ms, 5686ms total)

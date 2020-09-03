@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+2020.05.20
+
+v1.0.0, Initial software version
+
+1.Fix Bug
+>haha
+>haha
+
+2.Add New
++hehe
++hehe
+
+3.Delete
+-xixi
+-xixi

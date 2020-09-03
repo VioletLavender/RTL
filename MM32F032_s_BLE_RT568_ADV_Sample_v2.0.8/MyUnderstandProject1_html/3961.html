@@ -1,0 +1,52 @@
+<html><head><title>_ble_host.h</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: RELATIVE:\1_SampleCode_HAL\19_SPI\Rafael_BLE_SPI_DMA_Reg\APP\rf_source\rf_include\_ble_host.h</h3>
+<SCRIPT>
+defaultStatus = "File: RELATIVE:\\1_SampleCode_HAL\\19_SPI\\Rafael_BLE_SPI_DMA_Reg\\APP\\rf_source\\rf_include\\_ble_host.h";
+top.document.title  = "_ble_host.h";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">/**************************************************************************//**</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment">* @file       _ble_host.h</span>
+<a name="3"><font size=-1>3     </font></a><span class="comment">* @brief</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment">*</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment">* @copyright  All rights reserved. \n</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment">*             (C) 2020 Rafael Microelectronics Co. Ltd. Taiwan, R.O.C.</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment">*</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment">*</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment">*****************************************************************************/</span>
+<a name="10"><font size=-1>10     </font></a><span class="comment"></span>
+<a name="11"><font size=-1>11     </font></a><span class="comment"></span><span class="preproc">#ifndef <a href="dictionary_&.html#3962">__BLE_HOST_H_</a></span>
+<a name="12"><font size=-1>12     </font></a><span class="preproc">#define <a href="dictionary_&.html#3962">__BLE_HOST_H_</a></span>
+<a name="13"><font size=-1>13     </font></a><span class="preproc"></span>
+<a name="14"><font size=-1>14     </font></a><span class="preproc"></span>
+<a name="15"><font size=-1>15     </font></a><span class="preproc">#include </span><span class="string">&quot;ble_basicType.h&quot;</span>
+<a name="16"><font size=-1>16     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&quot;ble_cmd.h&quot;</span>
+<a name="17"><font size=-1>17     </font></a><span class="string"></span>
+<a name="18"><font size=-1>18     </font></a><span class="string"></span><span class="preproc">#define <a href="dictionary_S.html#3964">SIZE_PACKET_MAX</a>             </span><span class="number">251  </span><span class="comment">/**&lt; BLE Max Packet Size. \n  maping to L2CAPBuf.DataBuf size</span>
+<a name="19"><font size=-1>19     </font></a><span class="comment">                                            PDU(39 bytes max.)+CRC(3 bytes)*/</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_S.html#3965">SIZE_KEYBUFFER_MAX</a>          </span><span class="number">42  </span><span class="comment">/**&lt; BLE Max Packet Size. \n</span>
+<a name="21"><font size=-1>21     </font></a><span class="comment">                                            PDU(39 bytes max.)+CRC(3 bytes)*/</span>
+<a name="22"><font size=-1>22     </font></a><span class="comment"></span>
+<a name="23"><font size=-1>23     </font></a><span class="comment">//Both a GATT client and server implementations shall support an ATT_MTU not less than the default value</span>
+<a name="24"><font size=-1>24     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_S.html#3966">SIZE_DEFAULT_ATT_MTU</a>                                </span><span class="number">23      </span><span class="comment">//the default value, BLE</span>
+<a name="25"><font size=-1>25     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_S.html#3967">SIZE_MINIMUM_ENCRYPTION_KEY</a>                         </span><span class="number">16</span>
+<a name="26"><font size=-1>26     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_S.html#3968">SIZE_AES_KEY</a>                                        </span><span class="number">16</span>
+<a name="27"><font size=-1>27     </font></a><span class="number"></span>
+<a name="28"><font size=-1>28     </font></a><span class="number"></span><span class="comment">/** @brief BLE device parameter.</span>
+<a name="29"><font size=-1>29     </font></a><span class="comment">*/</span>
+<a name="30"><font size=-1>30     </font></a><span class="comment"></span><span class="keyword">typedef struct <a href="dictionary_B.html#3969">BLE_Device_Param</a></span>
+<a name="31"><font size=-1>31     </font></a><span class="keyword"></span><span class="default">{</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">    <a href="dictionary_U.html#192">uint8_t</a>         <a href="dictionary_B.html#3970">ble_deviceChipId</a>;     </span><span class="comment">/** Chip Id */</span>
+<a name="33"><font size=-1>33     </font></a><span class="comment">    <a href="dictionary_B.html#653">BLE_Addr_Param</a>  <a href="dictionary_B.html#3971">ble_deviceAddr_param</a></span><span class="default">; </span><span class="comment">/** BLE device address*/</span>
+<a name="34"><font size=-1>34     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_B.html#654">BLE_Device_Param</a>;</span>
+<a name="35"><font size=-1>35     </font></a><span class="default"></span>
+<a name="36"><font size=-1>36     </font></a><span class="default"></span><span class="keyword">extern <a href="dictionary_B.html#654">BLE_Device_Param</a> <a href="dictionary_B.html#655">ble_device_param</a></span><span class="default">;</span>
+<a name="37"><font size=-1>37     </font></a><span class="default"></span>
+<a name="38"><font size=-1>38     </font></a><span class="default"></span>
+<a name="39"><font size=-1>39     </font></a><span class="default"></span><span class="preproc">#endif </span><span class="comment">// __BLE_HOST_H_</span>
+<a name="40"><font size=-1>40     </font></a><span class="comment"></span>
+<a name="41"><font size=-1>41     </font></a><span class="comment"></span>
+<a name="42"><font size=-1>42     </font></a><span class="comment"></span>
+</pre></body></html>

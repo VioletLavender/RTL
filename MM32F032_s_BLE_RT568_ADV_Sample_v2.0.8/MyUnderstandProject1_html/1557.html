@@ -1,0 +1,303 @@
+<html><head><title>HAL_spi.h</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: RELATIVE:\3_Device\MM32F032xx_s\HAL_lib\inc\HAL_spi.h</h3>
+<SCRIPT>
+defaultStatus = "File: RELATIVE:\\3_Device\\MM32F032xx_s\\HAL_lib\\inc\\HAL_spi.h";
+top.document.title  = "HAL_spi.h";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment">/// @file     HAL_SPI.H</span>
+<a name="3"><font size=-1>3     </font></a><span class="comment">/// @author   AE TEAM</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment">/// @brief    THIS FILE CONTAINS ALL THE FUNCTIONS PROTOTYPES FOR THE SPI</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment">///           FIRMWARE LIBRARY.</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment">/// @attention</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment">///</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment">/// THE EXISTING FIRMWARE IS ONLY FOR REFERENCE, WHICH IS DESIGNED TO PROVIDE</span>
+<a name="10"><font size=-1>10     </font></a><span class="comment">/// CUSTOMERS WITH CODING INFORMATION ABOUT THEIR PRODUCTS SO THEY CAN SAVE</span>
+<a name="11"><font size=-1>11     </font></a><span class="comment">/// TIME. THEREFORE, MINDMOTION SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT OR</span>
+<a name="12"><font size=-1>12     </font></a><span class="comment">/// CONSEQUENTIAL DAMAGES ABOUT ANY CLAIMS ARISING OUT OF THE CONTENT OF SUCH</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment">/// HARDWARE AND/OR THE USE OF THE CODING INFORMATION CONTAINED HEREIN IN</span>
+<a name="14"><font size=-1>14     </font></a><span class="comment">/// CONNECTION WITH PRODUCTS MADE BY CUSTOMERS.</span>
+<a name="15"><font size=-1>15     </font></a><span class="comment">///</span>
+<a name="16"><font size=-1>16     </font></a><span class="comment">/// &lt;H2&gt;&lt;CENTER&gt;&amp;COPY; COPYRIGHT MINDMOTION &lt;/CENTER&gt;&lt;/H2&gt;</span>
+<a name="17"><font size=-1>17     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"></span>
+<a name="19"><font size=-1>19     </font></a><span class="comment">// Define to prevent recursive inclusion</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment"></span><span class="preproc">#ifndef <a href="dictionary_&.html#4570">__HAL_SPI_H</a></span>
+<a name="21"><font size=-1>21     </font></a><span class="preproc">#define <a href="dictionary_&.html#4570">__HAL_SPI_H</a></span>
+<a name="22"><font size=-1>22     </font></a><span class="preproc"></span>
+<a name="23"><font size=-1>23     </font></a><span class="preproc"></span><span class="comment">// Files includes</span>
+<a name="24"><font size=-1>24     </font></a><span class="comment"></span><span class="preproc">#include </span><span class="string">&quot;types.h&quot;</span>
+<a name="25"><font size=-1>25     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&quot;mm32_device.h&quot;</span>
+<a name="26"><font size=-1>26     </font></a><span class="string"></span>
+<a name="27"><font size=-1>27     </font></a><span class="string"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="28"><font size=-1>28     </font></a><span class="comment">/// @addtogroup MM32_Hardware_Abstract_Layer</span>
+<a name="29"><font size=-1>29     </font></a><span class="comment">/// @{</span>
+<a name="30"><font size=-1>30     </font></a><span class="comment"></span>
+<a name="31"><font size=-1>31     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="32"><font size=-1>32     </font></a><span class="comment">/// @defgroup SPI_HAL</span>
+<a name="33"><font size=-1>33     </font></a><span class="comment">/// @brief SPI HAL modules</span>
+<a name="34"><font size=-1>34     </font></a><span class="comment">/// @{</span>
+<a name="35"><font size=-1>35     </font></a><span class="comment"></span>
+<a name="36"><font size=-1>36     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="37"><font size=-1>37     </font></a><span class="comment">/// @defgroup SPI_Exported_Types</span>
+<a name="38"><font size=-1>38     </font></a><span class="comment">/// @{</span>
+<a name="39"><font size=-1>39     </font></a><span class="comment"></span>
+<a name="40"><font size=-1>40     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="41"><font size=-1>41     </font></a><span class="comment">/// @brief  SPI mode enum definition</span>
+<a name="42"><font size=-1>42     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="43"><font size=-1>43     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="44"><font size=-1>44     </font></a><span class="default">    SPI_Mode_Slave  = </span><span class="number">0x0000</span><span class="default">,        </span><span class="comment">///&lt; SPI slave mode</span>
+<a name="45"><font size=-1>45     </font></a><span class="comment">    </span><span class="default">SPI_Mode_Master = <a href="dictionary_S.html#3021">SPI_GCR_MODE</a>   </span><span class="comment">///&lt; SPI master mode</span>
+<a name="46"><font size=-1>46     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#4572">SPI_Mode_TypeDef</a>;</span>
+<a name="47"><font size=-1>47     </font></a><span class="default"></span>
+<a name="48"><font size=-1>48     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="49"><font size=-1>49     </font></a><span class="comment">/// @brief  SPI data size enum definition</span>
+<a name="50"><font size=-1>50     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="51"><font size=-1>51     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="52"><font size=-1>52     </font></a><span class="default">    SPI_DataSize_8b  = </span><span class="number">0x0000</span><span class="default">,         </span><span class="comment">///&lt; 8 bits valid data</span>
+<a name="53"><font size=-1>53     </font></a><span class="comment">    </span><span class="default">SPI_DataSize_32b = <a href="dictionary_S.html#3019">SPI_GCR_DWSEL</a>   </span><span class="comment">///&lt; 32 bits valid data</span>
+<a name="54"><font size=-1>54     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#4574">SPI_DataSize_TypeDef</a>;</span>
+<a name="55"><font size=-1>55     </font></a><span class="default"></span>
+<a name="56"><font size=-1>56     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="57"><font size=-1>57     </font></a><span class="comment">/// @brief  SPI clock polarity enum definition</span>
+<a name="58"><font size=-1>58     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="59"><font size=-1>59     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="60"><font size=-1>60     </font></a><span class="default">    SPI_CPOL_Low  = </span><span class="number">0x0000</span><span class="default">,                                                     </span><span class="comment">///&lt; The clock is low in idle state.</span>
+<a name="61"><font size=-1>61     </font></a><span class="comment">    </span><span class="default">SPI_CPOL_High = <a href="dictionary_S.html#3024">SPI_CCR_CPOL</a>                                                </span><span class="comment">///&lt; The clock is high in idle state.</span>
+<a name="62"><font size=-1>62     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#4577">SPI_CPOL_TypeDef</a>;</span>
+<a name="63"><font size=-1>63     </font></a><span class="default"></span>
+<a name="64"><font size=-1>64     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="65"><font size=-1>65     </font></a><span class="comment">/// @brief  SPI clock phase enum definition</span>
+<a name="66"><font size=-1>66     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="67"><font size=-1>67     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">    SPI_CPHA_2Edge = </span><span class="number">0x0000</span><span class="default">,                                                    </span><span class="comment">///&lt; Data sampling starts from the second clock edge.</span>
+<a name="69"><font size=-1>69     </font></a><span class="comment">    </span><span class="default">SPI_CPHA_1Edge = <a href="dictionary_S.html#3025">SPI_CCR_CPHA</a>                                               </span><span class="comment">///&lt; Data sampling starts from the first clock edge.</span>
+<a name="70"><font size=-1>70     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#4580">SPI_CPHA_TypeDef</a>;</span>
+<a name="71"><font size=-1>71     </font></a><span class="default"></span>
+<a name="72"><font size=-1>72     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="73"><font size=-1>73     </font></a><span class="comment">/// @brief  SPI nss control mode enum definition</span>
+<a name="74"><font size=-1>74     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="75"><font size=-1>75     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="76"><font size=-1>76     </font></a><span class="default">    SPI_NSS_Soft = </span><span class="number">0x0000</span><span class="default">,</span>
+<a name="77"><font size=-1>77     </font></a><span class="default">    SPI_NSS_Hard = <a href="dictionary_S.html#3020">SPI_GCR_NSS</a></span>
+<a name="78"><font size=-1>78     </font></a><span class="default">} <a href="dictionary_S.html#3064">SPI_NSS_TypeDef</a>;</span>
+<a name="79"><font size=-1>79     </font></a><span class="default"></span>
+<a name="80"><font size=-1>80     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="81"><font size=-1>81     </font></a><span class="comment">/// @brief  SPI baud rate prescaler enum definition</span>
+<a name="82"><font size=-1>82     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="83"><font size=-1>83     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="84"><font size=-1>84     </font></a><span class="default">    SPI_BaudRatePrescaler_2   = </span><span class="number">0x0002</span><span class="default">,                                         </span><span class="comment">///&lt; SCK clock devide by 2</span>
+<a name="85"><font size=-1>85     </font></a><span class="comment">    </span><span class="default">SPI_BaudRatePrescaler_4   = </span><span class="number">0x0004</span><span class="default">,                                         </span><span class="comment">///&lt; SCK clock devide by 4</span>
+<a name="86"><font size=-1>86     </font></a><span class="comment">    </span><span class="default">SPI_BaudRatePrescaler_8   = </span><span class="number">0x0008</span><span class="default">,                                         </span><span class="comment">///&lt; SCK clock devide by 7</span>
+<a name="87"><font size=-1>87     </font></a><span class="comment">    </span><span class="default">SPI_BaudRatePrescaler_16  = </span><span class="number">0x0010</span><span class="default">,                                         </span><span class="comment">///&lt; SCK clock devide by 16</span>
+<a name="88"><font size=-1>88     </font></a><span class="comment">    </span><span class="default">SPI_BaudRatePrescaler_32  = </span><span class="number">0x0020</span><span class="default">,                                         </span><span class="comment">///&lt; SCK clock devide by 32</span>
+<a name="89"><font size=-1>89     </font></a><span class="comment">    </span><span class="default">SPI_BaudRatePrescaler_64  = </span><span class="number">0x0040</span><span class="default">,                                         </span><span class="comment">///&lt; SCK clock devide by 64</span>
+<a name="90"><font size=-1>90     </font></a><span class="comment">    </span><span class="default">SPI_BaudRatePrescaler_128 = </span><span class="number">0x0080</span><span class="default">,                                         </span><span class="comment">///&lt; SCK clock devide by 128</span>
+<a name="91"><font size=-1>91     </font></a><span class="comment">    </span><span class="default">SPI_BaudRatePrescaler_256 = </span><span class="number">0x0100                                          </span><span class="comment">///&lt; SCK clock devide by 256</span>
+<a name="92"><font size=-1>92     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#4590">SPI_BaudRatePrescaler_TypeDef</a>;</span>
+<a name="93"><font size=-1>93     </font></a><span class="default"></span>
+<a name="94"><font size=-1>94     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="95"><font size=-1>95     </font></a><span class="comment">/// @brief  SPI first bit enum definition</span>
+<a name="96"><font size=-1>96     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="97"><font size=-1>97     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="98"><font size=-1>98     </font></a><span class="default">    SPI_FirstBit_MSB = </span><span class="number">0x0000</span><span class="default">,                                                  </span><span class="comment">///&lt; Data transfers start from MSB</span>
+<a name="99"><font size=-1>99     </font></a><span class="comment">    </span><span class="default">SPI_FirstBit_LSB = <a href="dictionary_S.html#3023">SPI_CCR_LSBFE</a>                                            </span><span class="comment">///&lt; Data transfers start from LSB</span>
+<a name="100"><font size=-1>100     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#4593">SPI_FirstBit_TypeDef</a>;</span>
+<a name="101"><font size=-1>101     </font></a><span class="default"></span>
+<a name="102"><font size=-1>102     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="103"><font size=-1>103     </font></a><span class="comment">/// @brief  SPI FIFO trigger level enum definition</span>
+<a name="104"><font size=-1>104     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="105"><font size=-1>105     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="106"><font size=-1>106     </font></a><span class="default">    SPI_RXTLF = <a href="dictionary_S.html#4596">SPI_GCR_RXTLF_Half</a>,                                             </span><span class="comment">///&lt; RX FIFO trigger level</span>
+<a name="107"><font size=-1>107     </font></a><span class="comment">    </span><span class="default">SPI_TXTLF = <a href="dictionary_S.html#4598">SPI_GCR_TXTLF_Half</a>                                              </span><span class="comment">///&lt; TX FIFO trigger level</span>
+<a name="108"><font size=-1>108     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#3047">SPI_TLF_TypeDef</a>;</span>
+<a name="109"><font size=-1>109     </font></a><span class="default"></span>
+<a name="110"><font size=-1>110     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="111"><font size=-1>111     </font></a><span class="comment">/// @brief  SPI bit derection enum definition</span>
+<a name="112"><font size=-1>112     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="113"><font size=-1>113     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="114"><font size=-1>114     </font></a><span class="default">    SPI_Direction_Rx,                                                           </span><span class="comment">///&lt; Receive enable</span>
+<a name="115"><font size=-1>115     </font></a><span class="comment">    </span><span class="default">SPI_Direction_Tx,                                                           </span><span class="comment">///&lt; Transmit enable</span>
+<a name="116"><font size=-1>116     </font></a><span class="comment">    </span><span class="default">SPI_Disable_Rx,                                                             </span><span class="comment">///&lt; Receive disable</span>
+<a name="117"><font size=-1>117     </font></a><span class="comment">    </span><span class="default">SPI_Disable_Tx                                                              </span><span class="comment">///&lt; Transmit disable</span>
+<a name="118"><font size=-1>118     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#3075">SPI_Direction_TypeDef</a>;</span>
+<a name="119"><font size=-1>119     </font></a><span class="default"></span>
+<a name="120"><font size=-1>120     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="121"><font size=-1>121     </font></a><span class="comment">/// @brief  SPI flag enum definition</span>
+<a name="122"><font size=-1>122     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="123"><font size=-1>123     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="124"><font size=-1>124     </font></a><span class="default">    SPI_FLAG_RXAVL       = <a href="dictionary_S.html#4601">SPI_SR_RXAVL</a>,                                        </span><span class="comment">///&lt; Receive 1 byte available data flag</span>
+<a name="125"><font size=-1>125     </font></a><span class="comment">    </span><span class="default">SPI_FLAG_TXEPT       = <a href="dictionary_S.html#4602">SPI_SR_TXEPT</a>,                                        </span><span class="comment">///&lt; Transmitter empty flag</span>
+<a name="126"><font size=-1>126     </font></a><span class="comment">    </span><span class="default">SPI_FLAG_TXFULL      = <a href="dictionary_S.html#4604">SPI_SR_TXFULL</a>,                                       </span><span class="comment">///&lt; Transmitter FIFO full status flag</span>
+<a name="127"><font size=-1>127     </font></a><span class="comment">    </span><span class="default">SPI_FLAG_RXAVL_4BYTE = <a href="dictionary_S.html#4606">SPI_SR_RXAVL_4BYTE</a>                                   </span><span class="comment">///&lt; Receive 4 bytes available data flag</span>
+<a name="128"><font size=-1>128     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#3083">SPI_FLAG_TypeDef</a>;</span>
+<a name="129"><font size=-1>129     </font></a><span class="default"></span>
+<a name="130"><font size=-1>130     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="131"><font size=-1>131     </font></a><span class="comment">/// @brief  SPI slave mode data edge adjust enum definition</span>
+<a name="132"><font size=-1>132     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="133"><font size=-1>133     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="134"><font size=-1>134     </font></a><span class="default">    SPI_SlaveAdjust_LOW,                                                        </span><span class="comment">///&lt; SPI slave mode data edge adjust in low speed mode</span>
+<a name="135"><font size=-1>135     </font></a><span class="comment">    </span><span class="default">SPI_SlaveAdjust_FAST                                                        </span><span class="comment">///&lt; SPI slave mode data edge adjust in fast speed mode</span>
+<a name="136"><font size=-1>136     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#3100">SPI_SlaveAdjust_TypeDef</a>;</span>
+<a name="137"><font size=-1>137     </font></a><span class="default"></span>
+<a name="138"><font size=-1>138     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="139"><font size=-1>139     </font></a><span class="comment">/// @brief  SPI data edge adjust enum definition</span>
+<a name="140"><font size=-1>140     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="141"><font size=-1>141     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="142"><font size=-1>142     </font></a><span class="default">    SPI_DataEdgeAdjust_LOW,                                                     </span><span class="comment">///&lt; SPI data edge adjust in low speed mode</span>
+<a name="143"><font size=-1>143     </font></a><span class="comment">    </span><span class="default">SPI_DataEdgeAdjust_FAST                                                     </span><span class="comment">///&lt; SPI data edge adjust in fast speed mode</span>
+<a name="144"><font size=-1>144     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#3118">SPI_DataEdgeAdjust_TypeDef</a>;</span>
+<a name="145"><font size=-1>145     </font></a><span class="default"></span>
+<a name="146"><font size=-1>146     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="147"><font size=-1>147     </font></a><span class="comment">/// @brief  SPI interruput enum definition</span>
+<a name="148"><font size=-1>148     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="149"><font size=-1>149     </font></a><span class="comment"></span><span class="keyword">typedef enum </span><span class="default">{</span>
+<a name="150"><font size=-1>150     </font></a><span class="default">    SPI_IT_TXEPT    = </span><span class="number">0x40</span><span class="default">,                                                     </span><span class="comment">///&lt; Transmitter empty interrupt</span>
+<a name="151"><font size=-1>151     </font></a><span class="comment">    </span><span class="default">SPI_IT_RXFULL   = </span><span class="number">0x20</span><span class="default">,                                                     </span><span class="comment">///&lt; RX FIFO full interrupt</span>
+<a name="152"><font size=-1>152     </font></a><span class="comment">    </span><span class="default">SPI_IT_RXMATCH  = </span><span class="number">0x10</span><span class="default">,                                                     </span><span class="comment">///&lt; Receive data match the RXDNR number interrut</span>
+<a name="153"><font size=-1>153     </font></a><span class="comment">    </span><span class="default">SPI_IT_RXOERR   = </span><span class="number">0x08</span><span class="default">,                                                     </span><span class="comment">///&lt; Receive overrun error interrupt</span>
+<a name="154"><font size=-1>154     </font></a><span class="comment">    </span><span class="default">SPI_IT_UNDERRUN = </span><span class="number">0x04</span><span class="default">,                                                     </span><span class="comment">///&lt; Underrun interrupt</span>
+<a name="155"><font size=-1>155     </font></a><span class="comment">    </span><span class="default">SPI_IT_RX       = </span><span class="number">0x02</span><span class="default">,                                                     </span><span class="comment">///&lt; Receive available data interrupt</span>
+<a name="156"><font size=-1>156     </font></a><span class="comment">    </span><span class="default">SPI_IT_TX       = </span><span class="number">0x01                                                      </span><span class="comment">///&lt; Transmit FIFO available interrupt</span>
+<a name="157"><font size=-1>157     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#3087">SPI_IT_TypeDef</a>;</span>
+<a name="158"><font size=-1>158     </font></a><span class="default"></span>
+<a name="159"><font size=-1>159     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="160"><font size=-1>160     </font></a><span class="comment">/// @brief  SPI Init structure definition</span>
+<a name="161"><font size=-1>161     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="162"><font size=-1>162     </font></a><span class="comment"></span><span class="keyword">typedef struct </span><span class="default">{</span>
+<a name="163"><font size=-1>163     </font></a><span class="default">    <a href="dictionary_S.html#4572">SPI_Mode_TypeDef</a>                <a href="dictionary_S.html#1559">SPI_Mode</a>;                                   </span><span class="comment">///&lt; Specifies the SPI operating mode</span>
+<a name="164"><font size=-1>164     </font></a><span class="comment">    <a href="dictionary_S.html#4574">SPI_DataSize_TypeDef</a>            <a href="dictionary_S.html#1561">SPI_DataSize</a></span><span class="default">;                               </span><span class="comment">///&lt; Specifies the SPI available data size</span>
+<a name="165"><font size=-1>165     </font></a><span class="comment">    <a href="dictionary_U.html#223">u8</a>                              <a href="dictionary_S.html#1562">SPI_DataWidth</a></span><span class="default">;                              </span><span class="comment">///&lt; SPI data length</span>
+<a name="166"><font size=-1>166     </font></a><span class="comment">    <a href="dictionary_S.html#4577">SPI_CPOL_TypeDef</a>                <a href="dictionary_S.html#1564">SPI_CPOL</a></span><span class="default">;                                   </span><span class="comment">///&lt; Specifies the serial clock steady state</span>
+<a name="167"><font size=-1>167     </font></a><span class="comment">    <a href="dictionary_S.html#4580">SPI_CPHA_TypeDef</a>                <a href="dictionary_S.html#1566">SPI_CPHA</a></span><span class="default">;                                   </span><span class="comment">///&lt; Specifies the clock active edge for the bit capture</span>
+<a name="168"><font size=-1>168     </font></a><span class="comment">    <a href="dictionary_S.html#3064">SPI_NSS_TypeDef</a>                 <a href="dictionary_S.html#1568">SPI_NSS</a></span><span class="default">;                                    </span><span class="comment">///&lt; Specifies whether the NSS signal is managed by hardware or by software</span>
+<a name="169"><font size=-1>169     </font></a><span class="comment">    <a href="dictionary_S.html#4590">SPI_BaudRatePrescaler_TypeDef</a>   <a href="dictionary_S.html#1570">SPI_BaudRatePrescaler</a></span><span class="default">;                      </span><span class="comment">///&lt; Specifies the Baud Rate prescaler value which will be</span>
+<a name="170"><font size=-1>170     </font></a><span class="comment">    ///&lt; used to configure the transmit and receive SCK clock</span>
+<a name="171"><font size=-1>171     </font></a><span class="comment">    <a href="dictionary_S.html#4593">SPI_FirstBit_TypeDef</a>            <a href="dictionary_S.html#1572">SPI_FirstBit</a></span><span class="default">;                               </span><span class="comment">///&lt; Specifies whether data transfers start from MSB or LSB bit</span>
+<a name="172"><font size=-1>172     </font></a><span class="comment">    //  u16     SPI_length;</span>
+<a name="173"><font size=-1>173     </font></a><span class="comment"></span><span class="default">} <a href="dictionary_S.html#1552">SPI_InitTypeDef</a>;</span>
+<a name="174"><font size=-1>174     </font></a><span class="default"></span>
+<a name="175"><font size=-1>175     </font></a><span class="default"></span><span class="comment">/// @}</span>
+<a name="176"><font size=-1>176     </font></a><span class="comment"></span>
+<a name="177"><font size=-1>177     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="178"><font size=-1>178     </font></a><span class="comment">/// @defgroup SPI_Exported_Constants</span>
+<a name="179"><font size=-1>179     </font></a><span class="comment">/// @{</span>
+<a name="180"><font size=-1>180     </font></a><span class="comment"></span>
+<a name="181"><font size=-1>181     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="182"><font size=-1>182     </font></a><span class="comment">/// @defgroup SPI_Register_Mask</span>
+<a name="183"><font size=-1>183     </font></a><span class="comment">/// @{</span>
+<a name="184"><font size=-1>184     </font></a><span class="comment"></span>
+<a name="185"><font size=-1>185     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_G.html#4622">GCR_Mask</a> </span><span class="default">((<a href="dictionary_U.html#698">u32</a>)</span><span class="number">0x0FFF</span><span class="default">)</span>
+<a name="186"><font size=-1>186     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#4623">CCR_Mask</a> </span><span class="default">((<a href="dictionary_U.html#698">u32</a>)</span><span class="number">0x003F</span><span class="default">)</span>
+<a name="187"><font size=-1>187     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_B.html#3028">BRR_Mask</a> </span><span class="default">((<a href="dictionary_U.html#698">u32</a>)</span><span class="number">0xFFFF</span><span class="default">)</span>
+<a name="188"><font size=-1>188     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_E.html#3030">ECR_Mask</a> </span><span class="default">((<a href="dictionary_U.html#698">u32</a>)</span><span class="number">0x001F</span><span class="default">)</span>
+<a name="189"><font size=-1>189     </font></a><span class="default"></span>
+<a name="190"><font size=-1>190     </font></a><span class="default"></span>
+<a name="191"><font size=-1>191     </font></a><span class="default"></span>
+<a name="192"><font size=-1>192     </font></a><span class="default"></span><span class="comment">/// @}</span>
+<a name="193"><font size=-1>193     </font></a><span class="comment"></span>
+<a name="194"><font size=-1>194     </font></a><span class="comment"></span>
+<a name="195"><font size=-1>195     </font></a><span class="comment">// SPI_7bit_8bit data width</span>
+<a name="196"><font size=-1>196     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_S.html#4624">SPI_DataWidth_1b</a>                  </span><span class="default">((uint16_t)</span><span class="number">0x0001</span><span class="default">)</span>
+<a name="197"><font size=-1>197     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4625">SPI_DataWidth_2b</a>                  </span><span class="default">((uint16_t)</span><span class="number">0x0002</span><span class="default">)</span>
+<a name="198"><font size=-1>198     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4626">SPI_DataWidth_3b</a>                  </span><span class="default">((uint16_t)</span><span class="number">0x0003</span><span class="default">)</span>
+<a name="199"><font size=-1>199     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4627">SPI_DataWidth_4b</a>                  </span><span class="default">((uint16_t)</span><span class="number">0x0004</span><span class="default">)</span>
+<a name="200"><font size=-1>200     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4628">SPI_DataWidth_5b</a>                  </span><span class="default">((uint16_t)</span><span class="number">0x0005</span><span class="default">)</span>
+<a name="201"><font size=-1>201     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4629">SPI_DataWidth_6b</a>                  </span><span class="default">((uint16_t)</span><span class="number">0x0006</span><span class="default">)</span>
+<a name="202"><font size=-1>202     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4630">SPI_DataWidth_7b</a>                  </span><span class="default">((uint16_t)</span><span class="number">0x0007</span><span class="default">)</span>
+<a name="203"><font size=-1>203     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4631">SPI_DataWidth_8b</a>                  </span><span class="default">((uint16_t)</span><span class="number">0x0008</span><span class="default">)</span>
+<a name="204"><font size=-1>204     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4632">SPI_DataWidth_9b</a>                  </span><span class="default">((uint16_t)</span><span class="number">0x0009</span><span class="default">)</span>
+<a name="205"><font size=-1>205     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4633">SPI_DataWidth_10b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x000a</span><span class="default">)</span>
+<a name="206"><font size=-1>206     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4634">SPI_DataWidth_11b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x000b</span><span class="default">)</span>
+<a name="207"><font size=-1>207     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4635">SPI_DataWidth_12b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x000c</span><span class="default">)</span>
+<a name="208"><font size=-1>208     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4636">SPI_DataWidth_13b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x000d</span><span class="default">)</span>
+<a name="209"><font size=-1>209     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4637">SPI_DataWidth_14b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x000e</span><span class="default">)</span>
+<a name="210"><font size=-1>210     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4638">SPI_DataWidth_15b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x000f</span><span class="default">)</span>
+<a name="211"><font size=-1>211     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4639">SPI_DataWidth_16b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0010</span><span class="default">)</span>
+<a name="212"><font size=-1>212     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4640">SPI_DataWidth_17b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0011</span><span class="default">)</span>
+<a name="213"><font size=-1>213     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4641">SPI_DataWidth_18b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0012</span><span class="default">)</span>
+<a name="214"><font size=-1>214     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4642">SPI_DataWidth_19b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0013</span><span class="default">)</span>
+<a name="215"><font size=-1>215     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4643">SPI_DataWidth_20b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0014</span><span class="default">)</span>
+<a name="216"><font size=-1>216     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4644">SPI_DataWidth_21b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0015</span><span class="default">)</span>
+<a name="217"><font size=-1>217     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4645">SPI_DataWidth_22b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0016</span><span class="default">)</span>
+<a name="218"><font size=-1>218     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4646">SPI_DataWidth_23b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0017</span><span class="default">)</span>
+<a name="219"><font size=-1>219     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4647">SPI_DataWidth_24b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0018</span><span class="default">)</span>
+<a name="220"><font size=-1>220     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4648">SPI_DataWidth_25b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0019</span><span class="default">)</span>
+<a name="221"><font size=-1>221     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4649">SPI_DataWidth_26b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x001a</span><span class="default">)</span>
+<a name="222"><font size=-1>222     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4650">SPI_DataWidth_27b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x001b</span><span class="default">)</span>
+<a name="223"><font size=-1>223     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4651">SPI_DataWidth_28b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x001c</span><span class="default">)</span>
+<a name="224"><font size=-1>224     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4652">SPI_DataWidth_29b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x001d</span><span class="default">)</span>
+<a name="225"><font size=-1>225     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4653">SPI_DataWidth_30b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x001e</span><span class="default">)</span>
+<a name="226"><font size=-1>226     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4654">SPI_DataWidth_31b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x001f</span><span class="default">)</span>
+<a name="227"><font size=-1>227     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#4655">SPI_DataWidth_32b</a>                 </span><span class="default">((uint16_t)</span><span class="number">0x0000</span><span class="default">)</span>
+<a name="228"><font size=-1>228     </font></a><span class="default"></span>
+<a name="229"><font size=-1>229     </font></a><span class="default"></span>
+<a name="230"><font size=-1>230     </font></a><span class="default"></span><span class="comment">/// @}</span>
+<a name="231"><font size=-1>231     </font></a><span class="comment"></span>
+<a name="232"><font size=-1>232     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="233"><font size=-1>233     </font></a><span class="comment">/// @defgroup SPI_Exported_Variables</span>
+<a name="234"><font size=-1>234     </font></a><span class="comment">/// @{</span>
+<a name="235"><font size=-1>235     </font></a><span class="comment"></span>
+<a name="236"><font size=-1>236     </font></a><span class="comment"></span><span class="preproc">#ifdef <a href="dictionary_&.html#4659">_HAL_SPI_C_</a></span>
+<a name="237"><font size=-1>237     </font></a><span class="preproc">#define <a href="dictionary_G.html#4657">GLOBAL</a></span>
+<a name="238"><font size=-1>238     </font></a><span class="preproc">#else</span>
+<a name="239"><font size=-1>239     </font></a><span class="preproc">#define <a href="dictionary_G.html#4658">GLOBAL</a> </span><span class="default">extern</span>
+<a name="240"><font size=-1>240     </font></a><span class="default"></span><span class="preproc">#endif</span>
+<a name="241"><font size=-1>241     </font></a><span class="preproc"></span>
+<a name="242"><font size=-1>242     </font></a><span class="preproc">#undef <a href="dictionary_G.html#4657">GLOBAL</a></span>
+<a name="243"><font size=-1>243     </font></a><span class="preproc"></span>
+<a name="244"><font size=-1>244     </font></a><span class="preproc"></span><span class="comment">/// @}</span>
+<a name="245"><font size=-1>245     </font></a><span class="comment"></span>
+<a name="246"><font size=-1>246     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="247"><font size=-1>247     </font></a><span class="comment">/// @defgroup SPI_Exported_Functions</span>
+<a name="248"><font size=-1>248     </font></a><span class="comment">/// @{</span>
+<a name="249"><font size=-1>249     </font></a><span class="comment"></span>
+<a name="250"><font size=-1>250     </font></a><span class="comment"></span><span class="keyword">void <a href="dictionary_S.html#3013">SPI_DeInit</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx);</span>
+<a name="251"><font size=-1>251     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#1573">SPI_Init</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_S.html#1552">SPI_InitTypeDef</a>* pInitStruct);</span>
+<a name="252"><font size=-1>252     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#1555">SPI_StructInit</a></span><span class="default">(<a href="dictionary_S.html#1552">SPI_InitTypeDef</a>* pInitStruct);</span>
+<a name="253"><font size=-1>253     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#1574">SPI_Cmd</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_F.html#709">FunctionalState</a> newState);</span>
+<a name="254"><font size=-1>254     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#3036">SPI_ITConfig</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_U.html#223">u8</a> interrupt, <a href="dictionary_F.html#709">FunctionalState</a> newState);</span>
+<a name="255"><font size=-1>255     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#1677">SPI_DMACmd</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_F.html#709">FunctionalState</a> newState);</span>
+<a name="256"><font size=-1>256     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#3044">SPI_FifoTrigger</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_S.html#3047">SPI_TLF_TypeDef</a> fifoTriggerValue, <a href="dictionary_F.html#709">FunctionalState</a> newState);</span>
+<a name="257"><font size=-1>257     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#3049">SPI_SendData</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_U.html#698">u32</a> data);</span>
+<a name="258"><font size=-1>258     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#1468">SPI_CSInternalSelected</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_F.html#709">FunctionalState</a> newState);</span>
+<a name="259"><font size=-1>259     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#3061">SPI_NSSInternalSoftwareConfig</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_S.html#3064">SPI_NSS_TypeDef</a> nss);</span>
+<a name="260"><font size=-1>260     </font></a><span class="default"></span>
+<a name="261"><font size=-1>261     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#1473">SPI_BiDirectionalLineConfig</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_S.html#3075">SPI_Direction_TypeDef</a> direction);</span>
+<a name="262"><font size=-1>262     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#3089">SPI_ClearITPendingBit</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_S.html#3087">SPI_IT_TypeDef</a> interrupt);</span>
+<a name="263"><font size=-1>263     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#3093">SPI_RxBytes</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_U.html#963">u16</a> number);</span>
+<a name="264"><font size=-1>264     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_S.html#3097">SPI_SlaveAdjust</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_S.html#3100">SPI_SlaveAdjust_TypeDef</a> adjustValue);</span>
+<a name="265"><font size=-1>265     </font></a><span class="default"></span>
+<a name="266"><font size=-1>266     </font></a><span class="default"></span><span class="keyword">bool <a href="dictionary_S.html#3066">SPI_DataSizeConfig</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_U.html#223">u8</a> dataSize);</span>
+<a name="267"><font size=-1>267     </font></a><span class="default"></span>
+<a name="268"><font size=-1>268     </font></a><span class="default"><a href="dictionary_U.html#698">u32</a> <a href="dictionary_S.html#3055">SPI_ReceiveData</a>(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx);</span>
+<a name="269"><font size=-1>269     </font></a><span class="default"></span>
+<a name="270"><font size=-1>270     </font></a><span class="default"><a href="dictionary_F.html#686">FlagStatus</a> <a href="dictionary_S.html#3080">SPI_GetFlagStatus</a>(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_S.html#3083">SPI_FLAG_TypeDef</a> flag);</span>
+<a name="271"><font size=-1>271     </font></a><span class="default"></span>
+<a name="272"><font size=-1>272     </font></a><span class="default"><a href="dictionary_I.html#838">ITStatus</a> <a href="dictionary_S.html#3084">SPI_GetITStatus</a>(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_S.html#3087">SPI_IT_TypeDef</a> interrupt);</span>
+<a name="273"><font size=-1>273     </font></a><span class="default"></span>
+<a name="274"><font size=-1>274     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="275"><font size=-1>275     </font></a><span class="comment">//          Extended function interface</span>
+<a name="276"><font size=-1>276     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="277"><font size=-1>277     </font></a><span class="comment"></span><span class="keyword">void <a href="dictionary_E.html#3102">exSPI_ITCmd</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_F.html#709">FunctionalState</a> newState);</span>
+<a name="278"><font size=-1>278     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_E.html#3105">exSPI_ITConfig</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_S.html#3087">SPI_IT_TypeDef</a> interrput, <a href="dictionary_F.html#709">FunctionalState</a> newState);</span>
+<a name="279"><font size=-1>279     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_E.html#3109">exSPI_DMACmd</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_F.html#709">FunctionalState</a> newState);</span>
+<a name="280"><font size=-1>280     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_E.html#3112">exSPI_CSInternalSelected</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_F.html#709">FunctionalState</a> newState);</span>
+<a name="281"><font size=-1>281     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_E.html#3115">exSPI_DataEdgeAdjust</a></span><span class="default">(<a href="dictionary_S.html#1467">SPI_TypeDef</a>* SPIx, <a href="dictionary_S.html#3118">SPI_DataEdgeAdjust_TypeDef</a> adjustValue);</span>
+<a name="282"><font size=-1>282     </font></a><span class="default"></span>
+<a name="283"><font size=-1>283     </font></a><span class="default"></span>
+<a name="284"><font size=-1>284     </font></a><span class="default"></span><span class="comment">/// @}</span>
+<a name="285"><font size=-1>285     </font></a><span class="comment"></span>
+<a name="286"><font size=-1>286     </font></a><span class="comment">/// @}</span>
+<a name="287"><font size=-1>287     </font></a><span class="comment"></span>
+<a name="288"><font size=-1>288     </font></a><span class="comment">/// @}</span>
+<a name="289"><font size=-1>289     </font></a><span class="comment"></span>
+<a name="290"><font size=-1>290     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="291"><font size=-1>291     </font></a><span class="comment"></span><span class="preproc">#endif </span><span class="comment">//__HAL_SPI_H </span>
+<a name="292"><font size=-1>292     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="293"><font size=-1>293     </font></a><span class="comment"></span>
+</pre></body></html>

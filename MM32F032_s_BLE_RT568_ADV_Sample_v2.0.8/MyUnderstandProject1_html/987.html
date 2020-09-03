@@ -1,0 +1,146 @@
+<html><head><title>config.h</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: RELATIVE:\1_SampleCode_HAL\19_SPI\Rafael_BLE_SPI_DMA_Reg\APP\inc\config.h</h3>
+<SCRIPT>
+defaultStatus = "File: RELATIVE:\\1_SampleCode_HAL\\19_SPI\\Rafael_BLE_SPI_DMA_Reg\\APP\\inc\\config.h";
+top.document.title  = "config.h";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">/******************************************************************************</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment"> * @file    config.h</span>
+<a name="3"><font size=-1>3     </font></a><span class="comment"> * @author  King</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment"> * @version V1.00</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment"> * @date    20-May-2020</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment"> * @brief   ......</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment"> ******************************************************************************</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment"> * @attention</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment"> * </span>
+<a name="10"><font size=-1>10     </font></a><span class="comment"> * THE EXISTING FIRMWARE IS ONLY FOR REFERENCE, WHICH IS DESIGNED TO PROVIDE</span>
+<a name="11"><font size=-1>11     </font></a><span class="comment"> * CUSTOMERS WITH CODING INFORMATION ABOUT THEIR PRODUCTS SO THEY CAN SAVE</span>
+<a name="12"><font size=-1>12     </font></a><span class="comment"> * TIME. THEREFORE, MINDMOTION SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT OR</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment"> * CONSEQUENTIAL DAMAGES ABOUT ANY CLAIMS ARISING OUT OF THE CONTENT OF SUCH</span>
+<a name="14"><font size=-1>14     </font></a><span class="comment"> * HARDWARE AND/OR THE USE OF THE CODING INFORMATION CONTAINED HEREIN IN</span>
+<a name="15"><font size=-1>15     </font></a><span class="comment"> * CONNECTION WITH PRODUCTS MADE BY CUSTOMERS.</span>
+<a name="16"><font size=-1>16     </font></a><span class="comment"> * &lt;H2&gt;&lt;CENTER&gt;&amp;COPY; COPYRIGHT 2020 MINDMOTION &lt;/CENTER&gt;&lt;/H2&gt;</span>
+<a name="17"><font size=-1>17     </font></a><span class="comment">******************************************************************************/</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"></span>
+<a name="19"><font size=-1>19     </font></a><span class="comment"></span>
+<a name="20"><font size=-1>20     </font></a><span class="comment">/* Define to prevent recursive inclusion ------------------------------------*/</span>
+<a name="21"><font size=-1>21     </font></a><span class="comment"></span><span class="preproc">#ifndef <a href="dictionary_&.html#14168">__CONFIG_H__</a></span>
+<a name="22"><font size=-1>22     </font></a><span class="preproc">#define <a href="dictionary_&.html#14168">__CONFIG_H__</a></span>
+<a name="23"><font size=-1>23     </font></a><span class="preproc"></span>
+<a name="24"><font size=-1>24     </font></a><span class="preproc"></span>
+<a name="25"><font size=-1>25     </font></a><span class="preproc">#ifdef <a href="dictionary_&.html#10290">__cplusplus</a></span>
+<a name="26"><font size=-1>26     </font></a><span class="preproc"></span><span class="keyword">extern </span><span class="string">&quot;C&quot; </span><span class="default">{</span>
+<a name="27"><font size=-1>27     </font></a><span class="default"></span><span class="preproc">#endif</span>
+<a name="28"><font size=-1>28     </font></a><span class="preproc"></span>
+<a name="29"><font size=-1>29     </font></a><span class="preproc"></span>
+<a name="30"><font size=-1>30     </font></a><span class="preproc"></span><span class="comment">/* Includes -----------------------------------------------------------------*/</span>
+<a name="31"><font size=-1>31     </font></a><span class="comment"></span><span class="preproc">#include </span><span class="string">&lt;stdio.h&gt;</span>
+<a name="32"><font size=-1>32     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&lt;stdint.h&gt;</span>
+<a name="33"><font size=-1>33     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&lt;stdlib.h&gt;</span>
+<a name="34"><font size=-1>34     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&lt;string.h&gt;</span>
+<a name="35"><font size=-1>35     </font></a><span class="string"></span>
+<a name="36"><font size=-1>36     </font></a><span class="string"></span>
+<a name="37"><font size=-1>37     </font></a><span class="string"></span><span class="comment">/* Includes -----------------------------------------------------------------*/</span>
+<a name="38"><font size=-1>38     </font></a><span class="comment"></span><span class="preproc">#include </span><span class="string">&quot;HAL_conf.h&quot;</span>
+<a name="39"><font size=-1>39     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&quot;HAL_device.h&quot;</span>
+<a name="40"><font size=-1>40     </font></a><span class="string"></span>
+<a name="41"><font size=-1>41     </font></a><span class="string"></span><span class="comment">/* Exported typedef -------------------------------------------------------*/</span>
+<a name="42"><font size=-1>42     </font></a><span class="comment"></span><span class="keyword">typedef struct <a href="dictionary_&.html#14169">_16_Bits_Struct</a></span>
+<a name="43"><font size=-1>43     </font></a><span class="keyword"></span><span class="default">{</span>
+<a name="44"><font size=-1>44     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14170">bit0</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="45"><font size=-1>45     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14171">bit1</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="46"><font size=-1>46     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14172">bit2</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="47"><font size=-1>47     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14173">bit3</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="48"><font size=-1>48     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14174">bit4</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14175">bit5</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14176">bit6</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="51"><font size=-1>51     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14177">bit7</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="52"><font size=-1>52     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14178">bit8</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14179">bit9</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="54"><font size=-1>54     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14180">bit10</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="55"><font size=-1>55     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14181">bit11</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14182">bit12</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14183">bit13</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="58"><font size=-1>58     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14184">bit14</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="59"><font size=-1>59     </font></a><span class="default">    <a href="dictionary_U.html#963">u16</a> <a href="dictionary_&.html#14185">bit15</a> : </span><span class="number">1</span><span class="default">;</span>
+<a name="60"><font size=-1>60     </font></a><span class="default">} <a href="dictionary_B.html#998">Bits_16_TypeDef</a>;</span>
+<a name="61"><font size=-1>61     </font></a><span class="default"></span>
+<a name="62"><font size=-1>62     </font></a><span class="default"></span><span class="comment">/* Exported constants -------------------------------------------------------*/</span>
+<a name="63"><font size=-1>63     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#1048">DEBUG_UART</a>      <a href="dictionary_U.html#3137">UART1</a>   </span><span class="comment">/* Used for printf */</span>
+<a name="64"><font size=-1>64     </font></a><span class="comment"></span>
+<a name="65"><font size=-1>65     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_&.html#14186">_MCU_ARM_CORTEX_</a>   </span><span class="comment">//no actual use, just for InterruptDisable</span>
+<a name="66"><font size=-1>66     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_T.html#14187">Tiny_Delay</a></span><span class="default">(x)    delay_us(x)</span><span class="comment">//SysTick_DelayMs(x)</span>
+<a name="67"><font size=-1>67     </font></a><span class="comment"></span>
+<a name="68"><font size=-1>68     </font></a><span class="comment"></span><span class="preproc">#ifndef <a href="dictionary_B.html#14188">BIT</a></span>
+<a name="69"><font size=-1>69     </font></a><span class="preproc">#define <a href="dictionary_B.html#14188">BIT</a></span><span class="default">(x)    (</span><span class="number">1 </span><span class="default">&lt;&lt; (x))</span>
+<a name="70"><font size=-1>70     </font></a><span class="default"></span><span class="preproc">#endif</span>
+<a name="71"><font size=-1>71     </font></a><span class="preproc"></span>
+<a name="72"><font size=-1>72     </font></a><span class="preproc">#define <a href="dictionary_R.html#1028">RF_IRQ_PORT</a>     <a href="dictionary_G.html#909">GPIOB</a></span>
+<a name="73"><font size=-1>73     </font></a><span class="preproc">#define <a href="dictionary_R.html#1019">RF_IRQ_PIN</a>      <a href="dictionary_G.html#3143">GPIO_Pin_8</a></span>
+<a name="74"><font size=-1>74     </font></a><span class="preproc">#define <a href="dictionary_R.html#1014">RF_IRQ_CLOCK</a>    <a href="dictionary_R.html#1013">RCC_AHBPeriph_GPIOB</a></span>
+<a name="75"><font size=-1>75     </font></a><span class="preproc"></span>
+<a name="76"><font size=-1>76     </font></a><span class="preproc">#define <a href="dictionary_R.html#1040">RF_RESET_PORT</a>   <a href="dictionary_G.html#909">GPIOB</a></span>
+<a name="77"><font size=-1>77     </font></a><span class="preproc">#define <a href="dictionary_R.html#1039">RF_RESET_PIN</a>    <a href="dictionary_G.html#3147">GPIO_Pin_9</a></span>
+<a name="78"><font size=-1>78     </font></a><span class="preproc">#define <a href="dictionary_R.html#1038">RF_RESET_CLOCK</a>  <a href="dictionary_R.html#1013">RCC_AHBPeriph_GPIOB</a></span>
+<a name="79"><font size=-1>79     </font></a><span class="preproc"></span>
+<a name="80"><font size=-1>80     </font></a><span class="preproc">#define <a href="dictionary_S.html#14189">SPI2_PORT_OUT</a>    </span><span class="default">((<a href="dictionary_B.html#998">Bits_16_TypeDef</a> *)(&amp;(<a href="dictionary_G.html#909">GPIOB</a>-&gt;ODR)))</span>
+<a name="81"><font size=-1>81     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#1004">SPI_CS</a>            </span><span class="default">(<a href="dictionary_S.html#14189">SPI2_PORT_OUT</a>-&gt;bit12)</span>
+<a name="82"><font size=-1>82     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#1006">SPI_CK</a>            </span><span class="default">(<a href="dictionary_S.html#14189">SPI2_PORT_OUT</a>-&gt;bit13)</span>
+<a name="83"><font size=-1>83     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#1008">SPI_MOSI</a>          </span><span class="default">(<a href="dictionary_S.html#14189">SPI2_PORT_OUT</a>-&gt;bit15)</span>
+<a name="84"><font size=-1>84     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#1031">SPI_MISO</a>          </span><span class="default">(<a href="dictionary_S.html#14189">SPI2_PORT_OUT</a>-&gt;bit14)</span>
+<a name="85"><font size=-1>85     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_R.html#14190">RF_IRQ_PORT_OUT</a>  </span><span class="default">((<a href="dictionary_B.html#998">Bits_16_TypeDef</a> *)(&amp;(<a href="dictionary_R.html#1028">RF_IRQ_PORT</a>-&gt;ODR)))</span>
+<a name="86"><font size=-1>86     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_D.html#1033">DEFAULT_INT</a>       </span><span class="default">(<a href="dictionary_R.html#14190">RF_IRQ_PORT_OUT</a>-&gt;bit8)</span>
+<a name="87"><font size=-1>87     </font></a><span class="default"></span>
+<a name="88"><font size=-1>88     </font></a><span class="default"></span><span class="comment">/* Platform Select */</span>
+<a name="89"><font size=-1>89     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_&.html#12956">_BOARD_NUVOTON_M031TD2AE_QFN33_</a> </span><span class="number">3   </span><span class="comment">//M031 daughter board</span>
+<a name="90"><font size=-1>90     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_&.html#12954">_BOARD_SELECTION_</a>              <a href="dictionary_&.html#12956">_BOARD_NUVOTON_M031TD2AE_QFN33_</a></span>
+<a name="91"><font size=-1>91     </font></a><span class="preproc"></span>
+<a name="92"><font size=-1>92     </font></a><span class="preproc"></span><span class="comment">/* Ble App Setting */</span>
+<a name="93"><font size=-1>93     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_&.html#9848">_HCI_NEW_</a>        </span><span class="comment">//define in SDK</span>
+<a name="94"><font size=-1>94     </font></a><span class="comment">//#define _HCI_HW_       //remove in SDK. However, it is a must for test</span>
+<a name="95"><font size=-1>95     </font></a><span class="comment">//#define _HCI_VIRTUAL_  //if it defined. hci is virtual.</span>
+<a name="96"><font size=-1>96     </font></a><span class="comment">//#define _HCI_HW_MSG_   //remove in SDK. (msg2uart)</span>
+<a name="97"><font size=-1>97     </font></a><span class="comment"></span>
+<a name="98"><font size=-1>98     </font></a><span class="comment">// Define BLE Version</span>
+<a name="99"><font size=-1>99     </font></a><span class="comment">//#define BLE_VERSION             0x06    //Bluetooth Core Specification 4.0</span>
+<a name="100"><font size=-1>100     </font></a><span class="comment">//#define BLE_VERSION             0x07    //Bluetooth Core Specification 4.1</span>
+<a name="101"><font size=-1>101     </font></a><span class="comment">//#define BLE_VERSION             0x08    //Bluetooth Core Specification 4.2</span>
+<a name="102"><font size=-1>102     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_B.html#9838">BLE_VERSION</a>             </span><span class="number">0x09    </span><span class="comment">//Bluetooth Core Specification 5.0</span>
+<a name="103"><font size=-1>103     </font></a><span class="comment">//#define BLE_VERSION             0x0A    //Bluetooth Core Specification 5.1</span>
+<a name="104"><font size=-1>104     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_B.html#14191">BLE_COMPANY_ID_L</a>        </span><span class="number">0x64    </span><span class="comment">//HCI__004</span>
+<a name="105"><font size=-1>105     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_B.html#14192">BLE_COMPANY_ID_H</a>        </span><span class="number">0x08</span>
+<a name="106"><font size=-1>106     </font></a><span class="number"></span>
+<a name="107"><font size=-1>107     </font></a><span class="number"></span><span class="comment">// Settings</span>
+<a name="108"><font size=-1>108     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_M.html#14193">MAX_SIZE_ATT_VALUE_OVER_MTU_WR</a>      </span><span class="number">45    </span><span class="comment">//Maximum Attribute Data Size</span>
+<a name="109"><font size=-1>109     </font></a><span class="comment"></span>
+<a name="110"><font size=-1>110     </font></a><span class="comment">/* InterruptEnable */</span>
+<a name="111"><font size=-1>111     </font></a><span class="comment"></span><span class="preproc">#ifdef <a href="dictionary_&.html#14186">_MCU_ARM_CORTEX_</a></span>
+<a name="112"><font size=-1>112     </font></a><span class="preproc">#define <a href="dictionary_I.html#988">InterruptDisable</a>      </span><span class="default">__disable_irq</span>
+<a name="113"><font size=-1>113     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_I.html#992">InterruptEnable</a>       </span><span class="default">__enable_irq</span>
+<a name="114"><font size=-1>114     </font></a><span class="default"></span><span class="preproc">#endif</span>
+<a name="115"><font size=-1>115     </font></a><span class="preproc"></span>
+<a name="116"><font size=-1>116     </font></a><span class="preproc">#define <a href="dictionary_E.html#14194">E_SUCCESS</a> </span><span class="default">(</span><span class="number">0</span><span class="default">)</span>
+<a name="117"><font size=-1>117     </font></a><span class="default"></span>
+<a name="118"><font size=-1>118     </font></a><span class="default"></span><span class="preproc">#ifndef <a href="dictionary_N.html#12105">NULL</a></span>
+<a name="119"><font size=-1>119     </font></a><span class="preproc">#define <a href="dictionary_N.html#12105">NULL</a>      </span><span class="default">(</span><span class="number">0</span><span class="default">)                 </span><span class="comment">///&lt; NULL pointer</span>
+<a name="120"><font size=-1>120     </font></a><span class="comment"></span><span class="preproc">#endif</span>
+<a name="121"><font size=-1>121     </font></a><span class="preproc"></span>
+<a name="122"><font size=-1>122     </font></a><span class="preproc">#define <a href="dictionary_T.html#4004">TRUE</a>      </span><span class="default">(</span><span class="number">1UL</span><span class="default">)               </span><span class="comment">///&lt; Boolean true, define to use in API parameters or return value</span>
+<a name="123"><font size=-1>123     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_F.html#10261">FALSE</a>     </span><span class="default">(</span><span class="number">0UL</span><span class="default">)               </span><span class="comment">///&lt; Boolean false, define to use in API parameters or return value</span>
+<a name="124"><font size=-1>124     </font></a><span class="comment"></span>
+<a name="125"><font size=-1>125     </font></a><span class="comment"></span>
+<a name="126"><font size=-1>126     </font></a><span class="comment"></span><span class="preproc">#ifdef <a href="dictionary_&.html#10290">__cplusplus</a></span>
+<a name="127"><font size=-1>127     </font></a><span class="preproc"></span><span class="default">}</span>
+<a name="128"><font size=-1>128     </font></a><span class="default"></span><span class="preproc">#endif</span>
+<a name="129"><font size=-1>129     </font></a><span class="preproc"></span>
+<a name="130"><font size=-1>130     </font></a><span class="preproc"></span>
+<a name="131"><font size=-1>131     </font></a><span class="preproc">#endif</span>
+<a name="132"><font size=-1>132     </font></a><span class="preproc"></span>
+<a name="133"><font size=-1>133     </font></a><span class="preproc"></span>
+<a name="134"><font size=-1>134     </font></a><span class="preproc"></span><span class="comment">/******************* (C) COPYRIGHT 2020 ************************END OF FILE***/</span>
+<a name="135"><font size=-1>135     </font></a><span class="comment"></span>
+<a name="136"><font size=-1>136     </font></a><span class="comment"></span>
+</pre></body></html>

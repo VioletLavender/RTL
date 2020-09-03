@@ -1,0 +1,1046 @@
+<html><head><title>mm32_reg_redefine_v1.h</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: RELATIVE:\3_Device\MM32F032xx_s\Include\mm32_reg_redefine_v1.h</h3>
+<SCRIPT>
+defaultStatus = "File: RELATIVE:\\3_Device\\MM32F032xx_s\\Include\\mm32_reg_redefine_v1.h";
+top.document.title  = "mm32_reg_redefine_v1.h";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment">/// @file     mm32_reg_define_v1.H</span>
+<a name="3"><font size=-1>3     </font></a><span class="comment">/// @author   AE TEAM</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment">/// @brief    THIS FILE CONTAINS ALL THE define for version compatibility define</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment">///           FIRMWARE LIBRARY.</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment">/// @attention</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment">///</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment">/// THE EXISTING FIRMWARE IS ONLY FOR REFERENCE, WHICH IS DESIGNED TO PROVIDE</span>
+<a name="10"><font size=-1>10     </font></a><span class="comment">/// CUSTOMERS WITH CODING INFORMATION ABOUT THEIR PRODUCTS SO THEY CAN SAVE</span>
+<a name="11"><font size=-1>11     </font></a><span class="comment">/// TIME. THEREFORE, MINDMOTION SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT OR</span>
+<a name="12"><font size=-1>12     </font></a><span class="comment">/// CONSEQUENTIAL DAMAGES ABOUT ANY CLAIMS ARISING OUT OF THE CONTENT OF SUCH</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment">/// HARDWARE AND/OR THE USE OF THE CODING INFORMATION CONTAINED HEREIN IN</span>
+<a name="14"><font size=-1>14     </font></a><span class="comment">/// CONNECTION WITH PRODUCTS MADE BY CUSTOMERS.</span>
+<a name="15"><font size=-1>15     </font></a><span class="comment">///</span>
+<a name="16"><font size=-1>16     </font></a><span class="comment">/// &lt;H2&gt;&lt;CENTER&gt;&amp;COPY; COPYRIGHT MINDMOTION &lt;/CENTER&gt;&lt;/H2&gt;</span>
+<a name="17"><font size=-1>17     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"></span>
+<a name="19"><font size=-1>19     </font></a><span class="comment">// Define to prevent recursive inclusion</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment"></span><span class="preproc">#ifndef <a href="dictionary_&.html#17422">__MM32_REG_DEFINE_V1_H</a></span>
+<a name="21"><font size=-1>21     </font></a><span class="preproc">#define <a href="dictionary_&.html#17422">__MM32_REG_DEFINE_V1_H</a></span>
+<a name="22"><font size=-1>22     </font></a><span class="preproc"></span>
+<a name="23"><font size=-1>23     </font></a><span class="preproc"></span><span class="comment">// Files includes</span>
+<a name="24"><font size=-1>24     </font></a><span class="comment"></span>
+<a name="25"><font size=-1>25     </font></a><span class="comment"></span>
+<a name="26"><font size=-1>26     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="27"><font size=-1>27     </font></a><span class="comment">/// @brief Version compatibility definition</span>
+<a name="28"><font size=-1>28     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="29"><font size=-1>29     </font></a><span class="comment"></span>
+<a name="30"><font size=-1>30     </font></a><span class="comment"></span>
+<a name="31"><font size=-1>31     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="32"><font size=-1>32     </font></a><span class="comment">/// @brief redefine for register</span>
+<a name="33"><font size=-1>33     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="34"><font size=-1>34     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="35"><font size=-1>35     </font></a><span class="comment">/// @brief redefine for ADC of MCU register</span>
+<a name="36"><font size=-1>36     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="37"><font size=-1>37     </font></a><span class="comment"></span>
+<a name="38"><font size=-1>38     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17423">ADC_COMP_IRQHandler</a>            </span><span class="default">ADC1_COMP_IRQHandler</span>
+<a name="39"><font size=-1>39     </font></a><span class="default"></span>
+<a name="40"><font size=-1>40     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17424">ADDATA_DATA</a>                     <a href="dictionary_A.html#6840">ADC_DR_DATA</a></span>
+<a name="41"><font size=-1>41     </font></a><span class="preproc"></span>
+<a name="42"><font size=-1>42     </font></a><span class="preproc">#define <a href="dictionary_A.html#17425">ADDATA_CHANNELSEL</a>               <a href="dictionary_A.html#6842">ADC_DR_CH</a></span>
+<a name="43"><font size=-1>43     </font></a><span class="preproc">#define <a href="dictionary_A.html#17426">ADDATA_CHANNELSEL_0</a>             <a href="dictionary_A.html#6843">ADC_DR_CH0</a></span>
+<a name="44"><font size=-1>44     </font></a><span class="preproc">#define <a href="dictionary_A.html#17427">ADDATA_CHANNELSEL_1</a>             <a href="dictionary_A.html#6844">ADC_DR_CH1</a></span>
+<a name="45"><font size=-1>45     </font></a><span class="preproc">#define <a href="dictionary_A.html#17428">ADDATA_CHANNELSEL_2</a>             <a href="dictionary_A.html#6845">ADC_DR_CH2</a></span>
+<a name="46"><font size=-1>46     </font></a><span class="preproc">#define <a href="dictionary_A.html#17429">ADDATA_CHANNELSEL_3</a>             <a href="dictionary_A.html#6846">ADC_DR_CH3</a></span>
+<a name="47"><font size=-1>47     </font></a><span class="preproc">#define <a href="dictionary_A.html#17430">ADDATA_CHANNELSEL_4</a>             <a href="dictionary_A.html#6847">ADC_DR_CH4</a></span>
+<a name="48"><font size=-1>48     </font></a><span class="preproc">#define <a href="dictionary_A.html#17431">ADDATA_CHANNELSEL_5</a>             <a href="dictionary_A.html#6848">ADC_DR_CH5</a></span>
+<a name="49"><font size=-1>49     </font></a><span class="preproc">#define <a href="dictionary_A.html#17432">ADDATA_CHANNELSEL_6</a>             <a href="dictionary_A.html#6849">ADC_DR_CH6</a></span>
+<a name="50"><font size=-1>50     </font></a><span class="preproc">#define <a href="dictionary_A.html#17433">ADDATA_CHANNELSEL_7</a>             <a href="dictionary_A.html#6850">ADC_DR_CH7</a></span>
+<a name="51"><font size=-1>51     </font></a><span class="preproc"></span>
+<a name="52"><font size=-1>52     </font></a><span class="preproc"></span>
+<a name="53"><font size=-1>53     </font></a><span class="preproc"></span>
+<a name="54"><font size=-1>54     </font></a><span class="preproc">#define <a href="dictionary_A.html#17434">ADDATA_CHANNELSEL_CH8</a>       <a href="dictionary_A.html#6851">ADC_DR_CH8</a></span>
+<a name="55"><font size=-1>55     </font></a><span class="preproc">#define <a href="dictionary_A.html#17435">ADDATA_CHANNELSEL_CH9</a>       <a href="dictionary_A.html#6852">ADC_DR_CH9</a></span>
+<a name="56"><font size=-1>56     </font></a><span class="preproc">#define <a href="dictionary_A.html#17436">ADDATA_CHANNELSEL_TempSensor</a>    <a href="dictionary_A.html#6853">ADC_DR_TempSensor</a></span>
+<a name="57"><font size=-1>57     </font></a><span class="preproc">#define <a href="dictionary_A.html#17437">ADDATA_CHANNELSEL_VolSensor</a> <a href="dictionary_A.html#6854">ADC_DR_VoltRef</a></span>
+<a name="58"><font size=-1>58     </font></a><span class="preproc"></span>
+<a name="59"><font size=-1>59     </font></a><span class="preproc"></span>
+<a name="60"><font size=-1>60     </font></a><span class="preproc">#define <a href="dictionary_A.html#17438">ADDATA_OVERRUN</a>                  <a href="dictionary_A.html#6856">ADC_DR_OVERRUN</a></span>
+<a name="61"><font size=-1>61     </font></a><span class="preproc">#define <a href="dictionary_A.html#17439">ADDATA_VALID</a>                    <a href="dictionary_A.html#6858">ADC_DR_VALID</a></span>
+<a name="62"><font size=-1>62     </font></a><span class="preproc"></span>
+<a name="63"><font size=-1>63     </font></a><span class="preproc">#define <a href="dictionary_A.html#17440">ADCFG_ADEN</a>                      <a href="dictionary_A.html#4853">ADC_CFGR_ADEN</a></span>
+<a name="64"><font size=-1>64     </font></a><span class="preproc">#define <a href="dictionary_A.html#17441">ADCFG_ADWEN</a>                     <a href="dictionary_A.html#4900">ADC_CFGR_ADWEN</a></span>
+<a name="65"><font size=-1>65     </font></a><span class="preproc"></span>
+<a name="66"><font size=-1>66     </font></a><span class="preproc">#define <a href="dictionary_A.html#17442">ADCFG_RSLTCTL</a>                   <a href="dictionary_A.html#4831">ADC_CFGR_RSLTCTL</a></span>
+<a name="67"><font size=-1>67     </font></a><span class="preproc">#define <a href="dictionary_A.html#17443">ADCFG_RSLTCTL_12</a>                <a href="dictionary_A.html#6862">ADC_CFGR_RSLTCTL_12</a></span>
+<a name="68"><font size=-1>68     </font></a><span class="preproc">#define <a href="dictionary_A.html#17444">ADCFG_RSLTCTL_11</a>                <a href="dictionary_A.html#6863">ADC_CFGR_RSLTCTL_11</a></span>
+<a name="69"><font size=-1>69     </font></a><span class="preproc">#define <a href="dictionary_A.html#17445">ADCFG_RSLTCTL_10</a>                <a href="dictionary_A.html#6864">ADC_CFGR_RSLTCTL_10</a></span>
+<a name="70"><font size=-1>70     </font></a><span class="preproc">#define <a href="dictionary_A.html#17446">ADCFG_RSLTCTL_9</a>                 <a href="dictionary_A.html#6865">ADC_CFGR_RSLTCTL_9</a></span>
+<a name="71"><font size=-1>71     </font></a><span class="preproc">#define <a href="dictionary_A.html#17447">ADCFG_RSLTCTL_8</a>                 <a href="dictionary_A.html#6866">ADC_CFGR_RSLTCTL_8</a></span>
+<a name="72"><font size=-1>72     </font></a><span class="preproc"></span>
+<a name="73"><font size=-1>73     </font></a><span class="preproc"></span>
+<a name="74"><font size=-1>74     </font></a><span class="preproc">#define <a href="dictionary_A.html#17448">ADCFG_TSEN</a>                  <a href="dictionary_A.html#4915">ADC_CFGR_TEN</a></span>
+<a name="75"><font size=-1>75     </font></a><span class="preproc">#define <a href="dictionary_A.html#17449">ADCFG_VSEN</a>                  <a href="dictionary_A.html#4916">ADC_CFGR_VEN</a></span>
+<a name="76"><font size=-1>76     </font></a><span class="preproc"></span>
+<a name="77"><font size=-1>77     </font></a><span class="preproc">#define <a href="dictionary_A.html#17450">ADCFG_ADCPRE</a>                    <a href="dictionary_A.html#749">ADC_CFGR_PRE</a></span>
+<a name="78"><font size=-1>78     </font></a><span class="preproc">#define <a href="dictionary_A.html#17451">ADCFG_ADCPRE_2</a>                  <a href="dictionary_A.html#6884">ADC_CFGR_PRE_2</a></span>
+<a name="79"><font size=-1>79     </font></a><span class="preproc">#define <a href="dictionary_A.html#17452">ADCFG_ADCPRE_4</a>                  <a href="dictionary_A.html#6885">ADC_CFGR_PRE_4</a></span>
+<a name="80"><font size=-1>80     </font></a><span class="preproc">#define <a href="dictionary_A.html#17453">ADCFG_ADCPRE_6</a>                  <a href="dictionary_A.html#6886">ADC_CFGR_PRE_6</a></span>
+<a name="81"><font size=-1>81     </font></a><span class="preproc">#define <a href="dictionary_A.html#17454">ADCFG_ADCPRE_8</a>                  <a href="dictionary_A.html#6887">ADC_CFGR_PRE_8</a></span>
+<a name="82"><font size=-1>82     </font></a><span class="preproc">#define <a href="dictionary_A.html#17455">ADCFG_ADCPRE_10</a>                 <a href="dictionary_A.html#6888">ADC_CFGR_PRE_10</a></span>
+<a name="83"><font size=-1>83     </font></a><span class="preproc">#define <a href="dictionary_A.html#17456">ADCFG_ADCPRE_12</a>                 <a href="dictionary_A.html#6889">ADC_CFGR_PRE_12</a></span>
+<a name="84"><font size=-1>84     </font></a><span class="preproc">#define <a href="dictionary_A.html#17457">ADCFG_ADCPRE_14</a>                 <a href="dictionary_A.html#6890">ADC_CFGR_PRE_14</a></span>
+<a name="85"><font size=-1>85     </font></a><span class="preproc">#define <a href="dictionary_A.html#17458">ADCFG_ADCPRE_16</a>                 <a href="dictionary_A.html#6891">ADC_CFGR_PRE_16</a></span>
+<a name="86"><font size=-1>86     </font></a><span class="preproc">#define <a href="dictionary_A.html#17459">ADCFG_SAMCTL</a>                    <a href="dictionary_A.html#4877">ADC_CFGR_SAMCTL</a></span>
+<a name="87"><font size=-1>87     </font></a><span class="preproc">#define <a href="dictionary_A.html#17460">ADCFG_SAMCTL_1_5</a>                <a href="dictionary_A.html#6868">ADC_CFGR_SAMCTL_1_5</a></span>
+<a name="88"><font size=-1>88     </font></a><span class="preproc">#define <a href="dictionary_A.html#17461">ADCFG_SAMCTL_7_5</a>                <a href="dictionary_A.html#6869">ADC_CFGR_SAMCTL_7_5</a></span>
+<a name="89"><font size=-1>89     </font></a><span class="preproc">#define <a href="dictionary_A.html#17462">ADCFG_SAMCTL_13_5</a>               <a href="dictionary_A.html#6870">ADC_CFGR_SAMCTL_13_5</a></span>
+<a name="90"><font size=-1>90     </font></a><span class="preproc">#define <a href="dictionary_A.html#17463">ADCFG_SAMCTL_28_5</a>               <a href="dictionary_A.html#6871">ADC_CFGR_SAMCTL_28_5</a></span>
+<a name="91"><font size=-1>91     </font></a><span class="preproc">#define <a href="dictionary_A.html#17464">ADCFG_SAMCTL_41_5</a>               <a href="dictionary_A.html#6872">ADC_CFGR_SAMCTL_41_5</a></span>
+<a name="92"><font size=-1>92     </font></a><span class="preproc">#define <a href="dictionary_A.html#17465">ADCFG_SAMCTL_55_5</a>               <a href="dictionary_A.html#6873">ADC_CFGR_SAMCTL_55_5</a></span>
+<a name="93"><font size=-1>93     </font></a><span class="preproc">#define <a href="dictionary_A.html#17466">ADCFG_SAMCTL_71_5</a>               <a href="dictionary_A.html#6874">ADC_CFGR_SAMCTL_71_5</a></span>
+<a name="94"><font size=-1>94     </font></a><span class="preproc">#define <a href="dictionary_A.html#17467">ADCFG_SAMCTL_239_5</a>              <a href="dictionary_A.html#6875">ADC_CFGR_SAMCTL_239_5</a></span>
+<a name="95"><font size=-1>95     </font></a><span class="preproc"></span>
+<a name="96"><font size=-1>96     </font></a><span class="preproc"></span>
+<a name="97"><font size=-1>97     </font></a><span class="preproc">#define <a href="dictionary_A.html#17468">ADCFG_ADCPRE_3</a>              <a href="dictionary_A.html#6892">ADC_CFGR_PRE_3</a></span>
+<a name="98"><font size=-1>98     </font></a><span class="preproc">#define <a href="dictionary_A.html#17469">ADCFG_ADCPRE_5</a>              <a href="dictionary_A.html#6893">ADC_CFGR_PRE_5</a></span>
+<a name="99"><font size=-1>99     </font></a><span class="preproc">#define <a href="dictionary_A.html#17470">ADCFG_ADCPRE_7</a>              <a href="dictionary_A.html#6894">ADC_CFGR_PRE_7</a></span>
+<a name="100"><font size=-1>100     </font></a><span class="preproc">#define <a href="dictionary_A.html#17471">ADCFG_ADCPRE_9</a>              <a href="dictionary_A.html#6895">ADC_CFGR_PRE_9</a></span>
+<a name="101"><font size=-1>101     </font></a><span class="preproc">#define <a href="dictionary_A.html#17472">ADCFG_ADCPRE_11</a>             <a href="dictionary_A.html#6896">ADC_CFGR_PRE_11</a></span>
+<a name="102"><font size=-1>102     </font></a><span class="preproc">#define <a href="dictionary_A.html#17473">ADCFG_ADCPRE_13</a>             <a href="dictionary_A.html#6897">ADC_CFGR_PRE_13</a></span>
+<a name="103"><font size=-1>103     </font></a><span class="preproc">#define <a href="dictionary_A.html#17474">ADCFG_ADCPRE_15</a>             <a href="dictionary_A.html#6898">ADC_CFGR_PRE_15</a></span>
+<a name="104"><font size=-1>104     </font></a><span class="preproc">#define <a href="dictionary_A.html#17475">ADCFG_ADCPRE_17</a>             <a href="dictionary_A.html#6899">ADC_CFGR_PRE_17</a></span>
+<a name="105"><font size=-1>105     </font></a><span class="preproc">#define <a href="dictionary_A.html#17476">ADCFG_SAMCTL_2_5</a>            <a href="dictionary_A.html#6876">ADC_CFGR_SAMCTL_2_5</a></span>
+<a name="106"><font size=-1>106     </font></a><span class="preproc">#define <a href="dictionary_A.html#17477">ADCFG_SAMCTL_3_5</a>            <a href="dictionary_A.html#6877">ADC_CFGR_SAMCTL_3_5</a></span>
+<a name="107"><font size=-1>107     </font></a><span class="preproc">#define <a href="dictionary_A.html#17478">ADCFG_SAMCTL_4_5</a>            <a href="dictionary_A.html#6878">ADC_CFGR_SAMCTL_4_5</a></span>
+<a name="108"><font size=-1>108     </font></a><span class="preproc">#define <a href="dictionary_A.html#17479">ADCFG_SAMCTL_5_5</a>            <a href="dictionary_A.html#6879">ADC_CFGR_SAMCTL_5_5</a></span>
+<a name="109"><font size=-1>109     </font></a><span class="preproc">#define <a href="dictionary_A.html#17480">ADCFG_SAMCTL_6_5</a>            <a href="dictionary_A.html#6880">ADC_CFGR_SAMCTL_6_5</a></span>
+<a name="110"><font size=-1>110     </font></a><span class="preproc"></span>
+<a name="111"><font size=-1>111     </font></a><span class="preproc">#define <a href="dictionary_A.html#17481">ADCR_ADIE</a>                       <a href="dictionary_A.html#4864">ADC_CR_ADIE</a></span>
+<a name="112"><font size=-1>112     </font></a><span class="preproc">#define <a href="dictionary_A.html#17482">ADCR_ADWIE</a>                      <a href="dictionary_A.html#4865">ADC_CR_ADWIE</a></span>
+<a name="113"><font size=-1>113     </font></a><span class="preproc">#define <a href="dictionary_A.html#17483">ADCR_TRGEN</a>                      <a href="dictionary_A.html#4885">ADC_CR_TRGEN</a></span>
+<a name="114"><font size=-1>114     </font></a><span class="preproc">#define <a href="dictionary_A.html#17484">ADCR_DMAEN</a>                      <a href="dictionary_A.html#4857">ADC_CR_DMAEN</a></span>
+<a name="115"><font size=-1>115     </font></a><span class="preproc">#define <a href="dictionary_A.html#17485">ADCR_ADST</a>                       <a href="dictionary_A.html#4869">ADC_CR_ADST</a></span>
+<a name="116"><font size=-1>116     </font></a><span class="preproc">#define <a href="dictionary_A.html#17486">ADCR_ADMD</a>                       <a href="dictionary_A.html#4837">ADC_CR_MODE</a></span>
+<a name="117"><font size=-1>117     </font></a><span class="preproc">#define <a href="dictionary_A.html#17487">ADCR_ADMD_SINGLE</a>                <a href="dictionary_A.html#4846">ADC_CR_IMM</a></span>
+<a name="118"><font size=-1>118     </font></a><span class="preproc">#define <a href="dictionary_A.html#17488">ADCR_ADMD_PERIOD</a>                <a href="dictionary_A.html#6906">ADC_CR_SCAN</a></span>
+<a name="119"><font size=-1>119     </font></a><span class="preproc">#define <a href="dictionary_A.html#17489">ADCR_ADMD_CONTINUE</a>              <a href="dictionary_A.html#6907">ADC_CR_CONTINUE</a></span>
+<a name="120"><font size=-1>120     </font></a><span class="preproc">#define <a href="dictionary_A.html#17490">ADC_Mode_Single</a>                 <a href="dictionary_A.html#4846">ADC_CR_IMM</a></span>
+<a name="121"><font size=-1>121     </font></a><span class="preproc">#define <a href="dictionary_A.html#17491">ADC_Mode_Single_Period</a>          <a href="dictionary_A.html#6906">ADC_CR_SCAN</a></span>
+<a name="122"><font size=-1>122     </font></a><span class="preproc">#define <a href="dictionary_A.html#17492">ADC_Mode_Continuous_Scan</a>        <a href="dictionary_A.html#6907">ADC_CR_CONTINUE</a></span>
+<a name="123"><font size=-1>123     </font></a><span class="preproc"></span>
+<a name="124"><font size=-1>124     </font></a><span class="preproc"></span>
+<a name="125"><font size=-1>125     </font></a><span class="preproc">#define <a href="dictionary_A.html#17493">ADCR_ALIGN</a>                      <a href="dictionary_A.html#4836">ADC_CR_ALIGN</a></span>
+<a name="126"><font size=-1>126     </font></a><span class="preproc">#define <a href="dictionary_A.html#17494">ADCR_ALIGN_LEFT</a>                 <a href="dictionary_A.html#6909">ADC_CR_LEFT</a></span>
+<a name="127"><font size=-1>127     </font></a><span class="preproc">#define <a href="dictionary_A.html#17495">ADCR_ALIGN_RIGHT</a>                <a href="dictionary_A.html#6910">ADC_CR_RIGHT</a></span>
+<a name="128"><font size=-1>128     </font></a><span class="preproc">#define <a href="dictionary_A.html#17496">ADCR_CMPCH_Pos</a>                  <a href="dictionary_A.html#4912">ADC_CR_CMPCH_Pos</a></span>
+<a name="129"><font size=-1>129     </font></a><span class="preproc">#define <a href="dictionary_A.html#17497">ADCR_CMPCH</a>                      <a href="dictionary_A.html#4911">ADC_CR_CMPCH</a></span>
+<a name="130"><font size=-1>130     </font></a><span class="preproc">#define <a href="dictionary_A.html#17498">ADCR_CMPCH_0</a>                    <a href="dictionary_A.html#6911">ADC_CR_CMPCH_0</a></span>
+<a name="131"><font size=-1>131     </font></a><span class="preproc">#define <a href="dictionary_A.html#17499">ADCR_CMPCH_1</a>                    <a href="dictionary_A.html#6912">ADC_CR_CMPCH_1</a></span>
+<a name="132"><font size=-1>132     </font></a><span class="preproc">#define <a href="dictionary_A.html#17500">ADCR_CMPCH_2</a>                    <a href="dictionary_A.html#6913">ADC_CR_CMPCH_2</a></span>
+<a name="133"><font size=-1>133     </font></a><span class="preproc">#define <a href="dictionary_A.html#17501">ADCR_CMPCH_4</a>                    <a href="dictionary_A.html#6914">ADC_CR_CMPCH_4</a></span>
+<a name="134"><font size=-1>134     </font></a><span class="preproc">#define <a href="dictionary_A.html#17502">ADCR_CMPCH_5</a>                    <a href="dictionary_A.html#6915">ADC_CR_CMPCH_5</a></span>
+<a name="135"><font size=-1>135     </font></a><span class="preproc">#define <a href="dictionary_A.html#17503">ADCR_CMPCH_6</a>                    <a href="dictionary_A.html#6916">ADC_CR_CMPCH_6</a></span>
+<a name="136"><font size=-1>136     </font></a><span class="preproc">#define <a href="dictionary_A.html#17504">ADCR_CMPCH_7</a>                    <a href="dictionary_A.html#6917">ADC_CR_CMPCH_7</a></span>
+<a name="137"><font size=-1>137     </font></a><span class="preproc">#define <a href="dictionary_A.html#17505">ADCR_CMPCH_8</a>                    <a href="dictionary_A.html#6918">ADC_CR_CMPCH_8</a></span>
+<a name="138"><font size=-1>138     </font></a><span class="preproc">#define <a href="dictionary_A.html#17506">ADCR_CMPCH_9</a>                    <a href="dictionary_A.html#6919">ADC_CR_CMPCH_9</a></span>
+<a name="139"><font size=-1>139     </font></a><span class="preproc">#define <a href="dictionary_A.html#17507">ADCR_CMPCH_10</a>                   <a href="dictionary_A.html#6920">ADC_CR_CMPCH_10</a></span>
+<a name="140"><font size=-1>140     </font></a><span class="preproc">#define <a href="dictionary_A.html#17508">ADCR_CMPCH_11</a>                   <a href="dictionary_A.html#6921">ADC_CR_CMPCH_11</a></span>
+<a name="141"><font size=-1>141     </font></a><span class="preproc">#define <a href="dictionary_A.html#17509">ADCR_CMPCH_13</a>                   <a href="dictionary_A.html#6922">ADC_CR_CMPCH_13</a></span>
+<a name="142"><font size=-1>142     </font></a><span class="preproc">#define <a href="dictionary_A.html#17510">ADCR_CMPCH_14</a>                   <a href="dictionary_A.html#6923">ADC_CR_CMPCH_14</a></span>
+<a name="143"><font size=-1>143     </font></a><span class="preproc">#define <a href="dictionary_A.html#17511">ADCR_CMPCH_ALL</a>                  <a href="dictionary_A.html#6924">ADC_CR_CMPCH_ALL</a></span>
+<a name="144"><font size=-1>144     </font></a><span class="preproc"></span>
+<a name="145"><font size=-1>145     </font></a><span class="preproc"></span>
+<a name="146"><font size=-1>146     </font></a><span class="preproc">#define <a href="dictionary_A.html#17512">ADCR_TRGSEL</a>                     <a href="dictionary_A.html#4838">ADC_CR_TRGSEL</a></span>
+<a name="147"><font size=-1>147     </font></a><span class="preproc">#define <a href="dictionary_A.html#17513">ADCR_TRGSEL_T1_CC1</a>              <a href="dictionary_A.html#6927">ADC_CR_T1_CC1</a></span>
+<a name="148"><font size=-1>148     </font></a><span class="preproc">#define <a href="dictionary_A.html#17514">ADCR_TRGSEL_T1_CC2</a>              <a href="dictionary_A.html#6928">ADC_CR_T1_CC2</a></span>
+<a name="149"><font size=-1>149     </font></a><span class="preproc">#define <a href="dictionary_A.html#17515">ADCR_TRGSEL_T1_CC3</a>              <a href="dictionary_A.html#6929">ADC_CR_T1_CC3</a></span>
+<a name="150"><font size=-1>150     </font></a><span class="preproc">#define <a href="dictionary_A.html#17516">ADCR_TRGSEL_T2_CC2</a>              <a href="dictionary_A.html#6930">ADC_CR_T2_CC2</a></span>
+<a name="151"><font size=-1>151     </font></a><span class="preproc">#define <a href="dictionary_A.html#17517">ADCR_TRGSEL_T3_TRGO</a>             <a href="dictionary_A.html#6931">ADC_CR_T3_TRIG</a></span>
+<a name="152"><font size=-1>152     </font></a><span class="preproc">#define <a href="dictionary_A.html#17518">ADCR_TRGSEL_EXTI_11</a>             <a href="dictionary_A.html#6934">ADC_CR_EXTI_11</a></span>
+<a name="153"><font size=-1>153     </font></a><span class="preproc"></span>
+<a name="154"><font size=-1>154     </font></a><span class="preproc"></span>
+<a name="155"><font size=-1>155     </font></a><span class="preproc"></span>
+<a name="156"><font size=-1>156     </font></a><span class="preproc">#define <a href="dictionary_A.html#17519">ADCR_TRGSEL_T1_CC4_CC5</a>      <a href="dictionary_A.html#6932">ADC_CR_T1_CC4_CC5</a></span>
+<a name="157"><font size=-1>157     </font></a><span class="preproc">#define <a href="dictionary_A.html#17520">ADCR_TRGSEL_T3_CC1</a>          <a href="dictionary_A.html#6933">ADC_CR_T3_CC1</a></span>
+<a name="158"><font size=-1>158     </font></a><span class="preproc">#define <a href="dictionary_A.html#17521">ADCR_TRGSEL_T1_TRGO</a>         <a href="dictionary_A.html#6935">ADC_CR_T1_TRIG</a></span>
+<a name="159"><font size=-1>159     </font></a><span class="preproc">#define <a href="dictionary_A.html#17522">ADCR_TRGSEL_T8_CC4</a>          </span><span class="default">ADC_CR_T8_CC4</span>
+<a name="160"><font size=-1>160     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17523">ADCR_TRGSEL_T8_CC4_CC5</a>      </span><span class="default">ADC_CR_T8_CC4_CC5</span>
+<a name="161"><font size=-1>161     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17524">ADCR_TRGSEL_T2_CC1</a>          <a href="dictionary_A.html#6936">ADC_CR_T2_CC1</a></span>
+<a name="162"><font size=-1>162     </font></a><span class="preproc">#define <a href="dictionary_A.html#17525">ADCR_TRGSEL_T3_CC4</a>          <a href="dictionary_A.html#6937">ADC_CR_T3_CC4</a></span>
+<a name="163"><font size=-1>163     </font></a><span class="preproc">#define <a href="dictionary_A.html#17526">ADCR_TRGSEL_T2_TRGO</a>         <a href="dictionary_A.html#6938">ADC_CR_T2_TRIG</a></span>
+<a name="164"><font size=-1>164     </font></a><span class="preproc">#define <a href="dictionary_A.html#17527">ADCR_TRGSEL_T8_CC5</a>          </span><span class="default">ADC_CR_T8_CC5</span>
+<a name="165"><font size=-1>165     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17528">ADCR_TRGSEL_EXTI_15</a>         <a href="dictionary_A.html#6939">ADC_CR_EXTI_15</a></span>
+<a name="166"><font size=-1>166     </font></a><span class="preproc">#define <a href="dictionary_A.html#17529">ADCR_TRGSEL_TIM1_CC4</a>        <a href="dictionary_A.html#6940">ADC_CR_TIM1_CC4</a></span>
+<a name="167"><font size=-1>167     </font></a><span class="preproc">#define <a href="dictionary_A.html#17530">ADCR_TRGSEL_TIM1_CC5</a>        <a href="dictionary_A.html#6941">ADC_CR_TIM1_CC5</a></span>
+<a name="168"><font size=-1>168     </font></a><span class="preproc">#define <a href="dictionary_A.html#17531">ADCR_SCANDIR</a>                <a href="dictionary_A.html#6943">ADC_CR_SCANDIR</a></span>
+<a name="169"><font size=-1>169     </font></a><span class="preproc">#define <a href="dictionary_A.html#17532">ADCR_TRGSHIFT</a>               <a href="dictionary_A.html#6945">ADC_CR_TRGSHIFT</a></span>
+<a name="170"><font size=-1>170     </font></a><span class="preproc">#define <a href="dictionary_A.html#17533">ADCR_TRGSHIFT_0</a>             <a href="dictionary_A.html#6946">ADC_CR_TRGSHIFT_0</a></span>
+<a name="171"><font size=-1>171     </font></a><span class="preproc">#define <a href="dictionary_A.html#17534">ADCR_TRGSHIFT_4</a>             <a href="dictionary_A.html#6947">ADC_CR_TRGSHIFT_4</a></span>
+<a name="172"><font size=-1>172     </font></a><span class="preproc">#define <a href="dictionary_A.html#17535">ADCR_TRGSHIFT_16</a>            <a href="dictionary_A.html#6948">ADC_CR_TRGSHIFT_16</a></span>
+<a name="173"><font size=-1>173     </font></a><span class="preproc">#define <a href="dictionary_A.html#17536">ADCR_TRGSHIFT_32</a>            <a href="dictionary_A.html#6949">ADC_CR_TRGSHIFT_32</a></span>
+<a name="174"><font size=-1>174     </font></a><span class="preproc">#define <a href="dictionary_A.html#17537">ADCR_TRGSHIFT_64</a>            <a href="dictionary_A.html#6950">ADC_CR_TRGSHIFT_64</a></span>
+<a name="175"><font size=-1>175     </font></a><span class="preproc">#define <a href="dictionary_A.html#17538">ADCR_TRGSHIFT_128</a>           <a href="dictionary_A.html#6951">ADC_CR_TRGSHIFT_128</a></span>
+<a name="176"><font size=-1>176     </font></a><span class="preproc">#define <a href="dictionary_A.html#17539">ADCR_TRGSHIFT_256</a>           <a href="dictionary_A.html#6952">ADC_CR_TRGSHIFT_256</a></span>
+<a name="177"><font size=-1>177     </font></a><span class="preproc">#define <a href="dictionary_A.html#17540">ADCR_TRGSHIFT_512</a>           <a href="dictionary_A.html#6953">ADC_CR_TRGSHIFT_512</a></span>
+<a name="178"><font size=-1>178     </font></a><span class="preproc">#define <a href="dictionary_A.html#17541">ADCR_CALIBEN</a>                </span><span class="default">ADC_CR_CALIBEN</span>
+<a name="179"><font size=-1>179     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17542">ADCR_CALIBSEL</a>               </span><span class="default">ADC_CR_CALIBSEL</span>
+<a name="180"><font size=-1>180     </font></a><span class="default"></span>
+<a name="181"><font size=-1>181     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17543">ADCHS_CHEN0</a>                     <a href="dictionary_A.html#6961">ADC_CHSR_CH0</a></span>
+<a name="182"><font size=-1>182     </font></a><span class="preproc">#define <a href="dictionary_A.html#17544">ADCHS_CHEN1</a>                     <a href="dictionary_A.html#6963">ADC_CHSR_CH1</a></span>
+<a name="183"><font size=-1>183     </font></a><span class="preproc">#define <a href="dictionary_A.html#17545">ADCHS_CHEN2</a>                     <a href="dictionary_A.html#6965">ADC_CHSR_CH2</a></span>
+<a name="184"><font size=-1>184     </font></a><span class="preproc">#define <a href="dictionary_A.html#17546">ADCHS_CHEN3</a>                     <a href="dictionary_A.html#6967">ADC_CHSR_CH3</a></span>
+<a name="185"><font size=-1>185     </font></a><span class="preproc">#define <a href="dictionary_A.html#17547">ADCHS_CHEN4</a>                     <a href="dictionary_A.html#6969">ADC_CHSR_CH4</a></span>
+<a name="186"><font size=-1>186     </font></a><span class="preproc">#define <a href="dictionary_A.html#17548">ADCHS_CHEN5</a>                     <a href="dictionary_A.html#6971">ADC_CHSR_CH5</a></span>
+<a name="187"><font size=-1>187     </font></a><span class="preproc">#define <a href="dictionary_A.html#17549">ADCHS_CHEN6</a>                     <a href="dictionary_A.html#6973">ADC_CHSR_CH6</a></span>
+<a name="188"><font size=-1>188     </font></a><span class="preproc">#define <a href="dictionary_A.html#17550">ADCHS_CHEN7</a>                     <a href="dictionary_A.html#6975">ADC_CHSR_CH7</a></span>
+<a name="189"><font size=-1>189     </font></a><span class="preproc">#define <a href="dictionary_A.html#17551">ADCHS_ALL</a>                       <a href="dictionary_A.html#6982">ADC_CHSR_CHALL</a></span>
+<a name="190"><font size=-1>190     </font></a><span class="preproc"></span>
+<a name="191"><font size=-1>191     </font></a><span class="preproc"></span>
+<a name="192"><font size=-1>192     </font></a><span class="preproc">#define <a href="dictionary_A.html#17552">ADCHS_CHEN8</a>                 <a href="dictionary_A.html#6977">ADC_CHSR_CH8</a></span>
+<a name="193"><font size=-1>193     </font></a><span class="preproc">#define <a href="dictionary_A.html#17553">ADCHS_CHEN9</a>                 <a href="dictionary_A.html#6979">ADC_CHSR_CH9</a></span>
+<a name="194"><font size=-1>194     </font></a><span class="preproc">#define <a href="dictionary_A.html#17554">ADCHS_CHENTS</a>                <a href="dictionary_A.html#4879">ADC_CHSR_CHT</a></span>
+<a name="195"><font size=-1>195     </font></a><span class="preproc">#define <a href="dictionary_A.html#17555">ADCHS_CHENVS</a>                <a href="dictionary_A.html#4881">ADC_CHSR_CHV</a></span>
+<a name="196"><font size=-1>196     </font></a><span class="preproc"></span>
+<a name="197"><font size=-1>197     </font></a><span class="preproc"></span>
+<a name="198"><font size=-1>198     </font></a><span class="preproc">#define <a href="dictionary_A.html#17556">ADCMPR_CMPLDATA</a>                 <a href="dictionary_A.html#6984">ADC_CMPR_CMPLDATA</a></span>
+<a name="199"><font size=-1>199     </font></a><span class="preproc">#define <a href="dictionary_A.html#17557">ADCMPR_CMPHDATA</a>                 <a href="dictionary_A.html#6986">ADC_CMPR_CMPHDATA</a></span>
+<a name="200"><font size=-1>200     </font></a><span class="preproc"></span>
+<a name="201"><font size=-1>201     </font></a><span class="preproc">#define <a href="dictionary_A.html#17558">ADSTA_ADIF</a>                      <a href="dictionary_A.html#4928">ADC_SR_ADIF</a></span>
+<a name="202"><font size=-1>202     </font></a><span class="preproc">#define <a href="dictionary_A.html#17559">ADSTA_ADWIF</a>                     <a href="dictionary_A.html#4929">ADC_SR_ADWIF</a></span>
+<a name="203"><font size=-1>203     </font></a><span class="preproc">#define <a href="dictionary_A.html#17560">ADSTA_BUSY</a>                      <a href="dictionary_A.html#6990">ADC_SR_BUSY</a></span>
+<a name="204"><font size=-1>204     </font></a><span class="preproc">#define <a href="dictionary_A.html#17561">ADSTA_CHANNEL</a>                   <a href="dictionary_A.html#6992">ADC_SR_CH</a></span>
+<a name="205"><font size=-1>205     </font></a><span class="preproc">#define <a href="dictionary_A.html#17562">ADSTA_CHANNEL_CH0</a>               <a href="dictionary_A.html#6993">ADC_SR_CH0</a></span>
+<a name="206"><font size=-1>206     </font></a><span class="preproc">#define <a href="dictionary_A.html#17563">ADSTA_CHANNEL_CH1</a>               <a href="dictionary_A.html#6994">ADC_SR_CH1</a></span>
+<a name="207"><font size=-1>207     </font></a><span class="preproc">#define <a href="dictionary_A.html#17564">ADSTA_CHANNEL_CH2</a>               <a href="dictionary_A.html#6995">ADC_SR_CH2</a></span>
+<a name="208"><font size=-1>208     </font></a><span class="preproc">#define <a href="dictionary_A.html#17565">ADSTA_CHANNEL_CH3</a>               <a href="dictionary_A.html#6996">ADC_SR_CH3</a></span>
+<a name="209"><font size=-1>209     </font></a><span class="preproc">#define <a href="dictionary_A.html#17566">ADSTA_CHANNEL_CH4</a>               <a href="dictionary_A.html#6997">ADC_SR_CH4</a></span>
+<a name="210"><font size=-1>210     </font></a><span class="preproc">#define <a href="dictionary_A.html#17567">ADSTA_CHANNEL_CH5</a>               <a href="dictionary_A.html#6998">ADC_SR_CH5</a></span>
+<a name="211"><font size=-1>211     </font></a><span class="preproc">#define <a href="dictionary_A.html#17568">ADSTA_CHANNEL_CH6</a>               <a href="dictionary_A.html#6999">ADC_SR_CH6</a></span>
+<a name="212"><font size=-1>212     </font></a><span class="preproc">#define <a href="dictionary_A.html#17569">ADSTA_CHANNEL_CH7</a>               <a href="dictionary_A.html#7000">ADC_SR_CH7</a></span>
+<a name="213"><font size=-1>213     </font></a><span class="preproc">#define <a href="dictionary_A.html#17570">ADSTA_CHANNEL_CH8</a>               <a href="dictionary_A.html#7001">ADC_SR_CH8</a></span>
+<a name="214"><font size=-1>214     </font></a><span class="preproc">#define <a href="dictionary_A.html#17571">ADSTA_CHANNEL_CH9</a>               <a href="dictionary_A.html#7002">ADC_SR_CH9</a></span>
+<a name="215"><font size=-1>215     </font></a><span class="preproc">#define <a href="dictionary_A.html#17572">ADSTA_CHANNEL_CH10</a>              <a href="dictionary_A.html#7003">ADC_SR_CH10</a></span>
+<a name="216"><font size=-1>216     </font></a><span class="preproc">#define <a href="dictionary_A.html#17573">ADSTA_CHANNEL_CH11</a>              <a href="dictionary_A.html#7004">ADC_SR_CH11</a></span>
+<a name="217"><font size=-1>217     </font></a><span class="preproc">#define <a href="dictionary_A.html#17574">ADSTA_CHANNEL_CH13</a>              <a href="dictionary_A.html#7005">ADC_SR_CH13</a></span>
+<a name="218"><font size=-1>218     </font></a><span class="preproc">#define <a href="dictionary_A.html#17575">ADSTA_CHANNEL_CH14</a>              <a href="dictionary_A.html#7006">ADC_SR_CH14</a></span>
+<a name="219"><font size=-1>219     </font></a><span class="preproc">#define <a href="dictionary_A.html#17576">ADSTA_CHANNEL_CH15</a>              <a href="dictionary_A.html#7007">ADC_SR_CH15</a></span>
+<a name="220"><font size=-1>220     </font></a><span class="preproc">#define <a href="dictionary_A.html#17577">ADSTA_VALID</a>                     <a href="dictionary_A.html#7009">ADC_SR_VALID</a></span>
+<a name="221"><font size=-1>221     </font></a><span class="preproc">#define <a href="dictionary_A.html#17578">ADSTA_OVERRUN</a>                   <a href="dictionary_A.html#7011">ADC_SR_OVERRUN</a></span>
+<a name="222"><font size=-1>222     </font></a><span class="preproc"></span>
+<a name="223"><font size=-1>223     </font></a><span class="preproc">#define <a href="dictionary_A.html#17579">ADDR_OVERRUN</a>                    <a href="dictionary_A.html#7015">ADC_CHDR_OVERRUN</a></span>
+<a name="224"><font size=-1>224     </font></a><span class="preproc">#define <a href="dictionary_A.html#17580">ADDR_VALID</a>                      <a href="dictionary_A.html#7017">ADC_CHDR_VALID</a></span>
+<a name="225"><font size=-1>225     </font></a><span class="preproc">#define <a href="dictionary_A.html#17581">ADDR_DATA</a>                       <a href="dictionary_A.html#7013">ADC_CHDR_DATA</a></span>
+<a name="226"><font size=-1>226     </font></a><span class="preproc"></span>
+<a name="227"><font size=-1>227     </font></a><span class="preproc"></span>
+<a name="228"><font size=-1>228     </font></a><span class="preproc"></span>
+<a name="229"><font size=-1>229     </font></a><span class="preproc"></span>
+<a name="230"><font size=-1>230     </font></a><span class="preproc"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="231"><font size=-1>231     </font></a><span class="comment">/// @brief redefine for HAL library</span>
+<a name="232"><font size=-1>232     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="233"><font size=-1>233     </font></a><span class="comment"></span>
+<a name="234"><font size=-1>234     </font></a><span class="comment"></span>
+<a name="235"><font size=-1>235     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="236"><font size=-1>236     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="237"><font size=-1>237     </font></a><span class="comment">/// @brief redefine for ADC of HAL library</span>
+<a name="238"><font size=-1>238     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="239"><font size=-1>239     </font></a><span class="comment"></span>
+<a name="240"><font size=-1>240     </font></a><span class="comment"></span>
+<a name="241"><font size=-1>241     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17582">ADC_ExternalTrigConv_T1_CC1</a>     </span><span class="default">ADC1_ExternalTrigConv_T1_CC1</span>
+<a name="242"><font size=-1>242     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17583">ADC_ExternalTrigConv_T1_CC2</a>     </span><span class="default">ADC1_ExternalTrigConv_T1_CC2</span>
+<a name="243"><font size=-1>243     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17584">ADC_ExternalTrigConv_T1_CC3</a>     </span><span class="default">ADC1_ExternalTrigConv_T1_CC3</span>
+<a name="244"><font size=-1>244     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17585">ADC_ExternalTrigConv_T2_CC2</a>     </span><span class="default">ADC1_ExternalTrigConv_T2_CC2</span>
+<a name="245"><font size=-1>245     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17586">ADC_ExternalTrigConv_T3_TRIG</a>    </span><span class="default">ADC1_ExternalTrigConv_T3_TRIG</span>
+<a name="246"><font size=-1>246     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17587">ADC_ExternalTrigConv_T3_CC1</a>     </span><span class="default">ADC1_ExternalTrigConv_T3_CC1</span>
+<a name="247"><font size=-1>247     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17588">ADC_ExternalTrigConv_EXTI_11</a>    </span><span class="default">ADC1_ExternalTrigConv_EXTI_11</span>
+<a name="248"><font size=-1>248     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17589">ADC_ExternalTrigConv_T1_CC4_CC5</a>  </span><span class="default">ADC1_ExternalTrigConv_T1_CC4_CC5</span>
+<a name="249"><font size=-1>249     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17590">ADC_ExternalTrigConv_T1_TRIG</a>     </span><span class="default">ADC1_ExternalTrigConv_T1_TRIG</span>
+<a name="250"><font size=-1>250     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17591">ADC_ExternalTrigConv_T8_CC4</a>      </span><span class="default">ADC1_ExternalTrigConv_T8_CC4</span>
+<a name="251"><font size=-1>251     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17592">ADC_ExternalTrigConv_T8_CC4_CC5</a>  </span><span class="default">ADC1_ExternalTrigConv_T8_CC4_CC5</span>
+<a name="252"><font size=-1>252     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17593">ADC_ExternalTrigConv_T2_CC1</a>      </span><span class="default">ADC1_ExternalTrigConv_T2_CC1</span>
+<a name="253"><font size=-1>253     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17594">ADC_ExternalTrigConv_T3_CC4</a>      </span><span class="default">ADC1_ExternalTrigConv_T3_CC4</span>
+<a name="254"><font size=-1>254     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17595">ADC_ExternalTrigConv_T2_TRIG</a>     </span><span class="default">ADC1_ExternalTrigConv_T2_TRIG</span>
+<a name="255"><font size=-1>255     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17596">ADC_ExternalTrigConv_T8_CC5</a>      </span><span class="default">ADC1_ExternalTrigConv_T8_CC5</span>
+<a name="256"><font size=-1>256     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17597">ADC_ExternalTrigConv_EXTI_15</a>     </span><span class="default">ADC1_ExternalTrigConv_EXTI_15</span>
+<a name="257"><font size=-1>257     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17598">ADC_ExternalTrigConv_T1_CC4</a>      </span><span class="default">ADC1_ExternalTrigConv_T1_CC4</span>
+<a name="258"><font size=-1>258     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17599">ADC_ExternalTrigConv_T1_CC5</a>      </span><span class="default">ADC1_ExternalTrigConv_T1_CC5</span>
+<a name="259"><font size=-1>259     </font></a><span class="default"></span>
+<a name="260"><font size=-1>260     </font></a><span class="default"></span>
+<a name="261"><font size=-1>261     </font></a><span class="default"></span>
+<a name="262"><font size=-1>262     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17600">ADC_SampleTime_1_5Cycles</a>         </span><span class="default">ADC_Samctl_1_5</span>
+<a name="263"><font size=-1>263     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17601">ADC_SampleTime_7_5Cycles</a>         </span><span class="default">ADC_Samctl_7_5</span>
+<a name="264"><font size=-1>264     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17602">ADC_SampleTime_13_5Cycles</a>        </span><span class="default">ADC_Samctl_13_5</span>
+<a name="265"><font size=-1>265     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17603">ADC_SampleTime_28_5Cycles</a>        </span><span class="default">ADC_Samctl_28_5</span>
+<a name="266"><font size=-1>266     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17604">ADC_SampleTime_41_5Cycles</a>        </span><span class="default">ADC_Samctl_41_5</span>
+<a name="267"><font size=-1>267     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17605">ADC_SampleTime_55_5Cycles</a>        </span><span class="default">ADC_Samctl_55_5</span>
+<a name="268"><font size=-1>268     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17606">ADC_SampleTime_71_5Cycles</a>        </span><span class="default">ADC_Samctl_71_5</span>
+<a name="269"><font size=-1>269     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_A.html#17607">ADC_SampleTime_239_5Cycles</a>       </span><span class="default">ADC_Samctl_239_5</span>
+<a name="270"><font size=-1>270     </font></a><span class="default"></span>
+<a name="271"><font size=-1>271     </font></a><span class="default"></span>
+<a name="272"><font size=-1>272     </font></a><span class="default"></span>
+<a name="273"><font size=-1>273     </font></a><span class="default"></span>
+<a name="274"><font size=-1>274     </font></a><span class="default"></span>
+<a name="275"><font size=-1>275     </font></a><span class="default"></span>
+<a name="276"><font size=-1>276     </font></a><span class="default"></span>
+<a name="277"><font size=-1>277     </font></a><span class="default"></span>
+<a name="278"><font size=-1>278     </font></a><span class="default"></span>
+<a name="279"><font size=-1>279     </font></a><span class="default"></span>
+<a name="280"><font size=-1>280     </font></a><span class="default"></span>
+<a name="281"><font size=-1>281     </font></a><span class="default"></span>
+<a name="282"><font size=-1>282     </font></a><span class="default"></span>
+<a name="283"><font size=-1>283     </font></a><span class="default"></span>
+<a name="284"><font size=-1>284     </font></a><span class="default"></span>
+<a name="285"><font size=-1>285     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="286"><font size=-1>286     </font></a><span class="comment">/// @brief Version compatibility definition</span>
+<a name="287"><font size=-1>287     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="288"><font size=-1>288     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17608">AES_KEYR0</a>                   </span><span class="default">AES_KEYRn                               </span><span class="comment">///&lt; AES Key Register 0</span>
+<a name="289"><font size=-1>289     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17609">AES_KEYR1</a>                   </span><span class="default">AES_KEYRn                               </span><span class="comment">///&lt; AES Key Register 1</span>
+<a name="290"><font size=-1>290     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17610">AES_KEYR2</a>                   </span><span class="default">AES_KEYRn                               </span><span class="comment">///&lt; AES Key Register 2</span>
+<a name="291"><font size=-1>291     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17611">AES_KEYR3</a>                   </span><span class="default">AES_KEYRn                               </span><span class="comment">///&lt; AES Key Register 3</span>
+<a name="292"><font size=-1>292     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17612">AES_KEYR4</a>                   </span><span class="default">AES_KEYRn                               </span><span class="comment">///&lt; AES Key Register 4</span>
+<a name="293"><font size=-1>293     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17613">AES_KEYR5</a>                   </span><span class="default">AES_KEYRn                               </span><span class="comment">///&lt; AES Key Register 5</span>
+<a name="294"><font size=-1>294     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17614">AES_KEYR6</a>                   </span><span class="default">AES_KEYRn                               </span><span class="comment">///&lt; AES Key Register 6</span>
+<a name="295"><font size=-1>295     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17615">AES_KEYR7</a>                   </span><span class="default">AES_KEYRn                               </span><span class="comment">///&lt; AES Key Register 7</span>
+<a name="296"><font size=-1>296     </font></a><span class="comment"></span>
+<a name="297"><font size=-1>297     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17616">AES_IVR0</a>                    </span><span class="default">AES_IVRn                                </span><span class="comment">///&lt; AES Initialization Vector Register 0</span>
+<a name="298"><font size=-1>298     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17617">AES_IVR1</a>                    </span><span class="default">AES_IVRn                                </span><span class="comment">///&lt; AES Initialization Vector Register 1</span>
+<a name="299"><font size=-1>299     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17618">AES_IVR2</a>                    </span><span class="default">AES_IVRn                                </span><span class="comment">///&lt; AES Initialization Vector Register 2</span>
+<a name="300"><font size=-1>300     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_A.html#17619">AES_IVR3</a>                    </span><span class="default">AES_IVRn                                </span><span class="comment">///&lt; AES Initialization Vector Register 3</span>
+<a name="301"><font size=-1>301     </font></a><span class="comment"></span>
+<a name="302"><font size=-1>302     </font></a><span class="comment"></span>
+<a name="303"><font size=-1>303     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17620">CRC_DR_DR</a>                       <a href="dictionary_C.html#7062">CRC_DR_DATA</a></span>
+<a name="304"><font size=-1>304     </font></a><span class="preproc">#define <a href="dictionary_C.html#17621">CRC_IDR_IDR</a>                     <a href="dictionary_C.html#7064">CRC_IDR_DATA</a></span>
+<a name="305"><font size=-1>305     </font></a><span class="preproc"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="306"><font size=-1>306     </font></a><span class="comment">/// @brief Version compatibility definition</span>
+<a name="307"><font size=-1>307     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="308"><font size=-1>308     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17622">CRS_CR_SYNCOKIE</a>                 </span><span class="default">CRS_CR_OKIE</span>
+<a name="309"><font size=-1>309     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17623">CRS_CR_SYNCWARNIE</a>               </span><span class="default">CRS_CR_WARNIE</span>
+<a name="310"><font size=-1>310     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17624">CRS_CR_ESYNCIE</a>                  </span><span class="default">CRS_CR_EXPTIE</span>
+<a name="311"><font size=-1>311     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17625">CRS_CR_CEN</a>                      </span><span class="default">CRS_CR_CNTEN</span>
+<a name="312"><font size=-1>312     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17626">CRS_CFGR_SYNCDIV</a>                </span><span class="default">CRS_CFGR_DIV</span>
+<a name="313"><font size=-1>313     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17627">CRS_CFGR_SYNCSRC</a>                </span><span class="default">CRS_CFGR_SRC</span>
+<a name="314"><font size=-1>314     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17628">CRS_CFGR_SYNCPOL</a>                </span><span class="default">CRS_CFGR_POL</span>
+<a name="315"><font size=-1>315     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17629">CRS_ISR_SYNCOKF</a>                 </span><span class="default">CRS_ISR_OKIF</span>
+<a name="316"><font size=-1>316     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17630">CRS_ISR_SYNCWARNF</a>               </span><span class="default">CRS_ISR_WARNIF</span>
+<a name="317"><font size=-1>317     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17631">CRS_ISR_ERRF</a>                    </span><span class="default">CRS_ISR_ERRIF</span>
+<a name="318"><font size=-1>318     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17632">CRS_ISR_ESYNCF</a>                  </span><span class="default">CRS_ISR_EXPTIF</span>
+<a name="319"><font size=-1>319     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17633">CRS_ISR_SYNCERR</a>                 </span><span class="default">CRS_ISR_ERR</span>
+<a name="320"><font size=-1>320     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17634">CRS_ISR_SYNCMISS</a>                </span><span class="default">CRS_ISR_MISS</span>
+<a name="321"><font size=-1>321     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17635">CRS_ISR_TRIMOVF</a>                 </span><span class="default">CRS_ISR_OVERFLOW</span>
+<a name="322"><font size=-1>322     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17636">CRS_ICR_SYNCOKC</a>                 </span><span class="default">CRS_ICR_OK</span>
+<a name="323"><font size=-1>323     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17637">CRS_ICR_SYNCWARNC</a>               </span><span class="default">CRS_ICR_WARN</span>
+<a name="324"><font size=-1>324     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17638">CRS_ICR_ERRC</a>                    </span><span class="default">CRS_ICR_ERR</span>
+<a name="325"><font size=-1>325     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17639">CRS_ICR_ESYNCC</a>                  </span><span class="default">CRS_ICR_EXPT</span>
+<a name="326"><font size=-1>326     </font></a><span class="default"></span>
+<a name="327"><font size=-1>327     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_C.html#17640">CRS_IT_SYNCOK</a>                   <a href="dictionary_C.html#17629">CRS_ISR_SYNCOKF</a>                         </span><span class="comment">///&lt; SYNC event OK</span>
+<a name="328"><font size=-1>328     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17641">CRS_IT_SYNCWARN</a>                 <a href="dictionary_C.html#17630">CRS_ISR_SYNCWARNF</a>                       </span><span class="comment">///&lt; SYNC warning</span>
+<a name="329"><font size=-1>329     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17642">CRS_IT_ERR</a>                      </span><span class="default">CRS_CR_ERRIE                            </span><span class="comment">///&lt; error</span>
+<a name="330"><font size=-1>330     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17643">CRS_IT_ESYNC</a>                    <a href="dictionary_C.html#17632">CRS_ISR_ESYNCF</a>                          </span><span class="comment">///&lt; Expected SYNC</span>
+<a name="331"><font size=-1>331     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17644">CRS_IT_TRIMOVF</a>                  <a href="dictionary_C.html#17635">CRS_ISR_TRIMOVF</a>                         </span><span class="comment">///&lt; Trimming overflow or underflow</span>
+<a name="332"><font size=-1>332     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17645">CRS_IT_SYNCERR</a>                  <a href="dictionary_C.html#17633">CRS_ISR_SYNCERR</a>                         </span><span class="comment">///&lt; SYNC error</span>
+<a name="333"><font size=-1>333     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17646">CRS_IT_SYNCMISS</a>                 <a href="dictionary_C.html#17634">CRS_ISR_SYNCMISS</a>                        </span><span class="comment">///&lt; SYNC missed</span>
+<a name="334"><font size=-1>334     </font></a><span class="comment"></span>
+<a name="335"><font size=-1>335     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17647">CRS_FLAG_SYNCOK</a>                 <a href="dictionary_C.html#17629">CRS_ISR_SYNCOKF</a>                         </span><span class="comment">///&lt; SYNC event OK</span>
+<a name="336"><font size=-1>336     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17648">CRS_FLAG_SYNCWARN</a>               <a href="dictionary_C.html#17630">CRS_ISR_SYNCWARNF</a>                       </span><span class="comment">///&lt; SYNC warning</span>
+<a name="337"><font size=-1>337     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17649">CRS_FLAG_ERR</a>                    <a href="dictionary_C.html#17631">CRS_ISR_ERRF</a>                            </span><span class="comment">///&lt; error</span>
+<a name="338"><font size=-1>338     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17650">CRS_FLAG_ESYNC</a>                  <a href="dictionary_C.html#17632">CRS_ISR_ESYNCF</a>                          </span><span class="comment">///&lt; Expected SYNC</span>
+<a name="339"><font size=-1>339     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17651">CRS_FLAG_TRIMOVF</a>                <a href="dictionary_C.html#17635">CRS_ISR_TRIMOVF</a>                         </span><span class="comment">///&lt; Trimming overflow or underflow</span>
+<a name="340"><font size=-1>340     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17652">CRS_FLAG_SYNCERR</a>                <a href="dictionary_C.html#17633">CRS_ISR_SYNCERR</a>                         </span><span class="comment">///&lt; SYNC error</span>
+<a name="341"><font size=-1>341     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_C.html#17653">CRS_FLAG_SYNCMISS</a>               <a href="dictionary_C.html#17634">CRS_ISR_SYNCMISS</a>                        </span><span class="comment">///&lt; SYNC missed</span>
+<a name="342"><font size=-1>342     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="343"><font size=-1>343     </font></a><span class="comment">/// @brief Version compatibility definition</span>
+<a name="344"><font size=-1>344     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="345"><font size=-1>345     </font></a><span class="comment"></span><span class="preproc">#define  <a href="dictionary_D.html#17654">DIV_UNSIGN</a>                     </span><span class="default">DIV_CR_USIGN                            </span><span class="comment">///&lt; Unsigned enable</span>
+<a name="346"><font size=-1>346     </font></a><span class="comment"></span>
+<a name="347"><font size=-1>347     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="348"><font size=-1>348     </font></a><span class="comment">/// @brief DMA type pointer Definition</span>
+<a name="349"><font size=-1>349     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="350"><font size=-1>350     </font></a><span class="comment"></span>
+<a name="351"><font size=-1>351     </font></a><span class="comment"></span>
+<a name="352"><font size=-1>352     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17655">DMA_CCR_MEM2MEM</a>                 <a href="dictionary_D.html#7201">DMA_CCR_M2M</a></span>
+<a name="353"><font size=-1>353     </font></a><span class="preproc"></span>
+<a name="354"><font size=-1>354     </font></a><span class="preproc">#define <a href="dictionary_D.html#17656">DMA_CCR1_EN</a>                     <a href="dictionary_D.html#1678">DMA_CCR_EN</a></span>
+<a name="355"><font size=-1>355     </font></a><span class="preproc">#define <a href="dictionary_D.html#17657">DMA_CCR1_DIR</a>                    <a href="dictionary_D.html#7171">DMA_CCR_DIR</a></span>
+<a name="356"><font size=-1>356     </font></a><span class="preproc">#define <a href="dictionary_D.html#17658">DMA_CCR1_CIRC</a>                   <a href="dictionary_D.html#7173">DMA_CCR_CIRC</a></span>
+<a name="357"><font size=-1>357     </font></a><span class="preproc">#define <a href="dictionary_D.html#17659">DMA_CCR1_PINC</a>                   <a href="dictionary_D.html#7175">DMA_CCR_PINC</a></span>
+<a name="358"><font size=-1>358     </font></a><span class="preproc">#define <a href="dictionary_D.html#17660">DMA_CCR1_MINC</a>                   <a href="dictionary_D.html#7177">DMA_CCR_MINC</a></span>
+<a name="359"><font size=-1>359     </font></a><span class="preproc">#define <a href="dictionary_D.html#17661">DMA_CCR1_PSIZE_0</a>                <a href="dictionary_D.html#7180">DMA_CCR_PSIZE_0</a></span>
+<a name="360"><font size=-1>360     </font></a><span class="preproc">#define <a href="dictionary_D.html#17662">DMA_CCR1_MSIZE_0</a>                <a href="dictionary_D.html#7187">DMA_CCR_MSIZE_0</a></span>
+<a name="361"><font size=-1>361     </font></a><span class="preproc">#define <a href="dictionary_D.html#17663">DMA_CCR1_PL_0</a>                   <a href="dictionary_D.html#7194">DMA_CCR_PL_0</a></span>
+<a name="362"><font size=-1>362     </font></a><span class="preproc">#define <a href="dictionary_D.html#17664">DMA_CCR1_PSIZE_1</a>                <a href="dictionary_D.html#7181">DMA_CCR_PSIZE_1</a></span>
+<a name="363"><font size=-1>363     </font></a><span class="preproc">#define <a href="dictionary_D.html#17665">DMA_CCR1_MSIZE_1</a>                <a href="dictionary_D.html#7188">DMA_CCR_MSIZE_1</a></span>
+<a name="364"><font size=-1>364     </font></a><span class="preproc">#define <a href="dictionary_D.html#17666">DMA_CCR1_PL_1</a>                   <a href="dictionary_D.html#7195">DMA_CCR_PL_1</a></span>
+<a name="365"><font size=-1>365     </font></a><span class="preproc">#define <a href="dictionary_D.html#17667">DMA_CCR1_MEM2MEM</a>                <a href="dictionary_D.html#7201">DMA_CCR_M2M</a></span>
+<a name="366"><font size=-1>366     </font></a><span class="preproc">#define <a href="dictionary_D.html#17668">DMA_CCR1_TCIE</a>                   <a href="dictionary_D.html#7165">DMA_CCR_TCIE</a></span>
+<a name="367"><font size=-1>367     </font></a><span class="preproc"></span>
+<a name="368"><font size=-1>368     </font></a><span class="preproc">#define <a href="dictionary_D.html#1631">DMA_IT_TC</a>                       <a href="dictionary_D.html#7165">DMA_CCR_TCIE</a>                            </span><span class="comment">//(0x00000002U)</span>
+<a name="369"><font size=-1>369     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17669">DMA_IT_HT</a>                       <a href="dictionary_D.html#7167">DMA_CCR_HTIE</a>                            </span><span class="comment">//(0x00000004U)</span>
+<a name="370"><font size=-1>370     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17670">DMA_IT_TE</a>                       <a href="dictionary_D.html#7169">DMA_CCR_TEIE</a>                            </span><span class="comment">//(0x00000008U)</span>
+<a name="371"><font size=-1>371     </font></a><span class="comment"></span>
+<a name="372"><font size=-1>372     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17671">DMA1_IT_GL1</a>                     <a href="dictionary_D.html#7124">DMA_IFCR_CGIF1</a>                          </span><span class="comment">//(0x00000001U)</span>
+<a name="373"><font size=-1>373     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17672">DMA1_IT_TC1</a>                     <a href="dictionary_D.html#7126">DMA_IFCR_CTCIF1</a>                         </span><span class="comment">//(0x00000002U)</span>
+<a name="374"><font size=-1>374     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17673">DMA1_IT_HT1</a>                     <a href="dictionary_D.html#7128">DMA_IFCR_CHTIF1</a>                         </span><span class="comment">//(0x00000004U)</span>
+<a name="375"><font size=-1>375     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17674">DMA1_IT_TE1</a>                     <a href="dictionary_D.html#7130">DMA_IFCR_CTEIF1</a>                         </span><span class="comment">//(0x00000008U)</span>
+<a name="376"><font size=-1>376     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17675">DMA1_IT_GL2</a>                     <a href="dictionary_D.html#7132">DMA_IFCR_CGIF2</a>                          </span><span class="comment">//(0x00000010U)</span>
+<a name="377"><font size=-1>377     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#1694">DMA1_IT_TC2</a>                     <a href="dictionary_D.html#7134">DMA_IFCR_CTCIF2</a>                         </span><span class="comment">//(0x00000020U)</span>
+<a name="378"><font size=-1>378     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17676">DMA1_IT_HT2</a>                     <a href="dictionary_D.html#7136">DMA_IFCR_CHTIF2</a>                         </span><span class="comment">//(0x00000040U)</span>
+<a name="379"><font size=-1>379     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17677">DMA1_IT_TE2</a>                     <a href="dictionary_D.html#7138">DMA_IFCR_CTEIF2</a>                         </span><span class="comment">//(0x00000080U)</span>
+<a name="380"><font size=-1>380     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17678">DMA1_IT_GL3</a>                     <a href="dictionary_D.html#7140">DMA_IFCR_CGIF3</a>                          </span><span class="comment">//(0x00000100U)</span>
+<a name="381"><font size=-1>381     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#1696">DMA1_IT_TC3</a>                     <a href="dictionary_D.html#7142">DMA_IFCR_CTCIF3</a>                         </span><span class="comment">//(0x00000200U)</span>
+<a name="382"><font size=-1>382     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17679">DMA1_IT_HT3</a>                     <a href="dictionary_D.html#7144">DMA_IFCR_CHTIF3</a>                         </span><span class="comment">//(0x00000400U)</span>
+<a name="383"><font size=-1>383     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17680">DMA1_IT_TE3</a>                     <a href="dictionary_D.html#7146">DMA_IFCR_CTEIF3</a>                         </span><span class="comment">//(0x00000800U)</span>
+<a name="384"><font size=-1>384     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17681">DMA1_IT_GL4</a>                     <a href="dictionary_D.html#7148">DMA_IFCR_CGIF4</a>                          </span><span class="comment">//(0x00001000U)</span>
+<a name="385"><font size=-1>385     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#1698">DMA1_IT_TC4</a>                     <a href="dictionary_D.html#7150">DMA_IFCR_CTCIF4</a>                         </span><span class="comment">//(0x00002000U)</span>
+<a name="386"><font size=-1>386     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17682">DMA1_IT_HT4</a>                     <a href="dictionary_D.html#7152">DMA_IFCR_CHTIF4</a>                         </span><span class="comment">//(0x00004000U)</span>
+<a name="387"><font size=-1>387     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17683">DMA1_IT_TE4</a>                     <a href="dictionary_D.html#7154">DMA_IFCR_CTEIF4</a>                         </span><span class="comment">//(0x00008000U)</span>
+<a name="388"><font size=-1>388     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17684">DMA1_IT_GL5</a>                     <a href="dictionary_D.html#7156">DMA_IFCR_CGIF5</a>                          </span><span class="comment">//(0x00010000U)</span>
+<a name="389"><font size=-1>389     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#1699">DMA1_IT_TC5</a>                     <a href="dictionary_D.html#7158">DMA_IFCR_CTCIF5</a>                         </span><span class="comment">//(0x00020000U)</span>
+<a name="390"><font size=-1>390     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17685">DMA1_IT_HT5</a>                     <a href="dictionary_D.html#7160">DMA_IFCR_CHTIF5</a>                         </span><span class="comment">//(0x00040000U)</span>
+<a name="391"><font size=-1>391     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17686">DMA1_IT_TE5</a>                     <a href="dictionary_D.html#7162">DMA_IFCR_CTEIF5</a>                         </span><span class="comment">//(0x00080000U)</span>
+<a name="392"><font size=-1>392     </font></a><span class="comment"></span>
+<a name="393"><font size=-1>393     </font></a><span class="comment"></span>
+<a name="394"><font size=-1>394     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17687">DMA1_FLAG_GL1</a>                   <a href="dictionary_D.html#7084">DMA_ISR_GIF1</a>                            </span><span class="comment">//(0x00000001U)</span>
+<a name="395"><font size=-1>395     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17688">DMA1_FLAG_TC1</a>                   <a href="dictionary_D.html#7086">DMA_ISR_TCIF1</a>                           </span><span class="comment">//(0x00000002U)</span>
+<a name="396"><font size=-1>396     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17689">DMA1_FLAG_HT1</a>                   <a href="dictionary_D.html#7088">DMA_ISR_HTIF1</a>                           </span><span class="comment">//(0x00000004U)</span>
+<a name="397"><font size=-1>397     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17690">DMA1_FLAG_TE1</a>                   <a href="dictionary_D.html#7090">DMA_ISR_TEIF1</a>                           </span><span class="comment">//(0x00000008U)</span>
+<a name="398"><font size=-1>398     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17691">DMA1_FLAG_GL2</a>                   <a href="dictionary_D.html#7092">DMA_ISR_GIF2</a>                            </span><span class="comment">//(0x00000010U)</span>
+<a name="399"><font size=-1>399     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17692">DMA1_FLAG_TC2</a>                   <a href="dictionary_D.html#7094">DMA_ISR_TCIF2</a>                           </span><span class="comment">//(0x00000020U)</span>
+<a name="400"><font size=-1>400     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17693">DMA1_FLAG_HT2</a>                   <a href="dictionary_D.html#7096">DMA_ISR_HTIF2</a>                           </span><span class="comment">//(0x00000040U)</span>
+<a name="401"><font size=-1>401     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17694">DMA1_FLAG_TE2</a>                   <a href="dictionary_D.html#7098">DMA_ISR_TEIF2</a>                           </span><span class="comment">//(0x00000080U)</span>
+<a name="402"><font size=-1>402     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17695">DMA1_FLAG_GL3</a>                   <a href="dictionary_D.html#7100">DMA_ISR_GIF3</a>                            </span><span class="comment">//(0x00000100U)</span>
+<a name="403"><font size=-1>403     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17696">DMA1_FLAG_TC3</a>                   <a href="dictionary_D.html#7102">DMA_ISR_TCIF3</a>                           </span><span class="comment">//(0x00000200U)</span>
+<a name="404"><font size=-1>404     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17697">DMA1_FLAG_HT3</a>                   <a href="dictionary_D.html#7104">DMA_ISR_HTIF3</a>                           </span><span class="comment">//(0x00000400U)</span>
+<a name="405"><font size=-1>405     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17698">DMA1_FLAG_TE3</a>                   <a href="dictionary_D.html#7106">DMA_ISR_TEIF3</a>                           </span><span class="comment">//(0x00000800U)</span>
+<a name="406"><font size=-1>406     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17699">DMA1_FLAG_GL4</a>                   <a href="dictionary_D.html#7108">DMA_ISR_GIF4</a>                            </span><span class="comment">//(0x00001000U)</span>
+<a name="407"><font size=-1>407     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#1685">DMA1_FLAG_TC4</a>                   <a href="dictionary_D.html#7110">DMA_ISR_TCIF4</a>                           </span><span class="comment">//(0x00002000U)</span>
+<a name="408"><font size=-1>408     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17700">DMA1_FLAG_HT4</a>                   <a href="dictionary_D.html#7112">DMA_ISR_HTIF4</a>                           </span><span class="comment">//(0x00004000U)</span>
+<a name="409"><font size=-1>409     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17701">DMA1_FLAG_TE4</a>                   <a href="dictionary_D.html#7114">DMA_ISR_TEIF4</a>                           </span><span class="comment">//(0x00008000U)</span>
+<a name="410"><font size=-1>410     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17702">DMA1_FLAG_GL5</a>                   <a href="dictionary_D.html#7116">DMA_ISR_GIF5</a>                            </span><span class="comment">//(0x00010000U)</span>
+<a name="411"><font size=-1>411     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#1687">DMA1_FLAG_TC5</a>                   <a href="dictionary_D.html#7118">DMA_ISR_TCIF5</a>                           </span><span class="comment">//(0x00020000U)</span>
+<a name="412"><font size=-1>412     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17703">DMA1_FLAG_HT5</a>                   <a href="dictionary_D.html#7120">DMA_ISR_HTIF5</a>                           </span><span class="comment">//(0x00040000U)</span>
+<a name="413"><font size=-1>413     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_D.html#17704">DMA1_FLAG_TE5</a>                   <a href="dictionary_D.html#7122">DMA_ISR_TEIF5</a>                           </span><span class="comment">//(0x00080000U)</span>
+<a name="414"><font size=-1>414     </font></a><span class="comment"></span>
+<a name="415"><font size=-1>415     </font></a><span class="comment"></span>
+<a name="416"><font size=-1>416     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="417"><font size=-1>417     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_E.html#17705">EXTI_IMR_MR0</a>                    <a href="dictionary_E.html#7330">EXTI_IMR_0</a></span>
+<a name="418"><font size=-1>418     </font></a><span class="preproc">#define <a href="dictionary_E.html#17706">EXTI_IMR_MR1</a>                    <a href="dictionary_E.html#7332">EXTI_IMR_1</a></span>
+<a name="419"><font size=-1>419     </font></a><span class="preproc">#define <a href="dictionary_E.html#17707">EXTI_IMR_MR2</a>                    <a href="dictionary_E.html#7334">EXTI_IMR_2</a></span>
+<a name="420"><font size=-1>420     </font></a><span class="preproc">#define <a href="dictionary_E.html#17708">EXTI_IMR_MR3</a>                    <a href="dictionary_E.html#7336">EXTI_IMR_3</a></span>
+<a name="421"><font size=-1>421     </font></a><span class="preproc">#define <a href="dictionary_E.html#17709">EXTI_IMR_MR4</a>                    <a href="dictionary_E.html#7338">EXTI_IMR_4</a></span>
+<a name="422"><font size=-1>422     </font></a><span class="preproc">#define <a href="dictionary_E.html#17710">EXTI_IMR_MR5</a>                    <a href="dictionary_E.html#7340">EXTI_IMR_5</a></span>
+<a name="423"><font size=-1>423     </font></a><span class="preproc">#define <a href="dictionary_E.html#17711">EXTI_IMR_MR6</a>                    <a href="dictionary_E.html#7342">EXTI_IMR_6</a></span>
+<a name="424"><font size=-1>424     </font></a><span class="preproc">#define <a href="dictionary_E.html#17712">EXTI_IMR_MR7</a>                    <a href="dictionary_E.html#7344">EXTI_IMR_7</a></span>
+<a name="425"><font size=-1>425     </font></a><span class="preproc">#define <a href="dictionary_E.html#17713">EXTI_IMR_MR8</a>                    <a href="dictionary_E.html#7346">EXTI_IMR_8</a></span>
+<a name="426"><font size=-1>426     </font></a><span class="preproc">#define <a href="dictionary_E.html#17714">EXTI_IMR_MR9</a>                    <a href="dictionary_E.html#7348">EXTI_IMR_9</a></span>
+<a name="427"><font size=-1>427     </font></a><span class="preproc">#define <a href="dictionary_E.html#17715">EXTI_IMR_MR10</a>                   <a href="dictionary_E.html#7350">EXTI_IMR_10</a></span>
+<a name="428"><font size=-1>428     </font></a><span class="preproc">#define <a href="dictionary_E.html#17716">EXTI_IMR_MR11</a>                   <a href="dictionary_E.html#7352">EXTI_IMR_11</a></span>
+<a name="429"><font size=-1>429     </font></a><span class="preproc">#define <a href="dictionary_E.html#17717">EXTI_IMR_MR12</a>                   <a href="dictionary_E.html#7354">EXTI_IMR_12</a></span>
+<a name="430"><font size=-1>430     </font></a><span class="preproc">#define <a href="dictionary_E.html#17718">EXTI_IMR_MR13</a>                   <a href="dictionary_E.html#7356">EXTI_IMR_13</a></span>
+<a name="431"><font size=-1>431     </font></a><span class="preproc">#define <a href="dictionary_E.html#17719">EXTI_IMR_MR14</a>                   <a href="dictionary_E.html#7358">EXTI_IMR_14</a></span>
+<a name="432"><font size=-1>432     </font></a><span class="preproc">#define <a href="dictionary_E.html#17720">EXTI_IMR_MR15</a>                   <a href="dictionary_E.html#7360">EXTI_IMR_15</a></span>
+<a name="433"><font size=-1>433     </font></a><span class="preproc">#define <a href="dictionary_E.html#17721">EXTI_IMR_MR16</a>                   <a href="dictionary_E.html#7362">EXTI_IMR_16</a></span>
+<a name="434"><font size=-1>434     </font></a><span class="preproc"></span>
+<a name="435"><font size=-1>435     </font></a><span class="preproc">#define <a href="dictionary_E.html#17722">EXTI_EMR_MR0</a>                    <a href="dictionary_E.html#7374">EXTI_EMR_0</a></span>
+<a name="436"><font size=-1>436     </font></a><span class="preproc">#define <a href="dictionary_E.html#17723">EXTI_EMR_MR1</a>                    <a href="dictionary_E.html#7376">EXTI_EMR_1</a></span>
+<a name="437"><font size=-1>437     </font></a><span class="preproc">#define <a href="dictionary_E.html#17724">EXTI_EMR_MR2</a>                    <a href="dictionary_E.html#7378">EXTI_EMR_2</a></span>
+<a name="438"><font size=-1>438     </font></a><span class="preproc">#define <a href="dictionary_E.html#17725">EXTI_EMR_MR3</a>                    <a href="dictionary_E.html#7380">EXTI_EMR_3</a></span>
+<a name="439"><font size=-1>439     </font></a><span class="preproc">#define <a href="dictionary_E.html#17726">EXTI_EMR_MR4</a>                    <a href="dictionary_E.html#7382">EXTI_EMR_4</a></span>
+<a name="440"><font size=-1>440     </font></a><span class="preproc">#define <a href="dictionary_E.html#17727">EXTI_EMR_MR5</a>                    <a href="dictionary_E.html#7384">EXTI_EMR_5</a></span>
+<a name="441"><font size=-1>441     </font></a><span class="preproc">#define <a href="dictionary_E.html#17728">EXTI_EMR_MR6</a>                    <a href="dictionary_E.html#7386">EXTI_EMR_6</a></span>
+<a name="442"><font size=-1>442     </font></a><span class="preproc">#define <a href="dictionary_E.html#17729">EXTI_EMR_MR7</a>                    <a href="dictionary_E.html#7388">EXTI_EMR_7</a></span>
+<a name="443"><font size=-1>443     </font></a><span class="preproc">#define <a href="dictionary_E.html#17730">EXTI_EMR_MR8</a>                    <a href="dictionary_E.html#7390">EXTI_EMR_8</a></span>
+<a name="444"><font size=-1>444     </font></a><span class="preproc">#define <a href="dictionary_E.html#17731">EXTI_EMR_MR9</a>                    <a href="dictionary_E.html#7392">EXTI_EMR_9</a></span>
+<a name="445"><font size=-1>445     </font></a><span class="preproc">#define <a href="dictionary_E.html#17732">EXTI_EMR_MR10</a>                   <a href="dictionary_E.html#7394">EXTI_EMR_10</a></span>
+<a name="446"><font size=-1>446     </font></a><span class="preproc">#define <a href="dictionary_E.html#17733">EXTI_EMR_MR11</a>                   <a href="dictionary_E.html#7396">EXTI_EMR_11</a></span>
+<a name="447"><font size=-1>447     </font></a><span class="preproc">#define <a href="dictionary_E.html#17734">EXTI_EMR_MR12</a>                   <a href="dictionary_E.html#7398">EXTI_EMR_12</a></span>
+<a name="448"><font size=-1>448     </font></a><span class="preproc">#define <a href="dictionary_E.html#17735">EXTI_EMR_MR13</a>                   <a href="dictionary_E.html#7400">EXTI_EMR_13</a></span>
+<a name="449"><font size=-1>449     </font></a><span class="preproc">#define <a href="dictionary_E.html#17736">EXTI_EMR_MR14</a>                   <a href="dictionary_E.html#7402">EXTI_EMR_14</a></span>
+<a name="450"><font size=-1>450     </font></a><span class="preproc">#define <a href="dictionary_E.html#17737">EXTI_EMR_MR15</a>                   <a href="dictionary_E.html#7404">EXTI_EMR_15</a></span>
+<a name="451"><font size=-1>451     </font></a><span class="preproc">#define <a href="dictionary_E.html#17738">EXTI_EMR_MR16</a>                   <a href="dictionary_E.html#7406">EXTI_EMR_16</a></span>
+<a name="452"><font size=-1>452     </font></a><span class="preproc"></span>
+<a name="453"><font size=-1>453     </font></a><span class="preproc">#define <a href="dictionary_E.html#17739">EXTI_RTSR_TR0</a>                   <a href="dictionary_E.html#7418">EXTI_RTSR_0</a></span>
+<a name="454"><font size=-1>454     </font></a><span class="preproc">#define <a href="dictionary_E.html#17740">EXTI_RTSR_TR1</a>                   <a href="dictionary_E.html#7420">EXTI_RTSR_1</a></span>
+<a name="455"><font size=-1>455     </font></a><span class="preproc">#define <a href="dictionary_E.html#17741">EXTI_RTSR_TR2</a>                   <a href="dictionary_E.html#7422">EXTI_RTSR_2</a></span>
+<a name="456"><font size=-1>456     </font></a><span class="preproc">#define <a href="dictionary_E.html#17742">EXTI_RTSR_TR3</a>                   <a href="dictionary_E.html#7424">EXTI_RTSR_3</a></span>
+<a name="457"><font size=-1>457     </font></a><span class="preproc">#define <a href="dictionary_E.html#17743">EXTI_RTSR_TR4</a>                   <a href="dictionary_E.html#7426">EXTI_RTSR_4</a></span>
+<a name="458"><font size=-1>458     </font></a><span class="preproc">#define <a href="dictionary_E.html#17744">EXTI_RTSR_TR5</a>                   <a href="dictionary_E.html#7428">EXTI_RTSR_5</a></span>
+<a name="459"><font size=-1>459     </font></a><span class="preproc">#define <a href="dictionary_E.html#17745">EXTI_RTSR_TR6</a>                   <a href="dictionary_E.html#7430">EXTI_RTSR_6</a></span>
+<a name="460"><font size=-1>460     </font></a><span class="preproc">#define <a href="dictionary_E.html#17746">EXTI_RTSR_TR7</a>                   <a href="dictionary_E.html#7432">EXTI_RTSR_7</a></span>
+<a name="461"><font size=-1>461     </font></a><span class="preproc">#define <a href="dictionary_E.html#17747">EXTI_RTSR_TR8</a>                   <a href="dictionary_E.html#7434">EXTI_RTSR_8</a></span>
+<a name="462"><font size=-1>462     </font></a><span class="preproc">#define <a href="dictionary_E.html#17748">EXTI_RTSR_TR9</a>                   <a href="dictionary_E.html#7436">EXTI_RTSR_9</a></span>
+<a name="463"><font size=-1>463     </font></a><span class="preproc">#define <a href="dictionary_E.html#17749">EXTI_RTSR_TR10</a>                  <a href="dictionary_E.html#7438">EXTI_RTSR_10</a></span>
+<a name="464"><font size=-1>464     </font></a><span class="preproc">#define <a href="dictionary_E.html#17750">EXTI_RTSR_TR11</a>                  <a href="dictionary_E.html#7440">EXTI_RTSR_11</a></span>
+<a name="465"><font size=-1>465     </font></a><span class="preproc">#define <a href="dictionary_E.html#17751">EXTI_RTSR_TR12</a>                  <a href="dictionary_E.html#7442">EXTI_RTSR_12</a></span>
+<a name="466"><font size=-1>466     </font></a><span class="preproc">#define <a href="dictionary_E.html#17752">EXTI_RTSR_TR13</a>                  <a href="dictionary_E.html#7444">EXTI_RTSR_13</a></span>
+<a name="467"><font size=-1>467     </font></a><span class="preproc">#define <a href="dictionary_E.html#17753">EXTI_RTSR_TR14</a>                  <a href="dictionary_E.html#7446">EXTI_RTSR_14</a></span>
+<a name="468"><font size=-1>468     </font></a><span class="preproc">#define <a href="dictionary_E.html#17754">EXTI_RTSR_TR15</a>                  <a href="dictionary_E.html#7448">EXTI_RTSR_15</a></span>
+<a name="469"><font size=-1>469     </font></a><span class="preproc">#define <a href="dictionary_E.html#17755">EXTI_RTSR_TR16</a>                  <a href="dictionary_E.html#7450">EXTI_RTSR_16</a></span>
+<a name="470"><font size=-1>470     </font></a><span class="preproc"></span>
+<a name="471"><font size=-1>471     </font></a><span class="preproc">#define <a href="dictionary_E.html#17756">EXTI_FTSR_TR0</a>                   <a href="dictionary_E.html#7462">EXTI_FTSR_0</a></span>
+<a name="472"><font size=-1>472     </font></a><span class="preproc">#define <a href="dictionary_E.html#17757">EXTI_FTSR_TR1</a>                   <a href="dictionary_E.html#7464">EXTI_FTSR_1</a></span>
+<a name="473"><font size=-1>473     </font></a><span class="preproc">#define <a href="dictionary_E.html#17758">EXTI_FTSR_TR2</a>                   <a href="dictionary_E.html#7466">EXTI_FTSR_2</a></span>
+<a name="474"><font size=-1>474     </font></a><span class="preproc">#define <a href="dictionary_E.html#17759">EXTI_FTSR_TR3</a>                   <a href="dictionary_E.html#7468">EXTI_FTSR_3</a></span>
+<a name="475"><font size=-1>475     </font></a><span class="preproc">#define <a href="dictionary_E.html#17760">EXTI_FTSR_TR4</a>                   <a href="dictionary_E.html#7470">EXTI_FTSR_4</a></span>
+<a name="476"><font size=-1>476     </font></a><span class="preproc">#define <a href="dictionary_E.html#17761">EXTI_FTSR_TR5</a>                   <a href="dictionary_E.html#7472">EXTI_FTSR_5</a></span>
+<a name="477"><font size=-1>477     </font></a><span class="preproc">#define <a href="dictionary_E.html#17762">EXTI_FTSR_TR6</a>                   <a href="dictionary_E.html#7474">EXTI_FTSR_6</a></span>
+<a name="478"><font size=-1>478     </font></a><span class="preproc">#define <a href="dictionary_E.html#17763">EXTI_FTSR_TR7</a>                   <a href="dictionary_E.html#7476">EXTI_FTSR_7</a></span>
+<a name="479"><font size=-1>479     </font></a><span class="preproc">#define <a href="dictionary_E.html#17764">EXTI_FTSR_TR8</a>                   <a href="dictionary_E.html#7478">EXTI_FTSR_8</a></span>
+<a name="480"><font size=-1>480     </font></a><span class="preproc">#define <a href="dictionary_E.html#17765">EXTI_FTSR_TR9</a>                   <a href="dictionary_E.html#7480">EXTI_FTSR_9</a></span>
+<a name="481"><font size=-1>481     </font></a><span class="preproc">#define <a href="dictionary_E.html#17766">EXTI_FTSR_TR10</a>                  <a href="dictionary_E.html#7482">EXTI_FTSR_10</a></span>
+<a name="482"><font size=-1>482     </font></a><span class="preproc">#define <a href="dictionary_E.html#17767">EXTI_FTSR_TR11</a>                  <a href="dictionary_E.html#7484">EXTI_FTSR_11</a></span>
+<a name="483"><font size=-1>483     </font></a><span class="preproc">#define <a href="dictionary_E.html#17768">EXTI_FTSR_TR12</a>                  <a href="dictionary_E.html#7486">EXTI_FTSR_12</a></span>
+<a name="484"><font size=-1>484     </font></a><span class="preproc">#define <a href="dictionary_E.html#17769">EXTI_FTSR_TR13</a>                  <a href="dictionary_E.html#7488">EXTI_FTSR_13</a></span>
+<a name="485"><font size=-1>485     </font></a><span class="preproc">#define <a href="dictionary_E.html#17770">EXTI_FTSR_TR14</a>                  <a href="dictionary_E.html#7490">EXTI_FTSR_14</a></span>
+<a name="486"><font size=-1>486     </font></a><span class="preproc">#define <a href="dictionary_E.html#17771">EXTI_FTSR_TR15</a>                  <a href="dictionary_E.html#7492">EXTI_FTSR_15</a></span>
+<a name="487"><font size=-1>487     </font></a><span class="preproc">#define <a href="dictionary_E.html#17772">EXTI_FTSR_TR16</a>                  <a href="dictionary_E.html#7494">EXTI_FTSR_16</a></span>
+<a name="488"><font size=-1>488     </font></a><span class="preproc"></span>
+<a name="489"><font size=-1>489     </font></a><span class="preproc">#define <a href="dictionary_E.html#17773">EXTI_SWIER_SWIER0</a>               <a href="dictionary_E.html#7506">EXTI_SWIER_0</a></span>
+<a name="490"><font size=-1>490     </font></a><span class="preproc">#define <a href="dictionary_E.html#17774">EXTI_SWIER_SWIER1</a>               <a href="dictionary_E.html#7508">EXTI_SWIER_1</a></span>
+<a name="491"><font size=-1>491     </font></a><span class="preproc">#define <a href="dictionary_E.html#17775">EXTI_SWIER_SWIER2</a>               <a href="dictionary_E.html#7510">EXTI_SWIER_2</a></span>
+<a name="492"><font size=-1>492     </font></a><span class="preproc">#define <a href="dictionary_E.html#17776">EXTI_SWIER_SWIER3</a>               <a href="dictionary_E.html#7512">EXTI_SWIER_3</a></span>
+<a name="493"><font size=-1>493     </font></a><span class="preproc">#define <a href="dictionary_E.html#17777">EXTI_SWIER_SWIER4</a>               <a href="dictionary_E.html#7514">EXTI_SWIER_4</a></span>
+<a name="494"><font size=-1>494     </font></a><span class="preproc">#define <a href="dictionary_E.html#17778">EXTI_SWIER_SWIER5</a>               <a href="dictionary_E.html#7516">EXTI_SWIER_5</a></span>
+<a name="495"><font size=-1>495     </font></a><span class="preproc">#define <a href="dictionary_E.html#17779">EXTI_SWIER_SWIER6</a>               <a href="dictionary_E.html#7518">EXTI_SWIER_6</a></span>
+<a name="496"><font size=-1>496     </font></a><span class="preproc">#define <a href="dictionary_E.html#17780">EXTI_SWIER_SWIER7</a>               <a href="dictionary_E.html#7520">EXTI_SWIER_7</a></span>
+<a name="497"><font size=-1>497     </font></a><span class="preproc">#define <a href="dictionary_E.html#17781">EXTI_SWIER_SWIER8</a>               <a href="dictionary_E.html#7522">EXTI_SWIER_8</a></span>
+<a name="498"><font size=-1>498     </font></a><span class="preproc">#define <a href="dictionary_E.html#17782">EXTI_SWIER_SWIER9</a>               <a href="dictionary_E.html#7524">EXTI_SWIER_9</a></span>
+<a name="499"><font size=-1>499     </font></a><span class="preproc">#define <a href="dictionary_E.html#17783">EXTI_SWIER_SWIER10</a>              <a href="dictionary_E.html#7526">EXTI_SWIER_10</a></span>
+<a name="500"><font size=-1>500     </font></a><span class="preproc">#define <a href="dictionary_E.html#17784">EXTI_SWIER_SWIER11</a>              <a href="dictionary_E.html#7528">EXTI_SWIER_11</a></span>
+<a name="501"><font size=-1>501     </font></a><span class="preproc">#define <a href="dictionary_E.html#17785">EXTI_SWIER_SWIER12</a>              <a href="dictionary_E.html#7530">EXTI_SWIER_12</a></span>
+<a name="502"><font size=-1>502     </font></a><span class="preproc">#define <a href="dictionary_E.html#17786">EXTI_SWIER_SWIER13</a>              <a href="dictionary_E.html#7532">EXTI_SWIER_13</a></span>
+<a name="503"><font size=-1>503     </font></a><span class="preproc">#define <a href="dictionary_E.html#17787">EXTI_SWIER_SWIER14</a>              <a href="dictionary_E.html#7534">EXTI_SWIER_14</a></span>
+<a name="504"><font size=-1>504     </font></a><span class="preproc">#define <a href="dictionary_E.html#17788">EXTI_SWIER_SWIER15</a>              <a href="dictionary_E.html#7536">EXTI_SWIER_15</a></span>
+<a name="505"><font size=-1>505     </font></a><span class="preproc">#define <a href="dictionary_E.html#17789">EXTI_SWIER_SWIER16</a>              <a href="dictionary_E.html#7538">EXTI_SWIER_16</a></span>
+<a name="506"><font size=-1>506     </font></a><span class="preproc"></span>
+<a name="507"><font size=-1>507     </font></a><span class="preproc">#define <a href="dictionary_E.html#17790">EXTI_PR_PR0</a>                     <a href="dictionary_E.html#7550">EXTI_PR_0</a></span>
+<a name="508"><font size=-1>508     </font></a><span class="preproc">#define <a href="dictionary_E.html#17791">EXTI_PR_PR1</a>                     <a href="dictionary_E.html#7552">EXTI_PR_1</a></span>
+<a name="509"><font size=-1>509     </font></a><span class="preproc">#define <a href="dictionary_E.html#17792">EXTI_PR_PR2</a>                     <a href="dictionary_E.html#7554">EXTI_PR_2</a></span>
+<a name="510"><font size=-1>510     </font></a><span class="preproc">#define <a href="dictionary_E.html#17793">EXTI_PR_PR3</a>                     <a href="dictionary_E.html#7556">EXTI_PR_3</a></span>
+<a name="511"><font size=-1>511     </font></a><span class="preproc">#define <a href="dictionary_E.html#17794">EXTI_PR_PR4</a>                     <a href="dictionary_E.html#7558">EXTI_PR_4</a></span>
+<a name="512"><font size=-1>512     </font></a><span class="preproc">#define <a href="dictionary_E.html#17795">EXTI_PR_PR5</a>                     <a href="dictionary_E.html#7560">EXTI_PR_5</a></span>
+<a name="513"><font size=-1>513     </font></a><span class="preproc">#define <a href="dictionary_E.html#17796">EXTI_PR_PR6</a>                     <a href="dictionary_E.html#7562">EXTI_PR_6</a></span>
+<a name="514"><font size=-1>514     </font></a><span class="preproc">#define <a href="dictionary_E.html#17797">EXTI_PR_PR7</a>                     <a href="dictionary_E.html#7564">EXTI_PR_7</a></span>
+<a name="515"><font size=-1>515     </font></a><span class="preproc">#define <a href="dictionary_E.html#17798">EXTI_PR_PR8</a>                     <a href="dictionary_E.html#7566">EXTI_PR_8</a></span>
+<a name="516"><font size=-1>516     </font></a><span class="preproc">#define <a href="dictionary_E.html#17799">EXTI_PR_PR9</a>                     <a href="dictionary_E.html#7568">EXTI_PR_9</a></span>
+<a name="517"><font size=-1>517     </font></a><span class="preproc">#define <a href="dictionary_E.html#17800">EXTI_PR_PR10</a>                    <a href="dictionary_E.html#7570">EXTI_PR_10</a></span>
+<a name="518"><font size=-1>518     </font></a><span class="preproc">#define <a href="dictionary_E.html#17801">EXTI_PR_PR11</a>                    <a href="dictionary_E.html#7572">EXTI_PR_11</a></span>
+<a name="519"><font size=-1>519     </font></a><span class="preproc">#define <a href="dictionary_E.html#17802">EXTI_PR_PR12</a>                    <a href="dictionary_E.html#7574">EXTI_PR_12</a></span>
+<a name="520"><font size=-1>520     </font></a><span class="preproc">#define <a href="dictionary_E.html#17803">EXTI_PR_PR13</a>                    <a href="dictionary_E.html#7576">EXTI_PR_13</a></span>
+<a name="521"><font size=-1>521     </font></a><span class="preproc">#define <a href="dictionary_E.html#17804">EXTI_PR_PR14</a>                    <a href="dictionary_E.html#7578">EXTI_PR_14</a></span>
+<a name="522"><font size=-1>522     </font></a><span class="preproc">#define <a href="dictionary_E.html#17805">EXTI_PR_PR15</a>                    <a href="dictionary_E.html#7580">EXTI_PR_15</a></span>
+<a name="523"><font size=-1>523     </font></a><span class="preproc">#define <a href="dictionary_E.html#17806">EXTI_PR_PR16</a>                    <a href="dictionary_E.html#7582">EXTI_PR_16</a></span>
+<a name="524"><font size=-1>524     </font></a><span class="preproc"></span>
+<a name="525"><font size=-1>525     </font></a><span class="preproc"></span>
+<a name="526"><font size=-1>526     </font></a><span class="preproc"></span>
+<a name="527"><font size=-1>527     </font></a><span class="preproc">#define <a href="dictionary_E.html#17807">EXTI_IMR_MR19</a>                   <a href="dictionary_E.html#7368">EXTI_IMR_19</a></span>
+<a name="528"><font size=-1>528     </font></a><span class="preproc"></span>
+<a name="529"><font size=-1>529     </font></a><span class="preproc"></span>
+<a name="530"><font size=-1>530     </font></a><span class="preproc"></span>
+<a name="531"><font size=-1>531     </font></a><span class="preproc"></span>
+<a name="532"><font size=-1>532     </font></a><span class="preproc">#define <a href="dictionary_E.html#17808">EXTI_IMR_MR24</a>               <a href="dictionary_E.html#7372">EXTI_IMR_24</a></span>
+<a name="533"><font size=-1>533     </font></a><span class="preproc"></span>
+<a name="534"><font size=-1>534     </font></a><span class="preproc"></span>
+<a name="535"><font size=-1>535     </font></a><span class="preproc"></span>
+<a name="536"><font size=-1>536     </font></a><span class="preproc">#define <a href="dictionary_E.html#17809">EXTI_EMR_MR19</a>                   <a href="dictionary_E.html#7412">EXTI_EMR_19</a></span>
+<a name="537"><font size=-1>537     </font></a><span class="preproc"></span>
+<a name="538"><font size=-1>538     </font></a><span class="preproc"></span>
+<a name="539"><font size=-1>539     </font></a><span class="preproc"></span>
+<a name="540"><font size=-1>540     </font></a><span class="preproc"></span>
+<a name="541"><font size=-1>541     </font></a><span class="preproc">#define <a href="dictionary_E.html#17810">EXTI_EMR_MR24</a>               <a href="dictionary_E.html#7416">EXTI_EMR_24</a></span>
+<a name="542"><font size=-1>542     </font></a><span class="preproc"></span>
+<a name="543"><font size=-1>543     </font></a><span class="preproc"></span>
+<a name="544"><font size=-1>544     </font></a><span class="preproc"></span>
+<a name="545"><font size=-1>545     </font></a><span class="preproc">#define <a href="dictionary_E.html#17811">EXTI_RTSR_MR19</a>                  <a href="dictionary_E.html#7456">EXTI_RTSR_19</a></span>
+<a name="546"><font size=-1>546     </font></a><span class="preproc"></span>
+<a name="547"><font size=-1>547     </font></a><span class="preproc"></span>
+<a name="548"><font size=-1>548     </font></a><span class="preproc"></span>
+<a name="549"><font size=-1>549     </font></a><span class="preproc"></span>
+<a name="550"><font size=-1>550     </font></a><span class="preproc">#define <a href="dictionary_E.html#17812">EXTI_RTSR_MR24</a>              <a href="dictionary_E.html#7460">EXTI_RTSR_24</a></span>
+<a name="551"><font size=-1>551     </font></a><span class="preproc"></span>
+<a name="552"><font size=-1>552     </font></a><span class="preproc"></span>
+<a name="553"><font size=-1>553     </font></a><span class="preproc"></span>
+<a name="554"><font size=-1>554     </font></a><span class="preproc">#define <a href="dictionary_E.html#17813">EXTI_FTSR_MR19</a>                  <a href="dictionary_E.html#7500">EXTI_FTSR_19</a></span>
+<a name="555"><font size=-1>555     </font></a><span class="preproc"></span>
+<a name="556"><font size=-1>556     </font></a><span class="preproc"></span>
+<a name="557"><font size=-1>557     </font></a><span class="preproc"></span>
+<a name="558"><font size=-1>558     </font></a><span class="preproc"></span>
+<a name="559"><font size=-1>559     </font></a><span class="preproc">#define <a href="dictionary_E.html#17814">EXTI_FTSR_MR24</a>              <a href="dictionary_E.html#7504">EXTI_FTSR_24</a></span>
+<a name="560"><font size=-1>560     </font></a><span class="preproc"></span>
+<a name="561"><font size=-1>561     </font></a><span class="preproc"></span>
+<a name="562"><font size=-1>562     </font></a><span class="preproc"></span>
+<a name="563"><font size=-1>563     </font></a><span class="preproc">#define <a href="dictionary_E.html#17815">EXTI_SWIER_MR19</a>                 <a href="dictionary_E.html#7544">EXTI_SWIER_19</a></span>
+<a name="564"><font size=-1>564     </font></a><span class="preproc"></span>
+<a name="565"><font size=-1>565     </font></a><span class="preproc"></span>
+<a name="566"><font size=-1>566     </font></a><span class="preproc"></span>
+<a name="567"><font size=-1>567     </font></a><span class="preproc"></span>
+<a name="568"><font size=-1>568     </font></a><span class="preproc">#define <a href="dictionary_E.html#17816">EXTI_SWIER_MR24</a>             <a href="dictionary_E.html#7548">EXTI_SWIER_24</a></span>
+<a name="569"><font size=-1>569     </font></a><span class="preproc"></span>
+<a name="570"><font size=-1>570     </font></a><span class="preproc"></span>
+<a name="571"><font size=-1>571     </font></a><span class="preproc"></span>
+<a name="572"><font size=-1>572     </font></a><span class="preproc">#define <a href="dictionary_E.html#17817">EXTI_PR_MR19</a>                    <a href="dictionary_E.html#7588">EXTI_PR_19</a></span>
+<a name="573"><font size=-1>573     </font></a><span class="preproc"></span>
+<a name="574"><font size=-1>574     </font></a><span class="preproc"></span>
+<a name="575"><font size=-1>575     </font></a><span class="preproc"></span>
+<a name="576"><font size=-1>576     </font></a><span class="preproc"></span>
+<a name="577"><font size=-1>577     </font></a><span class="preproc">#define <a href="dictionary_E.html#17818">EXTI_PR_MR24</a>                <a href="dictionary_E.html#7592">EXTI_PR_24</a></span>
+<a name="578"><font size=-1>578     </font></a><span class="preproc"></span>
+<a name="579"><font size=-1>579     </font></a><span class="preproc"></span>
+<a name="580"><font size=-1>580     </font></a><span class="preproc"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="581"><font size=-1>581     </font></a><span class="comment">/// @brief Version compatibility definition</span>
+<a name="582"><font size=-1>582     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="583"><font size=-1>583     </font></a><span class="comment"></span>
+<a name="584"><font size=-1>584     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_G.html#12042">GPIO_Mode_IN_FLOATING</a>           </span><span class="default">GPIO_Mode_FLOATING</span>
+<a name="585"><font size=-1>585     </font></a><span class="default"></span>
+<a name="586"><font size=-1>586     </font></a><span class="default"></span>
+<a name="587"><font size=-1>587     </font></a><span class="default"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="588"><font size=-1>588     </font></a><span class="comment">/// @brief Version compatibility definition</span>
+<a name="589"><font size=-1>589     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="590"><font size=-1>590     </font></a><span class="comment">//Bit</span>
+<a name="591"><font size=-1>591     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_I.html#17819">I2C_CON_MASTER_MODE</a>             <a href="dictionary_I.html#8061">I2C_CR_MASTER</a></span>
+<a name="592"><font size=-1>592     </font></a><span class="preproc">#define <a href="dictionary_I.html#17820">I2C_CON_SPEED</a>                   <a href="dictionary_I.html#8063">I2C_CR_SPEED</a></span>
+<a name="593"><font size=-1>593     </font></a><span class="preproc">#define <a href="dictionary_I.html#17821">I2C_CON_SPEED_STANDARD</a>          <a href="dictionary_I.html#8064">I2C_CR_STD</a></span>
+<a name="594"><font size=-1>594     </font></a><span class="preproc">#define <a href="dictionary_I.html#17822">I2C_CON_SPEED_FAST</a>              <a href="dictionary_I.html#8065">I2C_CR_FAST</a></span>
+<a name="595"><font size=-1>595     </font></a><span class="preproc">#define <a href="dictionary_I.html#17823">I2C_CON_10BITADDR_SLAVE</a>         <a href="dictionary_I.html#8067">I2C_CR_SLAVE10</a></span>
+<a name="596"><font size=-1>596     </font></a><span class="preproc">#define <a href="dictionary_I.html#17824">I2C_CON_10BITADDR_MASTER</a>        <a href="dictionary_I.html#8069">I2C_CR_MASTER10</a></span>
+<a name="597"><font size=-1>597     </font></a><span class="preproc">#define <a href="dictionary_I.html#17825">I2C_CON_RESTART_EN</a>              <a href="dictionary_I.html#8071">I2C_CR_REPEN</a></span>
+<a name="598"><font size=-1>598     </font></a><span class="preproc">#define <a href="dictionary_I.html#17826">I2C_CON_SLAVE_DISABLE</a>           <a href="dictionary_I.html#8073">I2C_CR_SLAVEDIS</a></span>
+<a name="599"><font size=-1>599     </font></a><span class="preproc">#define <a href="dictionary_I.html#17827">I2C_CON_STOP_DET_IFADDRESSED</a>    <a href="dictionary_I.html#8075">I2C_CR_STOPINT</a></span>
+<a name="600"><font size=-1>600     </font></a><span class="preproc">#define <a href="dictionary_I.html#17828">I2C_CON_EMPTY_CTRL</a>              <a href="dictionary_I.html#8077">I2C_CR_EMPINT</a></span>
+<a name="601"><font size=-1>601     </font></a><span class="preproc">#define <a href="dictionary_I.html#17829">I2C_CON_STOP</a>                    <a href="dictionary_I.html#8079">I2C_CR_STOP</a></span>
+<a name="602"><font size=-1>602     </font></a><span class="preproc">#define <a href="dictionary_I.html#17830">I2C_CON_RESTART</a>                 <a href="dictionary_I.html#8081">I2C_CR_RESTART</a></span>
+<a name="603"><font size=-1>603     </font></a><span class="preproc"></span>
+<a name="604"><font size=-1>604     </font></a><span class="preproc">#define <a href="dictionary_I.html#17831">I2C_TAR_TAR</a>                     <a href="dictionary_I.html#8083">I2C_TAR_ADDR</a></span>
+<a name="605"><font size=-1>605     </font></a><span class="preproc">#define <a href="dictionary_I.html#17832">I2C_TAR_GC_OR_START</a>             <a href="dictionary_I.html#8085">I2C_TAR_GC</a></span>
+<a name="606"><font size=-1>606     </font></a><span class="preproc">#define <a href="dictionary_I.html#17833">I2C_SAR_SAR</a>                     <a href="dictionary_I.html#8089">I2C_SAR_ADDR</a></span>
+<a name="607"><font size=-1>607     </font></a><span class="preproc">#define <a href="dictionary_I.html#17834">I2C_DATA_CMD_DAT</a>                <a href="dictionary_I.html#8091">I2C_DR_DAT</a></span>
+<a name="608"><font size=-1>608     </font></a><span class="preproc">#define <a href="dictionary_I.html#17835">I2C_DATA_CMD_CMD</a>                <a href="dictionary_I.html#8093">I2C_DR_CMD</a></span>
+<a name="609"><font size=-1>609     </font></a><span class="preproc">#define <a href="dictionary_I.html#17836">I2C_DATA_CMD_STOP</a>               <a href="dictionary_I.html#8095">I2C_DR_STOP</a></span>
+<a name="610"><font size=-1>610     </font></a><span class="preproc">#define <a href="dictionary_I.html#17837">I2C_DATA_CMD_RESTART</a>            <a href="dictionary_I.html#8097">I2C_DR_RESTART</a></span>
+<a name="611"><font size=-1>611     </font></a><span class="preproc"></span>
+<a name="612"><font size=-1>612     </font></a><span class="preproc">#define <a href="dictionary_I.html#17838">I2C_SS_SCL_HCNT</a>                 <a href="dictionary_I.html#8099">I2C_SSHR_CNT</a></span>
+<a name="613"><font size=-1>613     </font></a><span class="preproc">#define <a href="dictionary_I.html#17839">I2C_SS_SCL_LCNT</a>                 <a href="dictionary_I.html#8101">I2C_SSLR_CNT</a></span>
+<a name="614"><font size=-1>614     </font></a><span class="preproc">#define <a href="dictionary_I.html#17840">I2C_FS_SCL_HCNT</a>                 <a href="dictionary_I.html#8103">I2C_FSHR_CNT</a></span>
+<a name="615"><font size=-1>615     </font></a><span class="preproc">#define <a href="dictionary_I.html#17841">I2C_FS_SCL_LCNT</a>                 <a href="dictionary_I.html#8105">I2C_FSLR_CNT</a></span>
+<a name="616"><font size=-1>616     </font></a><span class="preproc"></span>
+<a name="617"><font size=-1>617     </font></a><span class="preproc">#define <a href="dictionary_I.html#17842">I2C_INTR_STAT_RX_UNDER</a>          <a href="dictionary_I.html#8107">I2C_ISR_RX_UNDER</a></span>
+<a name="618"><font size=-1>618     </font></a><span class="preproc">#define <a href="dictionary_I.html#17843">I2C_INTR_STAT_RX_OVER</a>           <a href="dictionary_I.html#8109">I2C_ISR_RX_OVER</a></span>
+<a name="619"><font size=-1>619     </font></a><span class="preproc">#define <a href="dictionary_I.html#17844">I2C_INTR_STAT_RX_FULL</a>           <a href="dictionary_I.html#8111">I2C_ISR_RX_FULL</a></span>
+<a name="620"><font size=-1>620     </font></a><span class="preproc">#define <a href="dictionary_I.html#17845">I2C_INTR_STAT_TX_OVER</a>           <a href="dictionary_I.html#8113">I2C_ISR_TX_OVER</a></span>
+<a name="621"><font size=-1>621     </font></a><span class="preproc">#define <a href="dictionary_I.html#17846">I2C_INTR_STAT_TX_EMPTY</a>          <a href="dictionary_I.html#8115">I2C_ISR_TX_EMPTY</a></span>
+<a name="622"><font size=-1>622     </font></a><span class="preproc">#define <a href="dictionary_I.html#17847">I2C_INTR_STAT_RX_REQ</a>            <a href="dictionary_I.html#8117">I2C_ISR_RX_REQ</a></span>
+<a name="623"><font size=-1>623     </font></a><span class="preproc">#define <a href="dictionary_I.html#17848">I2C_INTR_STAT_TX_ABRT</a>           <a href="dictionary_I.html#8119">I2C_ISR_TX_ABRT</a></span>
+<a name="624"><font size=-1>624     </font></a><span class="preproc">#define <a href="dictionary_I.html#17849">I2C_INTR_STAT_RX_DONE</a>           <a href="dictionary_I.html#8121">I2C_ISR_RX_DONE</a></span>
+<a name="625"><font size=-1>625     </font></a><span class="preproc">#define <a href="dictionary_I.html#17850">I2C_INTR_STAT_ACTIVITY</a>          <a href="dictionary_I.html#8123">I2C_ISR_ACTIV</a></span>
+<a name="626"><font size=-1>626     </font></a><span class="preproc">#define <a href="dictionary_I.html#17851">I2C_INTR_STAT_STOP_DET</a>          <a href="dictionary_I.html#8125">I2C_ISR_STOP</a></span>
+<a name="627"><font size=-1>627     </font></a><span class="preproc">#define <a href="dictionary_I.html#17852">I2C_INTR_STAT_START_DET</a>         <a href="dictionary_I.html#8127">I2C_ISR_START</a></span>
+<a name="628"><font size=-1>628     </font></a><span class="preproc">#define <a href="dictionary_I.html#17853">I2C_INTR_STAT_GEN_CALL</a>          <a href="dictionary_I.html#8129">I2C_ISR_GC</a></span>
+<a name="629"><font size=-1>629     </font></a><span class="preproc">#define <a href="dictionary_I.html#17854">I2C_INTR_STAT_RESTART_DET</a>       <a href="dictionary_I.html#8131">I2C_ISR_RESTART</a></span>
+<a name="630"><font size=-1>630     </font></a><span class="preproc">#define <a href="dictionary_I.html#17855">I2C_INTR_STAT_MST_ON_HOLD</a>       <a href="dictionary_I.html#8133">I2C_ISR_HOLD</a></span>
+<a name="631"><font size=-1>631     </font></a><span class="preproc"></span>
+<a name="632"><font size=-1>632     </font></a><span class="preproc">#define <a href="dictionary_I.html#17856">I2C_INTR_MASK_RX_UNDER</a>          <a href="dictionary_I.html#8135">I2C_IMR_RX_UNDER</a></span>
+<a name="633"><font size=-1>633     </font></a><span class="preproc">#define <a href="dictionary_I.html#17857">I2C_INTR_MASK_RX_OVER</a>           <a href="dictionary_I.html#8137">I2C_IMR_RX_OVER</a></span>
+<a name="634"><font size=-1>634     </font></a><span class="preproc">#define <a href="dictionary_I.html#17858">I2C_INTR_MASK_RX_FULL</a>           <a href="dictionary_I.html#8139">I2C_IMR_RX_FULL</a></span>
+<a name="635"><font size=-1>635     </font></a><span class="preproc">#define <a href="dictionary_I.html#17859">I2C_INTR_MASK_TX_OVER</a>           <a href="dictionary_I.html#8141">I2C_IMR_TX_OVER</a></span>
+<a name="636"><font size=-1>636     </font></a><span class="preproc">#define <a href="dictionary_I.html#17860">I2C_INTR_MASK_TX_EMPTY</a>          <a href="dictionary_I.html#8143">I2C_IMR_TX_EMPTY</a></span>
+<a name="637"><font size=-1>637     </font></a><span class="preproc">#define <a href="dictionary_I.html#17861">I2C_INTR_MASK_RX_REQ</a>            <a href="dictionary_I.html#8145">I2C_IMR_RX_REQ</a></span>
+<a name="638"><font size=-1>638     </font></a><span class="preproc">#define <a href="dictionary_I.html#17862">I2C_INTR_MASK_TX_ABRT</a>           <a href="dictionary_I.html#8147">I2C_IMR_TX_ABRT</a></span>
+<a name="639"><font size=-1>639     </font></a><span class="preproc">#define <a href="dictionary_I.html#17863">I2C_INTR_MASK_RX_DONE</a>           <a href="dictionary_I.html#8149">I2C_IMR_RX_DONE</a></span>
+<a name="640"><font size=-1>640     </font></a><span class="preproc">#define <a href="dictionary_I.html#17864">I2C_INTR_MASK_ACTIVITY</a>          <a href="dictionary_I.html#8151">I2C_IMR_ACTIV</a></span>
+<a name="641"><font size=-1>641     </font></a><span class="preproc">#define <a href="dictionary_I.html#17865">I2C_INTR_MASK_STOP_DET</a>          <a href="dictionary_I.html#8153">I2C_IMR_STOP</a></span>
+<a name="642"><font size=-1>642     </font></a><span class="preproc">#define <a href="dictionary_I.html#17866">I2C_INTR_MASK_START_DET</a>         <a href="dictionary_I.html#8155">I2C_IMR_START</a></span>
+<a name="643"><font size=-1>643     </font></a><span class="preproc">#define <a href="dictionary_I.html#17867">I2C_INTR_MASK_GEN_CALL</a>          <a href="dictionary_I.html#8157">I2C_IMR_GC</a></span>
+<a name="644"><font size=-1>644     </font></a><span class="preproc">#define <a href="dictionary_I.html#17868">I2C_INTR_MASK_RESTART_DET</a>       <a href="dictionary_I.html#8159">I2C_IMR_RESTART</a></span>
+<a name="645"><font size=-1>645     </font></a><span class="preproc">#define <a href="dictionary_I.html#17869">I2C_INTR_MASK_MST_ON_HOLD</a>       <a href="dictionary_I.html#8161">I2C_IMR_HOLD</a></span>
+<a name="646"><font size=-1>646     </font></a><span class="preproc"></span>
+<a name="647"><font size=-1>647     </font></a><span class="preproc">#define <a href="dictionary_I.html#17870">I2C_RAW_INTR_MASK_RX_UNDER</a>      <a href="dictionary_I.html#8163">I2C_RAWISR_RX_UNDER</a></span>
+<a name="648"><font size=-1>648     </font></a><span class="preproc">#define <a href="dictionary_I.html#17871">I2C_RAW_INTR_MASK_RX_OVER</a>       <a href="dictionary_I.html#8165">I2C_RAWISR_RX_OVER</a></span>
+<a name="649"><font size=-1>649     </font></a><span class="preproc">#define <a href="dictionary_I.html#17872">I2C_RAW_INTR_MASK_RX_FULL</a>       <a href="dictionary_I.html#8167">I2C_RAWISR_RX_FULL</a></span>
+<a name="650"><font size=-1>650     </font></a><span class="preproc">#define <a href="dictionary_I.html#17873">I2C_RAW_INTR_MASK_TX_OVER</a>       <a href="dictionary_I.html#8169">I2C_RAWISR_TX_OVER</a></span>
+<a name="651"><font size=-1>651     </font></a><span class="preproc">#define <a href="dictionary_I.html#17874">I2C_RAW_INTR_MASK_TX_EMPTY</a>      <a href="dictionary_I.html#8171">I2C_RAWISR_TX_EMPTY</a></span>
+<a name="652"><font size=-1>652     </font></a><span class="preproc">#define <a href="dictionary_I.html#17875">I2C_RAW_INTR_MASK_RX_REQ</a>        <a href="dictionary_I.html#8173">I2C_RAWISR_RX_REQ</a></span>
+<a name="653"><font size=-1>653     </font></a><span class="preproc">#define <a href="dictionary_I.html#17876">I2C_RAW_INTR_MASK_TX_ABRT</a>       <a href="dictionary_I.html#8175">I2C_RAWISR_TX_ABRT</a></span>
+<a name="654"><font size=-1>654     </font></a><span class="preproc">#define <a href="dictionary_I.html#17877">I2C_RAW_INTR_MASK_RX_DONE</a>       <a href="dictionary_I.html#8177">I2C_RAWISR_RX_DONE</a></span>
+<a name="655"><font size=-1>655     </font></a><span class="preproc">#define <a href="dictionary_I.html#17878">I2C_RAW_INTR_MASK_ACTIVITY</a>      <a href="dictionary_I.html#8179">I2C_RAWISR_ACTIV</a></span>
+<a name="656"><font size=-1>656     </font></a><span class="preproc">#define <a href="dictionary_I.html#17879">I2C_RAW_INTR_MASK_STOP_DET</a>      <a href="dictionary_I.html#8181">I2C_RAWISR_STOP</a></span>
+<a name="657"><font size=-1>657     </font></a><span class="preproc">#define <a href="dictionary_I.html#17880">I2C_RAW_INTR_MASK_START_DET</a>     <a href="dictionary_I.html#8183">I2C_RAWISR_START</a></span>
+<a name="658"><font size=-1>658     </font></a><span class="preproc">#define <a href="dictionary_I.html#17881">I2C_RAW_INTR_MASK_GEN_CALL</a>      <a href="dictionary_I.html#8185">I2C_RAWISR_GC</a></span>
+<a name="659"><font size=-1>659     </font></a><span class="preproc">#define <a href="dictionary_I.html#17882">I2C_RAW_INTR_MASK_RESTART_DET</a>   <a href="dictionary_I.html#8187">I2C_RAWISR_RESTART</a></span>
+<a name="660"><font size=-1>660     </font></a><span class="preproc">#define <a href="dictionary_I.html#17883">I2C_RAW_INTR_MASK_MST_ON_HOLD</a>   <a href="dictionary_I.html#8189">I2C_RAWISR_HOLD</a></span>
+<a name="661"><font size=-1>661     </font></a><span class="preproc"></span>
+<a name="662"><font size=-1>662     </font></a><span class="preproc">#define <a href="dictionary_I.html#17884">I2C_RX_TL</a>                       <a href="dictionary_I.html#8191">I2C_RXTLR_TL</a></span>
+<a name="663"><font size=-1>663     </font></a><span class="preproc">#define <a href="dictionary_I.html#17885">I2C_TX_TL</a>                       <a href="dictionary_I.html#8193">I2C_TXTLR_TL</a></span>
+<a name="664"><font size=-1>664     </font></a><span class="preproc"></span>
+<a name="665"><font size=-1>665     </font></a><span class="preproc">#define <a href="dictionary_I.html#17886">I2C_CLR_INTR</a>                    <a href="dictionary_I.html#8195">I2C_ICR</a></span>
+<a name="666"><font size=-1>666     </font></a><span class="preproc">#define <a href="dictionary_I.html#17887">I2C_CLR_RX_UNDER</a>                <a href="dictionary_I.html#8197">I2C_RX_UNDER</a></span>
+<a name="667"><font size=-1>667     </font></a><span class="preproc">#define <a href="dictionary_I.html#17888">I2C_CLR_RX_OVER</a>                 <a href="dictionary_I.html#8199">I2C_RX_OVER</a></span>
+<a name="668"><font size=-1>668     </font></a><span class="preproc">#define <a href="dictionary_I.html#17889">I2C_CLR_TX_OVER</a>                 <a href="dictionary_I.html#8201">I2C_TX_OVER</a></span>
+<a name="669"><font size=-1>669     </font></a><span class="preproc">#define <a href="dictionary_I.html#17890">I2C_RX_REQ</a>                      <a href="dictionary_I.html#8203">I2C_RD_REQ</a></span>
+<a name="670"><font size=-1>670     </font></a><span class="preproc">#define <a href="dictionary_I.html#17891">I2C_CLR_RX_REQ</a>                  <a href="dictionary_I.html#8203">I2C_RD_REQ</a></span>
+<a name="671"><font size=-1>671     </font></a><span class="preproc">#define <a href="dictionary_I.html#17892">I2C_CLR_TX_ABRT</a>                 <a href="dictionary_I.html#8205">I2C_TX_ABRT</a></span>
+<a name="672"><font size=-1>672     </font></a><span class="preproc">#define <a href="dictionary_I.html#17893">I2C_CLR_RX_DONE</a>                 <a href="dictionary_I.html#8207">I2C_RX_DONE</a></span>
+<a name="673"><font size=-1>673     </font></a><span class="preproc">#define <a href="dictionary_I.html#17894">I2C_CLR_ACTIVITY</a>                <a href="dictionary_I.html#8209">I2C_ACTIV</a></span>
+<a name="674"><font size=-1>674     </font></a><span class="preproc">#define <a href="dictionary_I.html#17895">I2C_CLR_STOP_DET</a>                <a href="dictionary_I.html#8211">I2C_STOP</a></span>
+<a name="675"><font size=-1>675     </font></a><span class="preproc">#define <a href="dictionary_I.html#17896">I2C_CLR_START_DET</a>               <a href="dictionary_I.html#8213">I2C_START</a></span>
+<a name="676"><font size=-1>676     </font></a><span class="preproc">#define <a href="dictionary_I.html#17897">I2C_CLR_GEN_CALL</a>                <a href="dictionary_I.html#8215">I2C_GC</a></span>
+<a name="677"><font size=-1>677     </font></a><span class="preproc"></span>
+<a name="678"><font size=-1>678     </font></a><span class="preproc">#define <a href="dictionary_I.html#17898">I2C_ENABLE_ENABLE</a>               <a href="dictionary_I.html#8217">I2C_ENR_ENABLE</a></span>
+<a name="679"><font size=-1>679     </font></a><span class="preproc">#define <a href="dictionary_I.html#17899">I2C_ENABLE_ABORT</a>                <a href="dictionary_I.html#8219">I2C_ENR_ABORT</a></span>
+<a name="680"><font size=-1>680     </font></a><span class="preproc"></span>
+<a name="681"><font size=-1>681     </font></a><span class="preproc">#define <a href="dictionary_I.html#17900">I2C_STATUS_ACTIVITY</a>             <a href="dictionary_I.html#8221">I2C_SR_ACTIV</a></span>
+<a name="682"><font size=-1>682     </font></a><span class="preproc">#define <a href="dictionary_I.html#17901">I2C_STATUS_TFNF</a>                 <a href="dictionary_I.html#8223">I2C_SR_TFNF</a></span>
+<a name="683"><font size=-1>683     </font></a><span class="preproc">#define <a href="dictionary_I.html#17902">I2C_STATUS_TFE</a>                  <a href="dictionary_I.html#8225">I2C_SR_TFE</a></span>
+<a name="684"><font size=-1>684     </font></a><span class="preproc">#define <a href="dictionary_I.html#17903">I2C_STATUS_RFNE</a>                 <a href="dictionary_I.html#8227">I2C_SR_RFNE</a></span>
+<a name="685"><font size=-1>685     </font></a><span class="preproc">#define <a href="dictionary_I.html#17904">I2C_STATUS_RFF</a>                  <a href="dictionary_I.html#8229">I2C_SR_RFF</a></span>
+<a name="686"><font size=-1>686     </font></a><span class="preproc">#define <a href="dictionary_I.html#17905">I2C_STATUS_MST_ACTIVITY</a>         <a href="dictionary_I.html#8231">I2C_SR_MST_ACTIV</a></span>
+<a name="687"><font size=-1>687     </font></a><span class="preproc">#define <a href="dictionary_I.html#17906">I2C_STATUS_SLV_ACTIVITY</a>         <a href="dictionary_I.html#8233">I2C_SR_SLV_ACTIV</a></span>
+<a name="688"><font size=-1>688     </font></a><span class="preproc"></span>
+<a name="689"><font size=-1>689     </font></a><span class="preproc">#define <a href="dictionary_I.html#17907">I2C_TXFLR</a>                       <a href="dictionary_I.html#8235">I2C_TXFLR_CNT</a></span>
+<a name="690"><font size=-1>690     </font></a><span class="preproc">#define <a href="dictionary_I.html#17908">I2C_RXFLR</a>                       <a href="dictionary_I.html#8237">I2C_RXFLR_CNT</a></span>
+<a name="691"><font size=-1>691     </font></a><span class="preproc"></span>
+<a name="692"><font size=-1>692     </font></a><span class="preproc">#define <a href="dictionary_I.html#17909">I2C_SDA_TX_HOLD</a>                 <a href="dictionary_I.html#8239">I2C_HOLD_TXCNT</a></span>
+<a name="693"><font size=-1>693     </font></a><span class="preproc">#define <a href="dictionary_I.html#17910">I2C_SDA_RX_HOLD</a>                 <a href="dictionary_I.html#8241">I2C_HOLD_RXCNT</a></span>
+<a name="694"><font size=-1>694     </font></a><span class="preproc"></span>
+<a name="695"><font size=-1>695     </font></a><span class="preproc">#define <a href="dictionary_I.html#17911">I2C_DMA_CR_RDMAE</a>                <a href="dictionary_I.html#8243">I2C_DMA_RXEN</a></span>
+<a name="696"><font size=-1>696     </font></a><span class="preproc">#define <a href="dictionary_I.html#17912">I2C_DMA_CR_TDMAE</a>                <a href="dictionary_I.html#8245">I2C_DMA_TXEN</a></span>
+<a name="697"><font size=-1>697     </font></a><span class="preproc"></span>
+<a name="698"><font size=-1>698     </font></a><span class="preproc">#define <a href="dictionary_I.html#17913">I2C_SDA_SET_UP</a>                  <a href="dictionary_I.html#8247">I2C_SETUP_CNT</a></span>
+<a name="699"><font size=-1>699     </font></a><span class="preproc">#define <a href="dictionary_I.html#17914">I2C_ACK_GENERAL_CALL</a>            <a href="dictionary_I.html#8249">I2C_GCR_GC</a></span>
+<a name="700"><font size=-1>700     </font></a><span class="preproc"></span>
+<a name="701"><font size=-1>701     </font></a><span class="preproc"></span>
+<a name="702"><font size=-1>702     </font></a><span class="preproc">#define <a href="dictionary_I.html#17915">IWDG_PR_PR</a>                      <a href="dictionary_I.html#8253">IWDG_PR_PRE</a></span>
+<a name="703"><font size=-1>703     </font></a><span class="preproc">#define <a href="dictionary_I.html#13485">IWDG_PR_PR_DIV4</a>                 <a href="dictionary_I.html#8254">IWDG_PR_PRE_DIV4</a></span>
+<a name="704"><font size=-1>704     </font></a><span class="preproc">#define <a href="dictionary_I.html#13487">IWDG_PR_PR_DIV8</a>                 <a href="dictionary_I.html#8255">IWDG_PR_PRE_DIV8</a></span>
+<a name="705"><font size=-1>705     </font></a><span class="preproc">#define <a href="dictionary_I.html#13489">IWDG_PR_PR_DIV16</a>                <a href="dictionary_I.html#8256">IWDG_PR_PRE_DIV16</a></span>
+<a name="706"><font size=-1>706     </font></a><span class="preproc">#define <a href="dictionary_I.html#13491">IWDG_PR_PR_DIV32</a>                <a href="dictionary_I.html#8257">IWDG_PR_PRE_DIV32</a></span>
+<a name="707"><font size=-1>707     </font></a><span class="preproc">#define <a href="dictionary_I.html#13493">IWDG_PR_PR_DIV64</a>                <a href="dictionary_I.html#8258">IWDG_PR_PRE_DIV64</a></span>
+<a name="708"><font size=-1>708     </font></a><span class="preproc">#define <a href="dictionary_I.html#13495">IWDG_PR_PR_DIV128</a>               <a href="dictionary_I.html#8259">IWDG_PR_PRE_DIV128</a></span>
+<a name="709"><font size=-1>709     </font></a><span class="preproc">#define <a href="dictionary_I.html#13497">IWDG_PR_PR_DIV256</a>               <a href="dictionary_I.html#8260">IWDG_PR_PRE_DIV256</a></span>
+<a name="710"><font size=-1>710     </font></a><span class="preproc"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="711"><font size=-1>711     </font></a><span class="comment">/// @brief Version compatibility definition</span>
+<a name="712"><font size=-1>712     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="713"><font size=-1>713     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17916">RCC_AHBENR_DMAEN</a>                <a href="dictionary_R.html#8728">RCC_AHBENR_DMA1</a></span>
+<a name="714"><font size=-1>714     </font></a><span class="preproc">#define <a href="dictionary_R.html#17917">RCC_AHBENR_DMA1EN</a>               <a href="dictionary_R.html#8728">RCC_AHBENR_DMA1</a></span>
+<a name="715"><font size=-1>715     </font></a><span class="preproc"></span>
+<a name="716"><font size=-1>716     </font></a><span class="preproc"></span>
+<a name="717"><font size=-1>717     </font></a><span class="preproc"></span>
+<a name="718"><font size=-1>718     </font></a><span class="preproc"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="719"><font size=-1>719     </font></a><span class="comment">/// @defgroup AHB_peripheral</span>
+<a name="720"><font size=-1>720     </font></a><span class="comment">/// @{</span>
+<a name="721"><font size=-1>721     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#1600">RCC_AHBPeriph_DMA1</a>              <a href="dictionary_R.html#8728">RCC_AHBENR_DMA1</a></span>
+<a name="722"><font size=-1>722     </font></a><span class="preproc">#define <a href="dictionary_R.html#17918">RCC_AHBPeriph_SRAM</a>              <a href="dictionary_R.html#8730">RCC_AHBENR_SRAM</a></span>
+<a name="723"><font size=-1>723     </font></a><span class="preproc">#define <a href="dictionary_R.html#17919">RCC_AHBPeriph_FLITF</a>             <a href="dictionary_R.html#8732">RCC_AHBENR_FLITF</a></span>
+<a name="724"><font size=-1>724     </font></a><span class="preproc">#define <a href="dictionary_R.html#17920">RCC_AHBPeriph_CRC</a>               <a href="dictionary_R.html#8734">RCC_AHBENR_CRC</a></span>
+<a name="725"><font size=-1>725     </font></a><span class="preproc">#define <a href="dictionary_R.html#1575">RCC_AHBPeriph_GPIOA</a>             <a href="dictionary_R.html#8736">RCC_AHBENR_GPIOA</a></span>
+<a name="726"><font size=-1>726     </font></a><span class="preproc">#define <a href="dictionary_R.html#1013">RCC_AHBPeriph_GPIOB</a>             <a href="dictionary_R.html#8738">RCC_AHBENR_GPIOB</a></span>
+<a name="727"><font size=-1>727     </font></a><span class="preproc">#define <a href="dictionary_R.html#17921">RCC_AHBPeriph_GPIOC</a>             <a href="dictionary_R.html#8740">RCC_AHBENR_GPIOC</a></span>
+<a name="728"><font size=-1>728     </font></a><span class="preproc">#define <a href="dictionary_R.html#17922">RCC_AHBPeriph_GPIOD</a>             <a href="dictionary_R.html#8742">RCC_AHBENR_GPIOD</a></span>
+<a name="729"><font size=-1>729     </font></a><span class="preproc"></span>
+<a name="730"><font size=-1>730     </font></a><span class="preproc"></span>
+<a name="731"><font size=-1>731     </font></a><span class="preproc">#define <a href="dictionary_R.html#17923">RCC_AHBPeriph_GPIOE</a>             </span><span class="default">RCC_AHBENR_GPIOE</span>
+<a name="732"><font size=-1>732     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_R.html#17924">RCC_AHBPeriph_HIV</a>               </span><span class="default">RCC_AHBENR_HWDIV</span>
+<a name="733"><font size=-1>733     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_R.html#17925">RCC_AHBPeriph_HWDIV</a>             </span><span class="default">RCC_AHBENR_HWDIV</span>
+<a name="734"><font size=-1>734     </font></a><span class="default"></span>
+<a name="735"><font size=-1>735     </font></a><span class="default"></span>
+<a name="736"><font size=-1>736     </font></a><span class="default"></span>
+<a name="737"><font size=-1>737     </font></a><span class="default"></span>
+<a name="738"><font size=-1>738     </font></a><span class="default"></span><span class="comment">/// @}</span>
+<a name="739"><font size=-1>739     </font></a><span class="comment"></span>
+<a name="740"><font size=-1>740     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="741"><font size=-1>741     </font></a><span class="comment">/// @defgroup APB2_peripheral</span>
+<a name="742"><font size=-1>742     </font></a><span class="comment">/// @{</span>
+<a name="743"><font size=-1>743     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17926">RCC_APB2Periph_ADC1</a>             <a href="dictionary_R.html#4824">RCC_APB2ENR_ADC1</a></span>
+<a name="744"><font size=-1>744     </font></a><span class="preproc">#define <a href="dictionary_R.html#17927">RCC_APB2Periph_TIM1</a>             <a href="dictionary_R.html#8747">RCC_APB2ENR_TIM1</a></span>
+<a name="745"><font size=-1>745     </font></a><span class="preproc">#define <a href="dictionary_R.html#1554">RCC_APB2Periph_SPI1</a>             <a href="dictionary_R.html#8749">RCC_APB2ENR_SPI1</a></span>
+<a name="746"><font size=-1>746     </font></a><span class="preproc">#define <a href="dictionary_R.html#12125">RCC_APB2Periph_UART1</a>            <a href="dictionary_R.html#8751">RCC_APB2ENR_UART1</a></span>
+<a name="747"><font size=-1>747     </font></a><span class="preproc">#define <a href="dictionary_R.html#17928">RCC_APB2Periph_COMP</a>             <a href="dictionary_R.html#8753">RCC_APB2ENR_COMP</a></span>
+<a name="748"><font size=-1>748     </font></a><span class="preproc">#define <a href="dictionary_R.html#1576">RCC_APB2Periph_SYSCFG</a>           <a href="dictionary_R.html#8744">RCC_APB2ENR_EXTI</a></span>
+<a name="749"><font size=-1>749     </font></a><span class="preproc">#define <a href="dictionary_R.html#17929">RCC_APB2Periph_TIM14</a>            <a href="dictionary_R.html#8755">RCC_APB2ENR_TIM14</a></span>
+<a name="750"><font size=-1>750     </font></a><span class="preproc">#define <a href="dictionary_R.html#17930">RCC_APB2Periph_TIM16</a>            <a href="dictionary_R.html#8757">RCC_APB2ENR_TIM16</a></span>
+<a name="751"><font size=-1>751     </font></a><span class="preproc">#define <a href="dictionary_R.html#17931">RCC_APB2Periph_TIM17</a>            <a href="dictionary_R.html#8759">RCC_APB2ENR_TIM17</a></span>
+<a name="752"><font size=-1>752     </font></a><span class="preproc">#define <a href="dictionary_R.html#17932">RCC_APB2Periph_DBGMCU</a>           <a href="dictionary_R.html#8761">RCC_APB2ENR_DBGMCU</a></span>
+<a name="753"><font size=-1>753     </font></a><span class="preproc"></span>
+<a name="754"><font size=-1>754     </font></a><span class="preproc">#define <a href="dictionary_R.html#17933">RCC_APB2ENR_ADC1EN</a>              <a href="dictionary_R.html#4824">RCC_APB2ENR_ADC1</a></span>
+<a name="755"><font size=-1>755     </font></a><span class="preproc">#define <a href="dictionary_R.html#17934">RCC_APB2ENR_TIM1EN</a>              <a href="dictionary_R.html#8747">RCC_APB2ENR_TIM1</a></span>
+<a name="756"><font size=-1>756     </font></a><span class="preproc">#define <a href="dictionary_R.html#17935">RCC_APB2RSTR_ADC1RST</a>            <a href="dictionary_R.html#8698">RCC_APB2RSTR_ADC1</a></span>
+<a name="757"><font size=-1>757     </font></a><span class="preproc"></span>
+<a name="758"><font size=-1>758     </font></a><span class="preproc"></span>
+<a name="759"><font size=-1>759     </font></a><span class="preproc"></span>
+<a name="760"><font size=-1>760     </font></a><span class="preproc"></span><span class="comment">/// @}</span>
+<a name="761"><font size=-1>761     </font></a><span class="comment"></span>
+<a name="762"><font size=-1>762     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="763"><font size=-1>763     </font></a><span class="comment">/// @defgroup APB1_peripheral</span>
+<a name="764"><font size=-1>764     </font></a><span class="comment">/// @{</span>
+<a name="765"><font size=-1>765     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17936">RCC_APB1Periph_TIM2</a>             <a href="dictionary_R.html#8763">RCC_APB1ENR_TIM2</a></span>
+<a name="766"><font size=-1>766     </font></a><span class="preproc">#define <a href="dictionary_R.html#17937">RCC_APB1Periph_TIM3</a>             <a href="dictionary_R.html#8765">RCC_APB1ENR_TIM3</a></span>
+<a name="767"><font size=-1>767     </font></a><span class="preproc">#define <a href="dictionary_R.html#17938">RCC_APB1Periph_BKP</a>              <a href="dictionary_R.html#8775">RCC_APB1ENR_BKP</a></span>
+<a name="768"><font size=-1>768     </font></a><span class="preproc">#define <a href="dictionary_R.html#17939">RCC_APB1Periph_USB</a>              </span><span class="default">RCC_APB1ENR_USB</span>
+<a name="769"><font size=-1>769     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_R.html#17940">RCC_APB1Periph_CAN</a>              </span><span class="default">RCC_APB1ENR_CAN</span>
+<a name="770"><font size=-1>770     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_R.html#17941">RCC_APB1Periph_CAN1</a>             </span><span class="default">RCC_APB1ENR_CAN</span>
+<a name="771"><font size=-1>771     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_R.html#17942">RCC_APB1Periph_CRS</a>              </span><span class="default">RCC_APB1ENR_CRS</span>
+<a name="772"><font size=-1>772     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_R.html#12124">RCC_APB1Periph_UART2</a>            <a href="dictionary_R.html#8771">RCC_APB1ENR_UART2</a></span>
+<a name="773"><font size=-1>773     </font></a><span class="preproc">#define <a href="dictionary_R.html#17943">RCC_APB1Periph_I2C1</a>             <a href="dictionary_R.html#8773">RCC_APB1ENR_I2C1</a></span>
+<a name="774"><font size=-1>774     </font></a><span class="preproc">#define <a href="dictionary_R.html#1588">RCC_APB1Periph_SPI2</a>             <a href="dictionary_R.html#8769">RCC_APB1ENR_SPI2</a></span>
+<a name="775"><font size=-1>775     </font></a><span class="preproc">#define <a href="dictionary_R.html#17944">RCC_APB1Periph_WWDG</a>             <a href="dictionary_R.html#8767">RCC_APB1ENR_WWDG</a></span>
+<a name="776"><font size=-1>776     </font></a><span class="preproc">#define <a href="dictionary_R.html#17945">RCC_APB1Periph_PWR</a>              <a href="dictionary_R.html#2937">RCC_APB1ENR_PWR</a></span>
+<a name="777"><font size=-1>777     </font></a><span class="preproc"></span>
+<a name="778"><font size=-1>778     </font></a><span class="preproc">#define <a href="dictionary_R.html#17946">RCC_APB1ENR_PWREN</a>               <a href="dictionary_R.html#2937">RCC_APB1ENR_PWR</a></span>
+<a name="779"><font size=-1>779     </font></a><span class="preproc">#define <a href="dictionary_R.html#17947">RCC_APB1ENR_TIM2EN</a>              <a href="dictionary_R.html#8763">RCC_APB1ENR_TIM2</a></span>
+<a name="780"><font size=-1>780     </font></a><span class="preproc">#define <a href="dictionary_R.html#17948">RCC_APB1ENR_TIM3EN</a>              <a href="dictionary_R.html#8765">RCC_APB1ENR_TIM3</a></span>
+<a name="781"><font size=-1>781     </font></a><span class="preproc"></span>
+<a name="782"><font size=-1>782     </font></a><span class="preproc"></span>
+<a name="783"><font size=-1>783     </font></a><span class="preproc"></span>
+<a name="784"><font size=-1>784     </font></a><span class="preproc"></span><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="785"><font size=-1>785     </font></a><span class="comment">/// @brief RTC_CR Register Bit Definition</span>
+<a name="786"><font size=-1>786     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="787"><font size=-1>787     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17949">RTC_CRH_SECIE_Pos</a>               <a href="dictionary_R.html#8822">RTC_CR_SECIE_Pos</a></span>
+<a name="788"><font size=-1>788     </font></a><span class="preproc">#define <a href="dictionary_R.html#17950">RTC_CRH_SECIE</a>                   <a href="dictionary_R.html#8823">RTC_CR_SECIE</a>                  </span><span class="comment">///&lt; Second Interrupt Enable</span>
+<a name="789"><font size=-1>789     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17951">RTC_CRH_ALRIE_Pos</a>               <a href="dictionary_R.html#8824">RTC_CR_ALRIE_Pos</a></span>
+<a name="790"><font size=-1>790     </font></a><span class="preproc">#define <a href="dictionary_R.html#17952">RTC_CRH_ALRIE</a>                   <a href="dictionary_R.html#8825">RTC_CR_ALRIE</a>                  </span><span class="comment">///&lt; Alarm Interrupt Enable</span>
+<a name="791"><font size=-1>791     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17953">RTC_CRH_OWIE_Pos</a>                <a href="dictionary_R.html#8826">RTC_CR_OWIE_Pos</a></span>
+<a name="792"><font size=-1>792     </font></a><span class="preproc">#define <a href="dictionary_R.html#17954">RTC_CRH_OWIE</a>                    <a href="dictionary_R.html#8827">RTC_CR_OWIE</a>                   </span><span class="comment">///&lt; OverfloW Interrupt Enable</span>
+<a name="793"><font size=-1>793     </font></a><span class="comment"></span>
+<a name="794"><font size=-1>794     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="795"><font size=-1>795     </font></a><span class="comment">/// @brief RTC_CSR Register Bit Definition</span>
+<a name="796"><font size=-1>796     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="797"><font size=-1>797     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17955">RTC_CRL_SECF_Pos</a>                <a href="dictionary_R.html#8828">RTC_CSR_SECF_Pos</a></span>
+<a name="798"><font size=-1>798     </font></a><span class="preproc">#define <a href="dictionary_R.html#17956">RTC_CRL_SECF</a>                    <a href="dictionary_R.html#8829">RTC_CSR_SECF</a>                   </span><span class="comment">///&lt; Second Flag</span>
+<a name="799"><font size=-1>799     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17957">RTC_CRL_ALRF_Pos</a>                <a href="dictionary_R.html#8830">RTC_CSR_ALRF_Pos</a></span>
+<a name="800"><font size=-1>800     </font></a><span class="preproc">#define <a href="dictionary_R.html#17958">RTC_CRL_ALRF</a>                    <a href="dictionary_R.html#8831">RTC_CSR_ALRF</a>                   </span><span class="comment">///&lt; Alarm Flag</span>
+<a name="801"><font size=-1>801     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17959">RTC_CRL_OWF_Pos</a>                 <a href="dictionary_R.html#8832">RTC_CSR_OWF_Pos</a></span>
+<a name="802"><font size=-1>802     </font></a><span class="preproc">#define <a href="dictionary_R.html#17960">RTC_CRL_OWF</a>                     <a href="dictionary_R.html#8833">RTC_CSR_OWF</a>                    </span><span class="comment">///&lt; OverfloW Flag</span>
+<a name="803"><font size=-1>803     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17961">RTC_CRL_RSF_Pos</a>                 <a href="dictionary_R.html#8834">RTC_CSR_RSF_Pos</a></span>
+<a name="804"><font size=-1>804     </font></a><span class="preproc">#define <a href="dictionary_R.html#17962">RTC_CRL_RSF</a>                     <a href="dictionary_R.html#8835">RTC_CSR_RSF</a>                    </span><span class="comment">///&lt; Registers Synchronized Flag</span>
+<a name="805"><font size=-1>805     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17963">RTC_CRL_CNF_Pos</a>                 <a href="dictionary_R.html#8836">RTC_CSR_CNF_Pos</a></span>
+<a name="806"><font size=-1>806     </font></a><span class="preproc">#define <a href="dictionary_R.html#17964">RTC_CRL_CNF</a>                     <a href="dictionary_R.html#8837">RTC_CSR_CNF</a>                    </span><span class="comment">///&lt; Configuration Flag</span>
+<a name="807"><font size=-1>807     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17965">RTC_CRL_RTOFF_Pos</a>               <a href="dictionary_R.html#8838">RTC_CSR_RTOFF_Pos</a></span>
+<a name="808"><font size=-1>808     </font></a><span class="preproc">#define <a href="dictionary_R.html#17966">RTC_CRL_RTOFF</a>                   <a href="dictionary_R.html#8839">RTC_CSR_RTOFF</a>                  </span><span class="comment">///&lt; RTC operation OFF</span>
+<a name="809"><font size=-1>809     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_R.html#17967">RTC_CRL_ALPEN_Pos</a>               <a href="dictionary_R.html#8840">RTC_CSR_ALPEN_Pos</a></span>
+<a name="810"><font size=-1>810     </font></a><span class="preproc">#define <a href="dictionary_R.html#17968">RTC_CRL_ALPEN</a>                   <a href="dictionary_R.html#8841">RTC_CSR_ALPEN</a>                  </span><span class="comment">///&lt; RTC Alarm Loop Enable</span>
+<a name="811"><font size=-1>811     </font></a><span class="comment"></span>
+<a name="812"><font size=-1>812     </font></a><span class="comment"></span>
+<a name="813"><font size=-1>813     </font></a><span class="comment"></span>
+<a name="814"><font size=-1>814     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="815"><font size=-1>815     </font></a><span class="comment">/// @brief Version compatibility definition</span>
+<a name="816"><font size=-1>816     </font></a><span class="comment">////////////////////////////////////////////////////////////////////////////////</span>
+<a name="817"><font size=-1>817     </font></a><span class="comment"></span><span class="preproc">#define <a href="dictionary_S.html#17969">SPI_TXREG_TXREG</a>                 <a href="dictionary_S.html#8863">SPI_TDR_TXREG</a></span>
+<a name="818"><font size=-1>818     </font></a><span class="preproc">#define <a href="dictionary_S.html#17970">SPI_RXREG_RXREG</a>                 <a href="dictionary_S.html#8865">SPI_RDR_RXREG</a></span>
+<a name="819"><font size=-1>819     </font></a><span class="preproc"></span>
+<a name="820"><font size=-1>820     </font></a><span class="preproc">#define <a href="dictionary_S.html#17971">SPI_CSTAT_TXEPT</a>                 <a href="dictionary_S.html#4602">SPI_SR_TXEPT</a></span>
+<a name="821"><font size=-1>821     </font></a><span class="preproc">#define <a href="dictionary_S.html#17972">SPI_CSTAT_RXAVL</a>                 <a href="dictionary_S.html#4601">SPI_SR_RXAVL</a></span>
+<a name="822"><font size=-1>822     </font></a><span class="preproc">#define <a href="dictionary_S.html#17973">SPI_CSTAT_TXFULL</a>                <a href="dictionary_S.html#4604">SPI_SR_TXFULL</a></span>
+<a name="823"><font size=-1>823     </font></a><span class="preproc">#define <a href="dictionary_S.html#17974">SPI_CSTAT_RXAVL_4BYTE</a>           <a href="dictionary_S.html#4606">SPI_SR_RXAVL_4BYTE</a></span>
+<a name="824"><font size=-1>824     </font></a><span class="preproc">#define <a href="dictionary_S.html#17975">SPI_CSTAT_TXFADDR</a>               <a href="dictionary_S.html#8871">SPI_SR_TXFADDR</a></span>
+<a name="825"><font size=-1>825     </font></a><span class="preproc">#define <a href="dictionary_S.html#17976">SPI_CSTAT_RXFADDR</a>               <a href="dictionary_S.html#8873">SPI_SR_RXFADDR</a></span>
+<a name="826"><font size=-1>826     </font></a><span class="preproc"></span>
+<a name="827"><font size=-1>827     </font></a><span class="preproc">#define <a href="dictionary_S.html#17977">SPI_INTSTAT_TX_INTF</a>             <a href="dictionary_S.html#8875">SPI_ISR_TX_INTF</a></span>
+<a name="828"><font size=-1>828     </font></a><span class="preproc">#define <a href="dictionary_S.html#17978">SPI_INTSTAT_RX_INTF</a>             <a href="dictionary_S.html#8877">SPI_ISR_RX_INTF</a></span>
+<a name="829"><font size=-1>829     </font></a><span class="preproc">#define <a href="dictionary_S.html#17979">SPI_INTSTAT_UNDERRUN_INTF</a>       <a href="dictionary_S.html#8879">SPI_ISR_UNDERRUN_INTF</a></span>
+<a name="830"><font size=-1>830     </font></a><span class="preproc">#define <a href="dictionary_S.html#17980">SPI_INTSTAT_RXOERR_INTF</a>         <a href="dictionary_S.html#8881">SPI_ISR_RXOERR_INTF</a></span>
+<a name="831"><font size=-1>831     </font></a><span class="preproc">#define <a href="dictionary_S.html#17981">SPI_INTSTAT_RXMATCH_INTF</a>        <a href="dictionary_S.html#8883">SPI_ISR_RXMATCH_INTF</a></span>
+<a name="832"><font size=-1>832     </font></a><span class="preproc">#define <a href="dictionary_S.html#17982">SPI_INTSTAT_RXFULL_INTF</a>         <a href="dictionary_S.html#8885">SPI_ISR_RXFULL_INTF</a></span>
+<a name="833"><font size=-1>833     </font></a><span class="preproc">#define <a href="dictionary_S.html#17983">SPI_INTSTAT_TXEPT_INTF</a>          <a href="dictionary_S.html#8887">SPI_ISR_TXEPT_INTF</a></span>
+<a name="834"><font size=-1>834     </font></a><span class="preproc"></span>
+<a name="835"><font size=-1>835     </font></a><span class="preproc">#define <a href="dictionary_S.html#17984">SPI_INTEN_TX_IEN</a>                <a href="dictionary_S.html#8889">SPI_IER_TX_IEN</a></span>
+<a name="836"><font size=-1>836     </font></a><span class="preproc">#define <a href="dictionary_S.html#17985">SPI_INTEN_RX_IEN</a>                <a href="dictionary_S.html#8891">SPI_IER_RX_IEN</a></span>
+<a name="837"><font size=-1>837     </font></a><span class="preproc">#define <a href="dictionary_S.html#17986">SPI_INTEN_UNDERRUN_IEN</a>          <a href="dictionary_S.html#8893">SPI_IER_UNDERRUN_IEN</a></span>
+<a name="838"><font size=-1>838     </font></a><span class="preproc">#define <a href="dictionary_S.html#17987">SPI_INTEN_RXOERR_IEN</a>            <a href="dictionary_S.html#8895">SPI_IER_RXOERR_IEN</a></span>
+<a name="839"><font size=-1>839     </font></a><span class="preproc">#define <a href="dictionary_S.html#17988">SPI_INTEN_RXMATCH_IEN</a>           <a href="dictionary_S.html#8897">SPI_IER_RXMATCH_IEN</a></span>
+<a name="840"><font size=-1>840     </font></a><span class="preproc">#define <a href="dictionary_S.html#17989">SPI_INTEN_RXFULL_IEN</a>            <a href="dictionary_S.html#8899">SPI_IER_RXFULL_IEN</a></span>
+<a name="841"><font size=-1>841     </font></a><span class="preproc">#define <a href="dictionary_S.html#17990">SPI_INTEN_TXEPT_IEN</a>             <a href="dictionary_S.html#8901">SPI_IER_TXEPT_IEN</a></span>
+<a name="842"><font size=-1>842     </font></a><span class="preproc"></span>
+<a name="843"><font size=-1>843     </font></a><span class="preproc">#define <a href="dictionary_S.html#17991">SPI_INTCLR_TX_ICLR</a>              <a href="dictionary_S.html#8903">SPI_ICR_TX_ICLR</a></span>
+<a name="844"><font size=-1>844     </font></a><span class="preproc">#define <a href="dictionary_S.html#17992">SPI_INTCLR_RX_ICLR</a>              <a href="dictionary_S.html#8905">SPI_ICR_RX_ICLR</a></span>
+<a name="845"><font size=-1>845     </font></a><span class="preproc">#define <a href="dictionary_S.html#17993">SPI_INTCLR_UNDERRUN_ICLR</a>        <a href="dictionary_S.html#8907">SPI_ICR_UNDERRUN_ICLR</a></span>
+<a name="846"><font size=-1>846     </font></a><span class="preproc">#define <a href="dictionary_S.html#17994">SPI_INTCLR_RXOERR_ICLR</a>          <a href="dictionary_S.html#8909">SPI_ICR_RXOERR_ICLR</a></span>
+<a name="847"><font size=-1>847     </font></a><span class="preproc">#define <a href="dictionary_S.html#17995">SPI_INTCLR_RXMATCH_ICLR</a>         <a href="dictionary_S.html#8911">SPI_ICR_RXMATCH_ICLR</a></span>
+<a name="848"><font size=-1>848     </font></a><span class="preproc">#define <a href="dictionary_S.html#17996">SPI_INTCLR_RXFULL_ICLR</a>          <a href="dictionary_S.html#8913">SPI_ICR_RXFULL_ICLR</a></span>
+<a name="849"><font size=-1>849     </font></a><span class="preproc">#define <a href="dictionary_S.html#17997">SPI_INTCLR_TXEPT_ICLR</a>           <a href="dictionary_S.html#8915">SPI_ICR_TXEPT_ICLR</a></span>
+<a name="850"><font size=-1>850     </font></a><span class="preproc"></span>
+<a name="851"><font size=-1>851     </font></a><span class="preproc">#define <a href="dictionary_S.html#17998">SPI_GCTL_SPIEN</a>                  <a href="dictionary_S.html#3035">SPI_GCR_SPIEN</a></span>
+<a name="852"><font size=-1>852     </font></a><span class="preproc">#define <a href="dictionary_S.html#17999">SPI_GCTL_INT_EN</a>                 <a href="dictionary_S.html#3040">SPI_GCR_IEN</a></span>
+<a name="853"><font size=-1>853     </font></a><span class="preproc">#define <a href="dictionary_S.html#18000">SPI_GCTL_MM</a>                     <a href="dictionary_S.html#3021">SPI_GCR_MODE</a></span>
+<a name="854"><font size=-1>854     </font></a><span class="preproc">#define <a href="dictionary_S.html#18001">SPI_GCTL_TXEN</a>                   <a href="dictionary_S.html#3077">SPI_GCR_TXEN</a></span>
+<a name="855"><font size=-1>855     </font></a><span class="preproc">#define <a href="dictionary_S.html#18002">SPI_GCTL_RXEN</a>                   <a href="dictionary_S.html#3076">SPI_GCR_RXEN</a></span>
+<a name="856"><font size=-1>856     </font></a><span class="preproc"></span>
+<a name="857"><font size=-1>857     </font></a><span class="preproc">#define <a href="dictionary_S.html#18003">SPI_GCTL_RXTLF</a>                  <a href="dictionary_S.html#8922">SPI_GCR_RXTLF</a></span>
+<a name="858"><font size=-1>858     </font></a><span class="preproc">#define <a href="dictionary_S.html#18004">SPI_GCTL_RXTLF_One</a>              <a href="dictionary_S.html#8923">SPI_GCR_RXTLF_One</a></span>
+<a name="859"><font size=-1>859     </font></a><span class="preproc">#define <a href="dictionary_S.html#18005">SPI_GCTL_RXTLF_Half</a>             <a href="dictionary_S.html#4596">SPI_GCR_RXTLF_Half</a></span>
+<a name="860"><font size=-1>860     </font></a><span class="preproc"></span>
+<a name="861"><font size=-1>861     </font></a><span class="preproc">#define <a href="dictionary_S.html#18006">SPI_GCTL_TXTLF_Pos</a>              <a href="dictionary_S.html#8924">SPI_GCR_TXTLF_Pos</a></span>
+<a name="862"><font size=-1>862     </font></a><span class="preproc">#define <a href="dictionary_S.html#18007">SPI_GCTL_TXTLF</a>                  <a href="dictionary_S.html#8925">SPI_GCR_TXTLF</a></span>
+<a name="863"><font size=-1>863     </font></a><span class="preproc">#define <a href="dictionary_S.html#18008">SPI_GCTL_TXTLF_One</a>              <a href="dictionary_S.html#8926">SPI_GCR_TXTLF_One</a></span>
+<a name="864"><font size=-1>864     </font></a><span class="preproc">#define <a href="dictionary_S.html#18009">SPI_GCTL_TXTLF_Half</a>             <a href="dictionary_S.html#4598">SPI_GCR_TXTLF_Half</a></span>
+<a name="865"><font size=-1>865     </font></a><span class="preproc"></span>
+<a name="866"><font size=-1>866     </font></a><span class="preproc">#define <a href="dictionary_S.html#18010">SPI_GCTL_DMAEN</a>                  <a href="dictionary_S.html#1681">SPI_GCR_DMAEN</a></span>
+<a name="867"><font size=-1>867     </font></a><span class="preproc">#define <a href="dictionary_S.html#18011">SPI_GCTL_NSS_SEL</a>                <a href="dictionary_S.html#3020">SPI_GCR_NSS</a></span>
+<a name="868"><font size=-1>868     </font></a><span class="preproc">#define <a href="dictionary_S.html#18012">SPI_GCTL_DATA_SEL</a>               <a href="dictionary_S.html#3019">SPI_GCR_DWSEL</a></span>
+<a name="869"><font size=-1>869     </font></a><span class="preproc"></span>
+<a name="870"><font size=-1>870     </font></a><span class="preproc">#define <a href="dictionary_S.html#18013">SPI_GCTL_NSSTOG</a>             <a href="dictionary_S.html#8931">SPI_GCR_NSSTOG</a></span>
+<a name="871"><font size=-1>871     </font></a><span class="preproc"></span>
+<a name="872"><font size=-1>872     </font></a><span class="preproc">#define <a href="dictionary_S.html#18014">SPI_CCTL_CPHA</a>                   <a href="dictionary_S.html#3025">SPI_CCR_CPHA</a></span>
+<a name="873"><font size=-1>873     </font></a><span class="preproc">#define <a href="dictionary_S.html#18015">SPI_CCTL_CPOL</a>                   <a href="dictionary_S.html#3024">SPI_CCR_CPOL</a></span>
+<a name="874"><font size=-1>874     </font></a><span class="preproc">#define <a href="dictionary_S.html#18016">SPI_CCTL_LSBFE</a>                  <a href="dictionary_S.html#3023">SPI_CCR_LSBFE</a></span>
+<a name="875"><font size=-1>875     </font></a><span class="preproc">#define <a href="dictionary_S.html#18017">SPI_CCTL_SPILEN</a>                 <a href="dictionary_S.html#3026">SPI_CCR_SPILEN</a></span>
+<a name="876"><font size=-1>876     </font></a><span class="preproc">#define <a href="dictionary_S.html#18018">SPI_CCTL_RXEDGE</a>                 <a href="dictionary_S.html#3101">SPI_CCR_RXEDGE</a></span>
+<a name="877"><font size=-1>877     </font></a><span class="preproc">#define <a href="dictionary_S.html#18019">SPI_CCTL_TXEDGE</a>                 <a href="dictionary_S.html#3119">SPI_CCR_TXEDGE</a></span>
+<a name="878"><font size=-1>878     </font></a><span class="preproc"></span>
+<a name="879"><font size=-1>879     </font></a><span class="preproc">#define <a href="dictionary_S.html#18020">SPI_CCTL_CPHASEL</a>            <a href="dictionary_S.html#8939">SPI_CCR_CPHASEL</a></span>
+<a name="880"><font size=-1>880     </font></a><span class="preproc"></span>
+<a name="881"><font size=-1>881     </font></a><span class="preproc">#define <a href="dictionary_S.html#18021">SPI_CCTL_HISPD</a>              <a href="dictionary_S.html#8941">SPI_CCR_HISPD</a></span>
+<a name="882"><font size=-1>882     </font></a><span class="preproc"></span>
+<a name="883"><font size=-1>883     </font></a><span class="preproc">#define <a href="dictionary_S.html#18022">SPI_SPBRG_SPBRG</a>                 <a href="dictionary_S.html#8943">SPI_BRR_DIVF</a></span>
+<a name="884"><font size=-1>884     </font></a><span class="preproc"></span>
+<a name="885"><font size=-1>885     </font></a><span class="preproc">#define <a href="dictionary_S.html#18023">SPI_RXDNR_RXDNR</a>                 <a href="dictionary_S.html#8945">SPI_RDNR_RDN</a></span>
+<a name="886"><font size=-1>886     </font></a><span class="preproc"></span>
+<a name="887"><font size=-1>887     </font></a><span class="preproc">#define <a href="dictionary_S.html#18024">SPI_EXTCTL_EXTLEN</a>               <a href="dictionary_S.html#8948">SPI_ECR_EXTLEN</a></span>
+<a name="888"><font size=-1>888     </font></a><span class="preproc">#define <a href="dictionary_T.html#13175">TIM_CR1_ARPE</a>                    <a href="dictionary_T.html#9054">TIM_CR1_ARPEN</a></span>
+<a name="889"><font size=-1>889     </font></a><span class="preproc"></span>
+<a name="890"><font size=-1>890     </font></a><span class="preproc">#define <a href="dictionary_T.html#13130">TIM_SMCR_ECE</a>                    <a href="dictionary_T.html#9131">TIM_SMCR_ECEN</a></span>
+<a name="891"><font size=-1>891     </font></a><span class="preproc"></span>
+<a name="892"><font size=-1>892     </font></a><span class="preproc">#define <a href="dictionary_T.html#18025">TIM_DIER_UIE</a>                    <a href="dictionary_T.html#9135">TIM_DIER_UI</a></span>
+<a name="893"><font size=-1>893     </font></a><span class="preproc">#define <a href="dictionary_T.html#18026">TIM_DIER_CC1IE</a>                  <a href="dictionary_T.html#9137">TIM_DIER_CC1I</a></span>
+<a name="894"><font size=-1>894     </font></a><span class="preproc">#define <a href="dictionary_T.html#18027">TIM_DIER_CC2IE</a>                  <a href="dictionary_T.html#9139">TIM_DIER_CC2I</a></span>
+<a name="895"><font size=-1>895     </font></a><span class="preproc">#define <a href="dictionary_T.html#18028">TIM_DIER_CC3IE</a>                  <a href="dictionary_T.html#9141">TIM_DIER_CC3I</a></span>
+<a name="896"><font size=-1>896     </font></a><span class="preproc">#define <a href="dictionary_T.html#18029">TIM_DIER_CC4IE</a>                  <a href="dictionary_T.html#9143">TIM_DIER_CC4I</a></span>
+<a name="897"><font size=-1>897     </font></a><span class="preproc">#define <a href="dictionary_T.html#18030">TIM_DIER_COMIE</a>                  <a href="dictionary_T.html#9145">TIM_DIER_COMI</a></span>
+<a name="898"><font size=-1>898     </font></a><span class="preproc">#define <a href="dictionary_T.html#18031">TIM_DIER_TIE</a>                    <a href="dictionary_T.html#9147">TIM_DIER_TI</a></span>
+<a name="899"><font size=-1>899     </font></a><span class="preproc">#define <a href="dictionary_T.html#18032">TIM_DIER_BIE</a>                    <a href="dictionary_T.html#9149">TIM_DIER_BI</a></span>
+<a name="900"><font size=-1>900     </font></a><span class="preproc">#define <a href="dictionary_T.html#18033">TIM_DIER_UDE</a>                    <a href="dictionary_T.html#9151">TIM_DIER_UD</a></span>
+<a name="901"><font size=-1>901     </font></a><span class="preproc">#define <a href="dictionary_T.html#18034">TIM_DIER_CC1DE</a>                  <a href="dictionary_T.html#9153">TIM_DIER_CC1D</a></span>
+<a name="902"><font size=-1>902     </font></a><span class="preproc">#define <a href="dictionary_T.html#18035">TIM_DIER_CC2DE</a>                  <a href="dictionary_T.html#9155">TIM_DIER_CC2D</a></span>
+<a name="903"><font size=-1>903     </font></a><span class="preproc">#define <a href="dictionary_T.html#18036">TIM_DIER_CC3DE</a>                  <a href="dictionary_T.html#9157">TIM_DIER_CC3D</a></span>
+<a name="904"><font size=-1>904     </font></a><span class="preproc">#define <a href="dictionary_T.html#18037">TIM_DIER_CC4DE</a>                  <a href="dictionary_T.html#9159">TIM_DIER_CC4D</a></span>
+<a name="905"><font size=-1>905     </font></a><span class="preproc">#define <a href="dictionary_T.html#18038">TIM_DIER_COMDE</a>                  <a href="dictionary_T.html#9161">TIM_DIER_COMD</a></span>
+<a name="906"><font size=-1>906     </font></a><span class="preproc">#define <a href="dictionary_T.html#18039">TIM_DIER_TDE</a>                    <a href="dictionary_T.html#9163">TIM_DIER_TD</a></span>
+<a name="907"><font size=-1>907     </font></a><span class="preproc"></span>
+<a name="908"><font size=-1>908     </font></a><span class="preproc">#define <a href="dictionary_T.html#18040">TIM_DIER_UIEN</a>                   <a href="dictionary_T.html#9135">TIM_DIER_UI</a></span>
+<a name="909"><font size=-1>909     </font></a><span class="preproc">#define <a href="dictionary_T.html#18041">TIM_DIER_CC1IEN</a>                 <a href="dictionary_T.html#9137">TIM_DIER_CC1I</a></span>
+<a name="910"><font size=-1>910     </font></a><span class="preproc">#define <a href="dictionary_T.html#18042">TIM_DIER_CC2IEN</a>                 <a href="dictionary_T.html#9139">TIM_DIER_CC2I</a></span>
+<a name="911"><font size=-1>911     </font></a><span class="preproc">#define <a href="dictionary_T.html#18043">TIM_DIER_CC3IEN</a>                 <a href="dictionary_T.html#9141">TIM_DIER_CC3I</a></span>
+<a name="912"><font size=-1>912     </font></a><span class="preproc">#define <a href="dictionary_T.html#18044">TIM_DIER_CC4IEN</a>                 <a href="dictionary_T.html#9143">TIM_DIER_CC4I</a></span>
+<a name="913"><font size=-1>913     </font></a><span class="preproc">#define <a href="dictionary_T.html#18045">TIM_DIER_COMIEN</a>                 <a href="dictionary_T.html#9145">TIM_DIER_COMI</a></span>
+<a name="914"><font size=-1>914     </font></a><span class="preproc">#define <a href="dictionary_T.html#18046">TIM_DIER_TIEN</a>                   <a href="dictionary_T.html#9147">TIM_DIER_TI</a></span>
+<a name="915"><font size=-1>915     </font></a><span class="preproc">#define <a href="dictionary_T.html#18047">TIM_DIER_BIEN</a>                   <a href="dictionary_T.html#9149">TIM_DIER_BI</a></span>
+<a name="916"><font size=-1>916     </font></a><span class="preproc">#define <a href="dictionary_T.html#18048">TIM_DIER_UDEN</a>                   <a href="dictionary_T.html#9151">TIM_DIER_UD</a></span>
+<a name="917"><font size=-1>917     </font></a><span class="preproc">#define <a href="dictionary_T.html#18049">TIM_DIER_CC1DEN</a>                 <a href="dictionary_T.html#9153">TIM_DIER_CC1D</a></span>
+<a name="918"><font size=-1>918     </font></a><span class="preproc">#define <a href="dictionary_T.html#18050">TIM_DIER_CC2DEN</a>                 <a href="dictionary_T.html#9155">TIM_DIER_CC2D</a></span>
+<a name="919"><font size=-1>919     </font></a><span class="preproc">#define <a href="dictionary_T.html#18051">TIM_DIER_CC3DEN</a>                 <a href="dictionary_T.html#9157">TIM_DIER_CC3D</a></span>
+<a name="920"><font size=-1>920     </font></a><span class="preproc">#define <a href="dictionary_T.html#18052">TIM_DIER_CC4DEN</a>                 <a href="dictionary_T.html#9159">TIM_DIER_CC4D</a></span>
+<a name="921"><font size=-1>921     </font></a><span class="preproc">#define <a href="dictionary_T.html#18053">TIM_DIER_COMDEN</a>                 <a href="dictionary_T.html#9161">TIM_DIER_COMD</a></span>
+<a name="922"><font size=-1>922     </font></a><span class="preproc">#define <a href="dictionary_T.html#18054">TIM_DIER_TDEN</a>                   <a href="dictionary_T.html#9163">TIM_DIER_TD</a></span>
+<a name="923"><font size=-1>923     </font></a><span class="preproc"></span>
+<a name="924"><font size=-1>924     </font></a><span class="preproc">#define <a href="dictionary_T.html#18055">TIM_DIER_CC5IE</a>                  <a href="dictionary_T.html#9165">TIM_DIER_CC5I</a></span>
+<a name="925"><font size=-1>925     </font></a><span class="preproc">#define <a href="dictionary_T.html#18056">TIM_DIER_CC5DE</a>                  <a href="dictionary_T.html#9167">TIM_DIER_CC5D</a></span>
+<a name="926"><font size=-1>926     </font></a><span class="preproc"></span>
+<a name="927"><font size=-1>927     </font></a><span class="preproc">#define <a href="dictionary_T.html#15800">TIM_SR_UIF</a>                      <a href="dictionary_T.html#9169">TIM_SR_UI</a></span>
+<a name="928"><font size=-1>928     </font></a><span class="preproc">#define <a href="dictionary_T.html#15802">TIM_SR_CC1IF</a>                    <a href="dictionary_T.html#9171">TIM_SR_CC1I</a></span>
+<a name="929"><font size=-1>929     </font></a><span class="preproc">#define <a href="dictionary_T.html#15804">TIM_SR_CC2IF</a>                    <a href="dictionary_T.html#9173">TIM_SR_CC2I</a></span>
+<a name="930"><font size=-1>930     </font></a><span class="preproc">#define <a href="dictionary_T.html#15806">TIM_SR_CC3IF</a>                    <a href="dictionary_T.html#9175">TIM_SR_CC3I</a></span>
+<a name="931"><font size=-1>931     </font></a><span class="preproc">#define <a href="dictionary_T.html#15808">TIM_SR_CC4IF</a>                    <a href="dictionary_T.html#9177">TIM_SR_CC4I</a></span>
+<a name="932"><font size=-1>932     </font></a><span class="preproc">#define <a href="dictionary_T.html#15810">TIM_SR_COMIF</a>                    <a href="dictionary_T.html#9179">TIM_SR_COMI</a></span>
+<a name="933"><font size=-1>933     </font></a><span class="preproc">#define <a href="dictionary_T.html#15812">TIM_SR_TIF</a>                      <a href="dictionary_T.html#9181">TIM_SR_TI</a></span>
+<a name="934"><font size=-1>934     </font></a><span class="preproc">#define <a href="dictionary_T.html#15814">TIM_SR_BIF</a>                      <a href="dictionary_T.html#9183">TIM_SR_BI</a></span>
+<a name="935"><font size=-1>935     </font></a><span class="preproc">#define <a href="dictionary_T.html#15816">TIM_SR_CC1OF</a>                    <a href="dictionary_T.html#9185">TIM_SR_CC1O</a></span>
+<a name="936"><font size=-1>936     </font></a><span class="preproc">#define <a href="dictionary_T.html#15818">TIM_SR_CC2OF</a>                    <a href="dictionary_T.html#9187">TIM_SR_CC2O</a></span>
+<a name="937"><font size=-1>937     </font></a><span class="preproc">#define <a href="dictionary_T.html#15820">TIM_SR_CC3OF</a>                    <a href="dictionary_T.html#9189">TIM_SR_CC3O</a></span>
+<a name="938"><font size=-1>938     </font></a><span class="preproc">#define <a href="dictionary_T.html#15822">TIM_SR_CC4OF</a>                    <a href="dictionary_T.html#9191">TIM_SR_CC4O</a></span>
+<a name="939"><font size=-1>939     </font></a><span class="preproc"></span>
+<a name="940"><font size=-1>940     </font></a><span class="preproc">#define <a href="dictionary_T.html#18057">TIM_SR_CC5IF</a>                    <a href="dictionary_T.html#9193">TIM_SR_CC5I</a></span>
+<a name="941"><font size=-1>941     </font></a><span class="preproc"></span>
+<a name="942"><font size=-1>942     </font></a><span class="preproc">#define <a href="dictionary_T.html#13206">TIM_CCMR1_OC1FE</a>                 <a href="dictionary_T.html#9219">TIM_CCMR1_OC1FEN</a></span>
+<a name="943"><font size=-1>943     </font></a><span class="preproc">#define <a href="dictionary_T.html#13189">TIM_CCMR1_OC1PE</a>                 <a href="dictionary_T.html#9221">TIM_CCMR1_OC1PEN</a></span>
+<a name="944"><font size=-1>944     </font></a><span class="preproc">#define <a href="dictionary_T.html#13223">TIM_CCMR1_OC1CE</a>                 <a href="dictionary_T.html#9233">TIM_CCMR1_OC1CEN</a></span>
+<a name="945"><font size=-1>945     </font></a><span class="preproc">#define <a href="dictionary_T.html#13210">TIM_CCMR1_OC2FE</a>                 <a href="dictionary_T.html#9241">TIM_CCMR1_OC2FEN</a></span>
+<a name="946"><font size=-1>946     </font></a><span class="preproc">#define <a href="dictionary_T.html#13193">TIM_CCMR1_OC2PE</a>                 <a href="dictionary_T.html#9243">TIM_CCMR1_OC2PEN</a></span>
+<a name="947"><font size=-1>947     </font></a><span class="preproc">#define <a href="dictionary_T.html#13227">TIM_CCMR1_OC2CE</a>                 <a href="dictionary_T.html#9255">TIM_CCMR1_OC2CEN</a></span>
+<a name="948"><font size=-1>948     </font></a><span class="preproc"></span>
+<a name="949"><font size=-1>949     </font></a><span class="preproc">#define <a href="dictionary_T.html#13214">TIM_CCMR2_OC3FE</a>                 <a href="dictionary_T.html#9287">TIM_CCMR2_OC3FEN</a></span>
+<a name="950"><font size=-1>950     </font></a><span class="preproc">#define <a href="dictionary_T.html#13197">TIM_CCMR2_OC3PE</a>                 <a href="dictionary_T.html#9295">TIM_CCMR2_OC3PEN</a></span>
+<a name="951"><font size=-1>951     </font></a><span class="preproc">#define <a href="dictionary_T.html#13231">TIM_CCMR2_OC3CE</a>                 <a href="dictionary_T.html#9313">TIM_CCMR2_OC3CEN</a></span>
+<a name="952"><font size=-1>952     </font></a><span class="preproc">#define <a href="dictionary_T.html#13218">TIM_CCMR2_OC4FE</a>                 <a href="dictionary_T.html#9321">TIM_CCMR2_OC4FEN</a></span>
+<a name="953"><font size=-1>953     </font></a><span class="preproc">#define <a href="dictionary_T.html#13201">TIM_CCMR2_OC4PE</a>                 <a href="dictionary_T.html#9323">TIM_CCMR2_OC4PEN</a></span>
+<a name="954"><font size=-1>954     </font></a><span class="preproc">#define <a href="dictionary_T.html#13235">TIM_CCMR2_OC4CE</a>                 <a href="dictionary_T.html#9335">TIM_CCMR2_OC4CEN</a></span>
+<a name="955"><font size=-1>955     </font></a><span class="preproc"></span>
+<a name="956"><font size=-1>956     </font></a><span class="preproc">#define <a href="dictionary_T.html#12993">TIM_CCER_CC1E</a>                   <a href="dictionary_T.html#9349">TIM_CCER_CC1EN</a></span>
+<a name="957"><font size=-1>957     </font></a><span class="preproc">#define <a href="dictionary_T.html#12997">TIM_CCER_CC1NE</a>                  <a href="dictionary_T.html#9353">TIM_CCER_CC1NEN</a></span>
+<a name="958"><font size=-1>958     </font></a><span class="preproc">#define <a href="dictionary_T.html#13003">TIM_CCER_CC2E</a>                   <a href="dictionary_T.html#9357">TIM_CCER_CC2EN</a></span>
+<a name="959"><font size=-1>959     </font></a><span class="preproc">#define <a href="dictionary_T.html#13004">TIM_CCER_CC2NE</a>                  <a href="dictionary_T.html#9361">TIM_CCER_CC2NEN</a></span>
+<a name="960"><font size=-1>960     </font></a><span class="preproc">#define <a href="dictionary_T.html#13008">TIM_CCER_CC3E</a>                   <a href="dictionary_T.html#9365">TIM_CCER_CC3EN</a></span>
+<a name="961"><font size=-1>961     </font></a><span class="preproc">#define <a href="dictionary_T.html#13009">TIM_CCER_CC3NE</a>                  <a href="dictionary_T.html#9369">TIM_CCER_CC3NEN</a></span>
+<a name="962"><font size=-1>962     </font></a><span class="preproc">#define <a href="dictionary_T.html#13013">TIM_CCER_CC4E</a>                   <a href="dictionary_T.html#9373">TIM_CCER_CC4EN</a></span>
+<a name="963"><font size=-1>963     </font></a><span class="preproc"></span>
+<a name="964"><font size=-1>964     </font></a><span class="preproc">#define <a href="dictionary_T.html#18058">TIM_CCER_CC5E</a>                   <a href="dictionary_T.html#9377">TIM_CCER_CC5EN</a></span>
+<a name="965"><font size=-1>965     </font></a><span class="preproc"></span>
+<a name="966"><font size=-1>966     </font></a><span class="preproc">#define <a href="dictionary_T.html#15735">TIM_BDTR_BKE</a>                    <a href="dictionary_T.html#9411">TIM_BDTR_BKEN</a></span>
+<a name="967"><font size=-1>967     </font></a><span class="preproc">#define <a href="dictionary_T.html#15742">TIM_BDTR_AOE</a>                    <a href="dictionary_T.html#9415">TIM_BDTR_AOEN</a></span>
+<a name="968"><font size=-1>968     </font></a><span class="preproc">#define <a href="dictionary_T.html#13087">TIM_BDTR_MOE</a>                    <a href="dictionary_T.html#9417">TIM_BDTR_MOEN</a></span>
+<a name="969"><font size=-1>969     </font></a><span class="preproc"></span>
+<a name="970"><font size=-1>970     </font></a><span class="preproc">#define <a href="dictionary_T.html#18059">TIM_BDTR_DOE</a>                    <a href="dictionary_T.html#9419">TIM_BDTR_DOEN</a></span>
+<a name="971"><font size=-1>971     </font></a><span class="preproc"></span>
+<a name="972"><font size=-1>972     </font></a><span class="preproc">#define <a href="dictionary_T.html#18060">TIM_CCMR3_OC5FE</a>                 <a href="dictionary_T.html#9444">TIM_CCMR3_OC5FEN</a></span>
+<a name="973"><font size=-1>973     </font></a><span class="preproc">#define <a href="dictionary_T.html#18061">TIM_CCMR3_OC5PE</a>                 <a href="dictionary_T.html#9446">TIM_CCMR3_OC5PEN</a></span>
+<a name="974"><font size=-1>974     </font></a><span class="preproc">#define <a href="dictionary_T.html#18062">TIM_CCMR3_OC5CE</a>                 <a href="dictionary_T.html#9450">TIM_CCMR3_OC5CEN</a></span>
+<a name="975"><font size=-1>975     </font></a><span class="preproc">#define <a href="dictionary_U.html#18063">UART_TDR_TXREG</a>                  <a href="dictionary_U.html#9470">UART_TDR_DATA</a></span>
+<a name="976"><font size=-1>976     </font></a><span class="preproc">#define <a href="dictionary_U.html#18064">UART_RDR_RXREG</a>                  <a href="dictionary_U.html#9472">UART_RDR_DATA</a></span>
+<a name="977"><font size=-1>977     </font></a><span class="preproc"></span>
+<a name="978"><font size=-1>978     </font></a><span class="preproc">#define <a href="dictionary_U.html#18065">UART_ISR_TX_INTF</a>                <a href="dictionary_U.html#9482">UART_ISR_TX</a></span>
+<a name="979"><font size=-1>979     </font></a><span class="preproc">#define <a href="dictionary_U.html#18066">UART_ISR_RX_INTF</a>                <a href="dictionary_U.html#9484">UART_ISR_RX</a></span>
+<a name="980"><font size=-1>980     </font></a><span class="preproc">#define <a href="dictionary_U.html#18067">UART_ISR_RXOERR_INTF</a>            <a href="dictionary_U.html#9488">UART_ISR_RXOERR</a></span>
+<a name="981"><font size=-1>981     </font></a><span class="preproc">#define <a href="dictionary_U.html#18068">UART_ISR_RXPERR_INTF</a>            <a href="dictionary_U.html#9490">UART_ISR_RXPERR</a></span>
+<a name="982"><font size=-1>982     </font></a><span class="preproc">#define <a href="dictionary_U.html#18069">UART_ISR_RXFERR_INTF</a>            <a href="dictionary_U.html#9492">UART_ISR_RXFERR</a></span>
+<a name="983"><font size=-1>983     </font></a><span class="preproc">#define <a href="dictionary_U.html#18070">UART_ISR_RXBRK_INTF</a>             <a href="dictionary_U.html#9494">UART_ISR_RXBRK</a></span>
+<a name="984"><font size=-1>984     </font></a><span class="preproc"></span>
+<a name="985"><font size=-1>985     </font></a><span class="preproc">#define <a href="dictionary_U.html#18071">UART_IER_TXIEN</a>                  <a href="dictionary_U.html#9502">UART_IER_TX</a></span>
+<a name="986"><font size=-1>986     </font></a><span class="preproc">#define <a href="dictionary_U.html#18072">UART_IER_RXIEN</a>                  </span><span class="default">UART_IER_RXI</span>
+<a name="987"><font size=-1>987     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_U.html#18073">UART_IER_RXOERREN</a>               <a href="dictionary_U.html#9508">UART_IER_RXOERR</a></span>
+<a name="988"><font size=-1>988     </font></a><span class="preproc">#define <a href="dictionary_U.html#18074">UART_IER_RXPERREN</a>               <a href="dictionary_U.html#9510">UART_IER_RXPERR</a></span>
+<a name="989"><font size=-1>989     </font></a><span class="preproc">#define <a href="dictionary_U.html#18075">UART_IER_RXFERREN</a>               <a href="dictionary_U.html#9512">UART_IER_RXFERR</a></span>
+<a name="990"><font size=-1>990     </font></a><span class="preproc">#define <a href="dictionary_U.html#18076">UART_IER_RXBRKEN</a>                <a href="dictionary_U.html#9514">UART_IER_RXBRK</a></span>
+<a name="991"><font size=-1>991     </font></a><span class="preproc"></span>
+<a name="992"><font size=-1>992     </font></a><span class="preproc">#define <a href="dictionary_U.html#18077">UART_ICR_TXICLR</a>                 <a href="dictionary_U.html#9522">UART_ICR_TX</a></span>
+<a name="993"><font size=-1>993     </font></a><span class="preproc">#define <a href="dictionary_U.html#18078">UART_ICR_RXICLR</a>                 <a href="dictionary_U.html#9524">UART_ICR_RX</a></span>
+<a name="994"><font size=-1>994     </font></a><span class="preproc">#define <a href="dictionary_U.html#18079">UART_ICR_RXOERRCLR</a>              <a href="dictionary_U.html#9526">UART_ICR_RXOERR</a></span>
+<a name="995"><font size=-1>995     </font></a><span class="preproc">#define <a href="dictionary_U.html#18080">UART_ICR_RXPERRCLR</a>              <a href="dictionary_U.html#9528">UART_ICR_RXPERR</a></span>
+<a name="996"><font size=-1>996     </font></a><span class="preproc">#define <a href="dictionary_U.html#18081">UART_ICR_RXFERRCLR</a>              <a href="dictionary_U.html#9530">UART_ICR_RXFERR</a></span>
+<a name="997"><font size=-1>997     </font></a><span class="preproc">#define <a href="dictionary_U.html#18082">UART_ICR_RXBRKCLR</a>               <a href="dictionary_U.html#9532">UART_ICR_RXBRK</a></span>
+<a name="998"><font size=-1>998     </font></a><span class="preproc"></span>
+<a name="999"><font size=-1>999     </font></a><span class="preproc">#define <a href="dictionary_U.html#12141">UART_Mode_Rx</a>                    <a href="dictionary_U.html#9542">UART_GCR_RX</a></span>
+<a name="1000"><font size=-1>1000     </font></a><span class="preproc">#define <a href="dictionary_U.html#12142">UART_Mode_Tx</a>                    <a href="dictionary_U.html#9544">UART_GCR_TX</a></span>
+<a name="1001"><font size=-1>1001     </font></a><span class="preproc">#define <a href="dictionary_U.html#18083">UART_EN</a>                         <a href="dictionary_U.html#9536">UART_GCR_UART</a></span>
+<a name="1002"><font size=-1>1002     </font></a><span class="preproc">#define <a href="dictionary_U.html#18084">UART_IT_RXBRK</a>                   <a href="dictionary_U.html#9514">UART_IER_RXBRK</a></span>
+<a name="1003"><font size=-1>1003     </font></a><span class="preproc">#define <a href="dictionary_U.html#18085">UART_IT_ERR</a>                     <a href="dictionary_U.html#9512">UART_IER_RXFERR</a></span>
+<a name="1004"><font size=-1>1004     </font></a><span class="preproc">#define <a href="dictionary_U.html#18086">UART_IT_PE</a>                      <a href="dictionary_U.html#9510">UART_IER_RXPERR</a></span>
+<a name="1005"><font size=-1>1005     </font></a><span class="preproc">#define <a href="dictionary_U.html#18087">UART_OVER_ERR</a>                   <a href="dictionary_U.html#9508">UART_IER_RXOERR</a></span>
+<a name="1006"><font size=-1>1006     </font></a><span class="preproc">#define <a href="dictionary_U.html#18088">UART_IT_RXIEN</a>                   <a href="dictionary_U.html#9504">UART_IER_RX</a></span>
+<a name="1007"><font size=-1>1007     </font></a><span class="preproc">#define <a href="dictionary_U.html#18089">UART_IT_TXIEN</a>                   <a href="dictionary_U.html#9502">UART_IER_TX</a></span>
+<a name="1008"><font size=-1>1008     </font></a><span class="preproc"></span>
+<a name="1009"><font size=-1>1009     </font></a><span class="preproc">#define <a href="dictionary_U.html#12265">UART_HardwareFlowControl_None</a>   </span><span class="default">UART_HWFlowControl_None</span>
+<a name="1010"><font size=-1>1010     </font></a><span class="default"></span>
+<a name="1011"><font size=-1>1011     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_U.html#18090">UART_BRR_DIV_MANTISSA</a>           <a href="dictionary_U.html#9586">UART_BRR_MANTISSA</a></span>
+<a name="1012"><font size=-1>1012     </font></a><span class="preproc">#define <a href="dictionary_U.html#18091">UART_BRR_DIV_FRACTION</a>           <a href="dictionary_U.html#9588">UART_BRR_FRACTION</a></span>
+<a name="1013"><font size=-1>1013     </font></a><span class="preproc"></span>
+<a name="1014"><font size=-1>1014     </font></a><span class="preproc">#define <a href="dictionary_U.html#18092">UART_ISR_TXC_INTF</a>           <a href="dictionary_U.html#9486">UART_ISR_TXC</a></span>
+<a name="1015"><font size=-1>1015     </font></a><span class="preproc">#define <a href="dictionary_U.html#18093">UART_ISR_TXBRK_INTF</a>         <a href="dictionary_U.html#9496">UART_ISR_TXBRK</a></span>
+<a name="1016"><font size=-1>1016     </font></a><span class="preproc">#define <a href="dictionary_U.html#18094">UART_ISR_RXB8_INTF</a>          <a href="dictionary_U.html#9498">UART_ISR_RXB8</a></span>
+<a name="1017"><font size=-1>1017     </font></a><span class="preproc"></span>
+<a name="1018"><font size=-1>1018     </font></a><span class="preproc">#define <a href="dictionary_U.html#18095">UART_IT_RXB8</a>                <a href="dictionary_U.html#9518">UART_IER_RXB8</a></span>
+<a name="1019"><font size=-1>1019     </font></a><span class="preproc">#define <a href="dictionary_U.html#18096">UART_IT_TXBRK</a>               <a href="dictionary_U.html#9516">UART_IER_TXBRK</a></span>
+<a name="1020"><font size=-1>1020     </font></a><span class="preproc">#define <a href="dictionary_U.html#18097">UART_IT_TXCIEN</a>              <a href="dictionary_U.html#9506">UART_IER_TXC</a></span>
+<a name="1021"><font size=-1>1021     </font></a><span class="preproc">#define <a href="dictionary_U.html#18098">UART_ICR_TXCCLR</a>             </span><span class="default">UART_ICR_TXC</span>
+<a name="1022"><font size=-1>1022     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_U.html#18099">UART_ICR_TXBRKCLR</a>           </span><span class="default">UART_ICR_TXBRK</span>
+<a name="1023"><font size=-1>1023     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_U.html#18100">UART_ICR_RXB8CLR</a>            </span><span class="default">UART_ICR_RXB8</span>
+<a name="1024"><font size=-1>1024     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_U.html#18101">UART_SCR_SCAEN</a>              <a href="dictionary_U.html#9596">UART_SCR_SCARB</a></span>
+<a name="1025"><font size=-1>1025     </font></a><span class="preproc"></span>
+<a name="1026"><font size=-1>1026     </font></a><span class="preproc">#define <a href="dictionary_U.html#18102">UART_DMAReq_EN</a>                  <a href="dictionary_U.html#9538">UART_GCR_DMA</a></span>
+<a name="1027"><font size=-1>1027     </font></a><span class="preproc"></span>
+<a name="1028"><font size=-1>1028     </font></a><span class="preproc">#define <a href="dictionary_U.html#18103">UART_FLAG_TXEMPTY</a>               <a href="dictionary_U.html#9480">UART_CSR_TXEPT</a></span>
+<a name="1029"><font size=-1>1029     </font></a><span class="preproc">#define <a href="dictionary_U.html#18104">UART_FLAG_TXFULL</a>                <a href="dictionary_U.html#9478">UART_CSR_TXFULL</a></span>
+<a name="1030"><font size=-1>1030     </font></a><span class="preproc">#define <a href="dictionary_U.html#18105">UART_FLAG_RXAVL</a>                 <a href="dictionary_U.html#9476">UART_CSR_RXAVL</a></span>
+<a name="1031"><font size=-1>1031     </font></a><span class="preproc">#define <a href="dictionary_U.html#12280">UART_FLAG_TXEPT</a>                 <a href="dictionary_U.html#9474">UART_CSR_TXC</a></span>
+<a name="1032"><font size=-1>1032     </font></a><span class="preproc">#define <a href="dictionary_W.html#18106">WWDG_CR_T</a>                       <a href="dictionary_W.html#9606">WWDG_CR_CNT</a></span>
+<a name="1033"><font size=-1>1033     </font></a><span class="preproc"></span>
+<a name="1034"><font size=-1>1034     </font></a><span class="preproc">#endif </span><span class="comment">//__MM32_REG_DEFINE_V1_H</span>
+<a name="1035"><font size=-1>1035     </font></a><span class="comment"></span>
+<a name="1036"><font size=-1>1036     </font></a><span class="comment"></span>
+</pre></body></html>

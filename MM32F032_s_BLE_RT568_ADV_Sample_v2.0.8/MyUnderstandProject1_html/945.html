@@ -1,0 +1,77 @@
+<html><head><title>uart.h</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: RELATIVE:\1_SampleCode_HAL\19_SPI\Rafael_BLE_SPI_DMA_Reg\Peripheral\inc\uart.h</h3>
+<SCRIPT>
+defaultStatus = "File: RELATIVE:\\1_SampleCode_HAL\\19_SPI\\Rafael_BLE_SPI_DMA_Reg\\Peripheral\\inc\\uart.h";
+top.document.title  = "uart.h";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">/******************************************************************************</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment"> * @file    uart.h</span>
+<a name="3"><font size=-1>3     </font></a><span class="comment"> * @author  King</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment"> * @version V1.00</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment"> * @date    20-May-2020</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment"> * @brief   ......</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment"> ******************************************************************************</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment"> * @attention</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment"> * </span>
+<a name="10"><font size=-1>10     </font></a><span class="comment"> * THE EXISTING FIRMWARE IS ONLY FOR REFERENCE, WHICH IS DESIGNED TO PROVIDE</span>
+<a name="11"><font size=-1>11     </font></a><span class="comment"> * CUSTOMERS WITH CODING INFORMATION ABOUT THEIR PRODUCTS SO THEY CAN SAVE</span>
+<a name="12"><font size=-1>12     </font></a><span class="comment"> * TIME. THEREFORE, MINDMOTION SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT OR</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment"> * CONSEQUENTIAL DAMAGES ABOUT ANY CLAIMS ARISING OUT OF THE CONTENT OF SUCH</span>
+<a name="14"><font size=-1>14     </font></a><span class="comment"> * HARDWARE AND/OR THE USE OF THE CODING INFORMATION CONTAINED HEREIN IN</span>
+<a name="15"><font size=-1>15     </font></a><span class="comment"> * CONNECTION WITH PRODUCTS MADE BY CUSTOMERS.</span>
+<a name="16"><font size=-1>16     </font></a><span class="comment"> * &lt;H2&gt;&lt;CENTER&gt;&amp;COPY; COPYRIGHT 2020 MINDMOTION &lt;/CENTER&gt;&lt;/H2&gt;</span>
+<a name="17"><font size=-1>17     </font></a><span class="comment">******************************************************************************/</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"></span>
+<a name="19"><font size=-1>19     </font></a><span class="comment"></span>
+<a name="20"><font size=-1>20     </font></a><span class="comment">/* Define to prevent recursive inclusion ------------------------------------*/</span>
+<a name="21"><font size=-1>21     </font></a><span class="comment"></span><span class="preproc">#ifndef <a href="dictionary_&.html#13393">__UART_H__</a></span>
+<a name="22"><font size=-1>22     </font></a><span class="preproc">#define <a href="dictionary_&.html#13393">__UART_H__</a></span>
+<a name="23"><font size=-1>23     </font></a><span class="preproc"></span>
+<a name="24"><font size=-1>24     </font></a><span class="preproc"></span>
+<a name="25"><font size=-1>25     </font></a><span class="preproc">#ifdef <a href="dictionary_&.html#10290">__cplusplus</a></span>
+<a name="26"><font size=-1>26     </font></a><span class="preproc"></span><span class="keyword">extern </span><span class="string">&quot;C&quot; </span><span class="default">{</span>
+<a name="27"><font size=-1>27     </font></a><span class="default"></span><span class="preproc">#endif</span>
+<a name="28"><font size=-1>28     </font></a><span class="preproc"></span>
+<a name="29"><font size=-1>29     </font></a><span class="preproc"></span>
+<a name="30"><font size=-1>30     </font></a><span class="preproc">#undef  <a href="dictionary_E.html#10288">EXTERN</a></span>
+<a name="31"><font size=-1>31     </font></a><span class="preproc"></span>
+<a name="32"><font size=-1>32     </font></a><span class="preproc"></span>
+<a name="33"><font size=-1>33     </font></a><span class="preproc">#ifdef  <a href="dictionary_&.html#13395">__UART_C__</a></span>
+<a name="34"><font size=-1>34     </font></a><span class="preproc">#define <a href="dictionary_E.html#10288">EXTERN</a></span>
+<a name="35"><font size=-1>35     </font></a><span class="preproc">#else</span>
+<a name="36"><font size=-1>36     </font></a><span class="preproc">#define <a href="dictionary_E.html#13394">EXTERN</a> </span><span class="default">extern</span>
+<a name="37"><font size=-1>37     </font></a><span class="default"></span><span class="preproc">#endif</span>
+<a name="38"><font size=-1>38     </font></a><span class="preproc"></span>
+<a name="39"><font size=-1>39     </font></a><span class="preproc"></span>
+<a name="40"><font size=-1>40     </font></a><span class="preproc"></span><span class="comment">/* Includes -----------------------------------------------------------------*/</span>
+<a name="41"><font size=-1>41     </font></a><span class="comment"></span><span class="preproc">#include </span><span class="string">&quot;config.h&quot;</span>
+<a name="42"><font size=-1>42     </font></a><span class="string"></span>
+<a name="43"><font size=-1>43     </font></a><span class="string"></span>
+<a name="44"><font size=-1>44     </font></a><span class="string"></span><span class="comment">/* Exported constants -------------------------------------------------------*/</span>
+<a name="45"><font size=-1>45     </font></a><span class="comment">/* Exported types -----------------------------------------------------------*/</span>
+<a name="46"><font size=-1>46     </font></a><span class="comment">/* Exported macro -----------------------------------------------------------*/</span>
+<a name="47"><font size=-1>47     </font></a><span class="comment"></span>
+<a name="48"><font size=-1>48     </font></a><span class="comment"></span>
+<a name="49"><font size=-1>49     </font></a><span class="comment">/* Exported functions -------------------------------------------------------*/</span>
+<a name="50"><font size=-1>50     </font></a><span class="comment"><a href="dictionary_E.html#10288">EXTERN</a> </span><span class="keyword">void <a href="dictionary_U.html#21612">UARTx_Configure</a></span><span class="default">(<a href="dictionary_U.html#1046">UART_TypeDef</a>           *UARTx,</span>
+<a name="51"><font size=-1>51     </font></a><span class="default">                            <a href="dictionary_U.html#181">uint32_t</a>                BaudRate,</span>
+<a name="52"><font size=-1>52     </font></a><span class="default">                            <a href="dictionary_U.html#11765">UART_WordLength_TypeDef</a> WordLength,</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">                            <a href="dictionary_U.html#11766">UART_Stop_Bits_TypeDef</a>  StopBits,</span>
+<a name="54"><font size=-1>54     </font></a><span class="default">                            <a href="dictionary_U.html#11767">UART_Parity_TypeDef</a>     Parity);</span>
+<a name="55"><font size=-1>55     </font></a><span class="default"></span>
+<a name="56"><font size=-1>56     </font></a><span class="default"></span>
+<a name="57"><font size=-1>57     </font></a><span class="default"></span><span class="preproc">#ifdef <a href="dictionary_&.html#10290">__cplusplus</a></span>
+<a name="58"><font size=-1>58     </font></a><span class="preproc"></span><span class="default">}</span>
+<a name="59"><font size=-1>59     </font></a><span class="default"></span><span class="preproc">#endif</span>
+<a name="60"><font size=-1>60     </font></a><span class="preproc"></span>
+<a name="61"><font size=-1>61     </font></a><span class="preproc"></span>
+<a name="62"><font size=-1>62     </font></a><span class="preproc">#endif</span>
+<a name="63"><font size=-1>63     </font></a><span class="preproc"></span>
+<a name="64"><font size=-1>64     </font></a><span class="preproc"></span>
+<a name="65"><font size=-1>65     </font></a><span class="preproc"></span><span class="comment">/******************* (C) COPYRIGHT 2020 ************************END OF FILE***/</span>
+<a name="66"><font size=-1>66     </font></a><span class="comment"></span>
+<a name="67"><font size=-1>67     </font></a><span class="comment"></span>
+</pre></body></html>

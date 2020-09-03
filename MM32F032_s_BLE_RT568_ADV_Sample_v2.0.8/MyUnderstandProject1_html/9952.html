@@ -1,0 +1,415 @@
+<html><head><title>LL_back.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: RELATIVE:\1_SampleCode_HAL\19_SPI\Rafael_BLE_SPI_DMA_Reg\APP\rf_source\LL_back.c</h3>
+<SCRIPT>
+defaultStatus = "File: RELATIVE:\\1_SampleCode_HAL\\19_SPI\\Rafael_BLE_SPI_DMA_Reg\\APP\\rf_source\\LL_back.c";
+top.document.title  = "LL_back.c";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">/*******************************************************************</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment"> *</span>
+<a name="3"><font size=-1>3     </font></a><span class="comment"> * File Name  : LL.C</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment"> * Description:</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment"> *</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment"> *******************************************************************</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment"> *</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment"> *      Copyright (c) 2020, All Right Reserved</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment"> *      Rafael Microelectronics Co. Ltd.</span>
+<a name="10"><font size=-1>10     </font></a><span class="comment"> *      Taiwan, R.O.C.</span>
+<a name="11"><font size=-1>11     </font></a><span class="comment"> *</span>
+<a name="12"><font size=-1>12     </font></a><span class="comment"> *******************************************************************/</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment"></span><span class="preproc">#pragma </span><span class="default">push</span>
+<a name="14"><font size=-1>14     </font></a><span class="default"></span><span class="comment">//#pragma Otime</span>
+<a name="15"><font size=-1>15     </font></a><span class="comment"></span><span class="preproc">#pragma </span><span class="default">Ospace</span>
+<a name="16"><font size=-1>16     </font></a><span class="default"></span>
+<a name="17"><font size=-1>17     </font></a><span class="default"></span><span class="comment">/*******************************************************************</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"> *      Include List</span>
+<a name="19"><font size=-1>19     </font></a><span class="comment"> *******************************************************************/</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment"></span><span class="preproc">#include </span><span class="string">&quot;BleAppSetting.h&quot;</span>
+<a name="21"><font size=-1>21     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&quot;rf_phy.h&quot;</span>
+<a name="22"><font size=-1>22     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&quot;knl_pblc.h&quot;</span>
+<a name="23"><font size=-1>23     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&quot;LL.h&quot;</span>
+<a name="24"><font size=-1>24     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&quot;hci.h&quot;</span>
+<a name="25"><font size=-1>25     </font></a><span class="string"></span><span class="preproc">#include </span><span class="string">&quot;bsp_spi_ble.h&quot;</span>
+<a name="26"><font size=-1>26     </font></a><span class="string"></span><span class="preproc">#ifdef <a href="dictionary_&.html#3973">_DEBUG_MSG_USER_</a></span>
+<a name="27"><font size=-1>27     </font></a><span class="preproc">    #include </span><span class="string">&lt;stdio.h&gt;</span>
+<a name="28"><font size=-1>28     </font></a><span class="string"></span><span class="preproc">#endif  </span><span class="comment">//(_DEBUG_MSG_USER_)</span>
+<a name="29"><font size=-1>29     </font></a><span class="comment"></span>
+<a name="30"><font size=-1>30     </font></a><span class="comment"></span><span class="preproc">#include </span><span class="string">&quot;_rafael_phy.h&quot;</span>
+<a name="31"><font size=-1>31     </font></a><span class="string"><a href="dictionary_B.html#654">BLE_Device_Param</a> <a href="dictionary_B.html#9953">ble_device_param</a></span><span class="default">;</span>
+<a name="32"><font size=-1>32     </font></a><span class="default"></span>
+<a name="33"><font size=-1>33     </font></a><span class="default"><a href="dictionary_L.html#972">LL_Adv</a>          <a href="dictionary_L.html#9954">LL_Adv_Para</a>;</span>
+<a name="34"><font size=-1>34     </font></a><span class="default"><a href="dictionary_L.html#3975">LL_Conn</a>         <a href="dictionary_L.html#9955">LL_Conn_Para</a>[<a href="dictionary_M.html#3976">MAX_NUM_CONN_HDL</a>];</span>
+<a name="35"><font size=-1>35     </font></a><span class="default"><a href="dictionary_L.html#3978">LL_WhiteList</a>    <a href="dictionary_L.html#9956">LL_WhiteList_Para</a>[<a href="dictionary_S.html#3979">SIZE_WHITE_LIST_ENTRIES</a>];</span>
+<a name="36"><font size=-1>36     </font></a><span class="default"><a href="dictionary_L.html#3981">LL_Para_Itrvl</a>   <a href="dictionary_L.html#9957">LL_Para_Interval</a>;</span>
+<a name="37"><font size=-1>37     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a>           <a href="dictionary_L.html#9958">LL_ConnID_Remaining</a>;</span>
+<a name="38"><font size=-1>38     </font></a><span class="default"></span>
+<a name="39"><font size=-1>39     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_L.html#9959">LL_Ref_ChMap</a>[<a href="dictionary_L.html#3984">LEN_LL_CH_MAP</a>];</span>
+<a name="40"><font size=-1>40     </font></a><span class="default"></span>
+<a name="41"><font size=-1>41     </font></a><span class="default"><a href="dictionary_T.html#3986">TBLK_LLx</a> <a href="dictionary_T.html#9960">TmrBlk_LL</a>[<a href="dictionary_M.html#3987">MAX_TBLK_LL_NO</a>];</span>
+<a name="42"><font size=-1>42     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_T.html#9961">TBlk_Free_LL</a>;</span>
+<a name="43"><font size=-1>43     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_T.html#9962">TBlk_InUse_LL</a>;</span>
+<a name="44"><font size=-1>44     </font></a><span class="default"><a href="dictionary_T.html#3986">TBLK_LLx</a> *<a href="dictionary_T.html#9963">tblk_LL_pi</a>;</span>
+<a name="45"><font size=-1>45     </font></a><span class="default"><a href="dictionary_T.html#3986">TBLK_LLx</a> *<a href="dictionary_T.html#9964">tblk_LL_pi2</a>;</span>
+<a name="46"><font size=-1>46     </font></a><span class="default"></span>
+<a name="47"><font size=-1>47     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_S.html#9965">status_LL_Tmr</a>;</span>
+<a name="48"><font size=-1>48     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_A.html#9966">anchor_LL_Tmr</a>;</span>
+<a name="49"><font size=-1>49     </font></a><span class="default"><a href="dictionary_L.html#3975">LL_Conn</a> *<a href="dictionary_L.html#9967">LL_conn_pi</a>;</span>
+<a name="50"><font size=-1>50     </font></a><span class="default"><a href="dictionary_U.html#3996">Uint16</a> <a href="dictionary_L.html#9968">LL_DurRxPktAccu</a>;</span>
+<a name="51"><font size=-1>51     </font></a><span class="default"></span>
+<a name="52"><font size=-1>52     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_B.html#9969">BD_Rand_Addr</a>[<a href="dictionary_L.html#3998">LEN_BD_ADDR</a>] = {</span><span class="number">0</span><span class="default">};</span>
+<a name="53"><font size=-1>53     </font></a><span class="default"><a href="dictionary_U.html#4000">Uint32</a> <a href="dictionary_L.html#9970">LL_Slv_Win_Width</a>;</span>
+<a name="54"><font size=-1>54     </font></a><span class="default"><a href="dictionary_U.html#4000">Uint32</a> <a href="dictionary_L.html#9971">LL_Slv_Win_Width_Base</a>;</span>
+<a name="55"><font size=-1>55     </font></a><span class="default"><a href="dictionary_U.html#181">uint32_t</a> <a href="dictionary_S.html#9972">seedR16</a>;</span>
+<a name="56"><font size=-1>56     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_R.html#9973">RX_CRC_valid_flag</a> = <a href="dictionary_T.html#4004">TRUE</a>;</span>
+<a name="57"><font size=-1>57     </font></a><span class="default"></span>
+<a name="58"><font size=-1>58     </font></a><span class="default"><a href="dictionary_U.html#1879">uint64_t</a> <a href="dictionary_T.html#9974">Tmr37</a>;</span>
+<a name="59"><font size=-1>59     </font></a><span class="default"></span>
+<a name="60"><font size=-1>60     </font></a><span class="default"></span>
+<a name="61"><font size=-1>61     </font></a><span class="default"></span><span class="keyword">const <a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_L.html#9975">LL_CHMAP_DEFAUT</a></span><span class="default">[<a href="dictionary_L.html#3984">LEN_LL_CH_MAP</a>] = {</span><span class="number">0xFF</span><span class="default">, </span><span class="number">0xFF</span><span class="default">, </span><span class="number">0xFF</span><span class="default">, </span><span class="number">0xFF</span><span class="default">, </span><span class="number">0x1F</span><span class="default">};</span>
+<a name="62"><font size=-1>62     </font></a><span class="default"></span>
+<a name="63"><font size=-1>63     </font></a><span class="default"></span><span class="keyword">const <a href="dictionary_U.html#3996">Uint16</a> <a href="dictionary_L.html#9976">LL_LENGTH</a></span><span class="default">[] =</span>
+<a name="64"><font size=-1>64     </font></a><span class="default">{</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">    </span><span class="number">32</span><span class="default">,</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">    ((</span><span class="number">32 </span><span class="default">+ <a href="dictionary_L.html#4008">LEN_CONN_PKT_EXCEPT_DATA_W_CCM</a>) * </span><span class="number">8</span><span class="default">), </span><span class="comment">//328</span>
+<a name="67"><font size=-1>67     </font></a><span class="comment">    </span><span class="number">32</span><span class="default">,</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">    ((</span><span class="number">32 </span><span class="default">+ <a href="dictionary_L.html#4008">LEN_CONN_PKT_EXCEPT_DATA_W_CCM</a>) * </span><span class="number">8</span><span class="default">), </span><span class="comment">//328</span>
+<a name="69"><font size=-1>69     </font></a><span class="comment"></span><span class="default">};</span>
+<a name="70"><font size=-1>70     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_S.html#9977">SIZE_LL_LENGTH_PREFER</a>   </span><span class="default">(sizeof(<a href="dictionary_L.html#9976">LL_LENGTH</a>)/sizeof(LL_LENGTH[</span><span class="number">0</span><span class="default">]))</span>
+<a name="71"><font size=-1>71     </font></a><span class="default"></span>
+<a name="72"><font size=-1>72     </font></a><span class="default"><a href="dictionary_U.html#3996">Uint16</a> <a href="dictionary_L.html#9978">LL_Length_Prefer</a>[<a href="dictionary_M.html#3976">MAX_NUM_CONN_HDL</a>][<a href="dictionary_S.html#9977">SIZE_LL_LENGTH_PREFER</a>];   </span><span class="comment">//&quot;/2&quot;:uint16_t -&gt; uint8_t</span>
+<a name="73"><font size=-1>73     </font></a><span class="comment"></span>
+<a name="74"><font size=-1>74     </font></a><span class="comment"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_L.html#9979">LL_REF_ACS_ADDR_ADVSCN</a></span><span class="default">[</span><span class="number">4</span><span class="default">] = {</span><span class="number">0xD6</span><span class="default">, </span><span class="number">0xBE</span><span class="default">, </span><span class="number">0x89</span><span class="default">, </span><span class="number">0x8E</span><span class="default">}; </span><span class="comment">//const Uint32 LL_REF_ACS_ADDR_ADVSCN = 0x8E89BED6;</span>
+<a name="75"><font size=-1>75     </font></a><span class="comment"></span>
+<a name="76"><font size=-1>76     </font></a><span class="comment"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_L.html#9980">LL_REF_CRC_INI_ADVSCN</a></span><span class="default">[<a href="dictionary_L.html#4012">LEN_CRC_INIT</a>] =</span>
+<a name="77"><font size=-1>77     </font></a><span class="default">{</span>
+<a name="78"><font size=-1>78     </font></a><span class="default">    </span><span class="comment">//const</span>
+<a name="79"><font size=-1>79     </font></a><span class="comment">    </span><span class="number">0x55</span><span class="default">, </span><span class="number">0x55</span><span class="default">, </span><span class="number">0x55</span><span class="default">,</span>
+<a name="80"><font size=-1>80     </font></a><span class="default">};</span>
+<a name="81"><font size=-1>81     </font></a><span class="default"></span>
+<a name="82"><font size=-1>82     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_L.html#9981">LL_DUR_RSV</a>[] =</span>
+<a name="83"><font size=-1>83     </font></a><span class="default">{</span>
+<a name="84"><font size=-1>84     </font></a><span class="default">    </span><span class="comment">//const</span>
+<a name="85"><font size=-1>85     </font></a><span class="comment">    </span><span class="number">11 </span><span class="default">+ <a href="dictionary_D.html#4014">DUR_LL_RSV_PRECAL</a>, </span><span class="comment">/* ADV_IND */</span>
+<a name="86"><font size=-1>86     </font></a><span class="comment">    </span><span class="number">8 </span><span class="default">+ <a href="dictionary_D.html#4014">DUR_LL_RSV_PRECAL</a>,  </span><span class="comment">/* ADV_DIRECT_IND */</span>
+<a name="87"><font size=-1>87     </font></a><span class="comment">    </span><span class="number">4 </span><span class="default">+ <a href="dictionary_D.html#4014">DUR_LL_RSV_PRECAL</a>,</span>
+<a name="88"><font size=-1>88     </font></a><span class="default">    <a href="dictionary_D.html#4017">DUR_LL_RSV_SCN_BASE</a>,</span>
+<a name="89"><font size=-1>89     </font></a><span class="default">    <a href="dictionary_D.html#4017">DUR_LL_RSV_SCN_BASE</a>,</span>
+<a name="90"><font size=-1>90     </font></a><span class="default">    <a href="dictionary_D.html#4018">DUR_LL_RSV_INIT_BASE</a>,</span>
+<a name="91"><font size=-1>91     </font></a><span class="default">    </span><span class="number">11 </span><span class="default">+ <a href="dictionary_D.html#4014">DUR_LL_RSV_PRECAL</a>,</span>
+<a name="92"><font size=-1>92     </font></a><span class="default">};</span>
+<a name="93"><font size=-1>93     </font></a><span class="default"></span>
+<a name="94"><font size=-1>94     </font></a><span class="default"><a href="dictionary_U.html#192">uint8_t</a> <a href="dictionary_L.html#9982">LL_RF_DATA_CH</a>[] =                                                      </span><span class="comment">//LL__001</span>
+<a name="95"><font size=-1>95     </font></a><span class="comment"></span><span class="default">{</span>
+<a name="96"><font size=-1>96     </font></a><span class="default">    </span><span class="comment">//const</span>
+<a name="97"><font size=-1>97     </font></a><span class="comment">    </span><span class="number">0</span><span class="default">,  </span><span class="number">1</span><span class="default">,  </span><span class="number">2</span><span class="default">,  </span><span class="number">3</span><span class="default">,  </span><span class="number">4</span><span class="default">,  </span><span class="number">5</span><span class="default">,  </span><span class="number">6</span><span class="default">,  </span><span class="number">7</span><span class="default">,</span>
+<a name="98"><font size=-1>98     </font></a><span class="default">    </span><span class="number">8</span><span class="default">,  </span><span class="number">9</span><span class="default">, </span><span class="number">10</span><span class="default">, </span><span class="number">11</span><span class="default">, </span><span class="number">12</span><span class="default">, </span><span class="number">13</span><span class="default">, </span><span class="number">14</span><span class="default">, </span><span class="number">15</span><span class="default">,</span>
+<a name="99"><font size=-1>99     </font></a><span class="default">    </span><span class="number">16</span><span class="default">, </span><span class="number">17</span><span class="default">, </span><span class="number">18</span><span class="default">, </span><span class="number">19</span><span class="default">, </span><span class="number">20</span><span class="default">, </span><span class="number">21</span><span class="default">, </span><span class="number">22</span><span class="default">, </span><span class="number">23</span><span class="default">,</span>
+<a name="100"><font size=-1>100     </font></a><span class="default">    </span><span class="number">24</span><span class="default">, </span><span class="number">25</span><span class="default">, </span><span class="number">26</span><span class="default">, </span><span class="number">27</span><span class="default">, </span><span class="number">28</span><span class="default">, </span><span class="number">29</span><span class="default">, </span><span class="number">30</span><span class="default">, </span><span class="number">31</span><span class="default">,</span>
+<a name="101"><font size=-1>101     </font></a><span class="default">    </span><span class="number">32</span><span class="default">, </span><span class="number">33</span><span class="default">, </span><span class="number">34</span><span class="default">, </span><span class="number">35</span><span class="default">, </span><span class="number">36</span><span class="default">,  </span><span class="number">0</span><span class="default">,  </span><span class="number">1</span><span class="default">,  </span><span class="number">2</span><span class="default">,</span>
+<a name="102"><font size=-1>102     </font></a><span class="default">    </span><span class="number">3</span><span class="default">,  </span><span class="number">4</span><span class="default">,  </span><span class="number">5</span><span class="default">,  </span><span class="number">6</span><span class="default">,  </span><span class="number">7</span><span class="default">,  </span><span class="number">8</span><span class="default">,  </span><span class="number">9</span><span class="default">, </span><span class="number">10</span><span class="default">,</span>
+<a name="103"><font size=-1>103     </font></a><span class="default">    </span><span class="number">11</span><span class="default">, </span><span class="number">12</span><span class="default">, </span><span class="number">13</span><span class="default">, </span><span class="number">14</span><span class="default">, </span><span class="number">15</span><span class="default">, </span><span class="number">16</span><span class="default">, </span><span class="number">17</span><span class="default">, </span><span class="number">18</span><span class="default">,</span>
+<a name="104"><font size=-1>104     </font></a><span class="default">    </span><span class="number">19</span><span class="default">, </span><span class="number">20</span><span class="default">, </span><span class="number">21</span><span class="default">, </span><span class="number">22</span><span class="default">, </span><span class="number">23</span><span class="default">, </span><span class="number">24</span><span class="default">, </span><span class="number">25</span><span class="default">, </span><span class="number">26</span><span class="default">,</span>
+<a name="105"><font size=-1>105     </font></a><span class="default">    </span><span class="number">27</span><span class="default">, </span><span class="number">28</span><span class="default">, </span><span class="number">29</span><span class="default">, </span><span class="number">30</span><span class="default">, </span><span class="number">31</span><span class="default">, </span><span class="number">32</span><span class="default">, </span><span class="number">33</span><span class="default">, </span><span class="number">34</span><span class="default">,</span>
+<a name="106"><font size=-1>106     </font></a><span class="default">    </span><span class="number">35</span><span class="default">, </span><span class="number">36</span><span class="default">,</span>
+<a name="107"><font size=-1>107     </font></a><span class="default">};</span>
+<a name="108"><font size=-1>108     </font></a><span class="default"></span>
+<a name="109"><font size=-1>109     </font></a><span class="default"><a href="dictionary_U.html#192">uint8_t</a> <a href="dictionary_C.html#9983">CH_ADV_SEL_TABLE</a>[] =</span>
+<a name="110"><font size=-1>110     </font></a><span class="default">{</span>
+<a name="111"><font size=-1>111     </font></a><span class="default">    </span><span class="comment">//const</span>
+<a name="112"><font size=-1>112     </font></a><span class="comment">    </span><span class="number">0</span><span class="default">,  </span><span class="number">37</span><span class="default">,  </span><span class="number">38</span><span class="default">, </span><span class="number">39</span>
+<a name="113"><font size=-1>113     </font></a><span class="number"></span><span class="default">};</span>
+<a name="114"><font size=-1>114     </font></a><span class="default"></span>
+<a name="115"><font size=-1>115     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_C.html#9984">CH_ADV_CH_HOP_BY_MAP_TABLE</a>[][</span><span class="number">4</span><span class="default">] =     </span><span class="comment">//channel hop in one ADV interval. The number is CURRENT_ch_num and also NEXT_array_index</span>
+<a name="116"><font size=-1>116     </font></a><span class="comment"></span><span class="default">{</span>
+<a name="117"><font size=-1>117     </font></a><span class="default">    </span><span class="comment">//const</span>
+<a name="118"><font size=-1>118     </font></a><span class="comment">    </span><span class="default">{</span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,},      </span><span class="comment">//000</span>
+<a name="119"><font size=-1>119     </font></a><span class="comment">    </span><span class="default">{</span><span class="number">1</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,},      </span><span class="comment">//001  //array[0]:ch37 -&gt; array[1]:stop -&gt; array[0]:ch37 .....repeat</span>
+<a name="120"><font size=-1>120     </font></a><span class="comment">    </span><span class="default">{</span><span class="number">2</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,},      </span><span class="comment">//010  //array[0]:ch38 -&gt; array[2]:stop -&gt; array[0]:ch38 .....repeat</span>
+<a name="121"><font size=-1>121     </font></a><span class="comment">    </span><span class="default">{</span><span class="number">1</span><span class="default">, </span><span class="number">2</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,},      </span><span class="comment">//011  //array[0]:ch37 -&gt; array[1]:ch38 -&gt; array[2]:stop -&gt; array[0] .....repeat</span>
+<a name="122"><font size=-1>122     </font></a><span class="comment">    </span><span class="default">{</span><span class="number">3</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,},      </span><span class="comment">//100  //array[0]:ch39 -&gt; array[3]:stop -&gt; array[0]:ch39 .....repeat</span>
+<a name="123"><font size=-1>123     </font></a><span class="comment">    </span><span class="default">{</span><span class="number">1</span><span class="default">, </span><span class="number">3</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,},      </span><span class="comment">//101  //array[0]:ch37 -&gt; array[1]:ch39 -&gt; array[3]:stop -&gt; array[0] .....repeat</span>
+<a name="124"><font size=-1>124     </font></a><span class="comment">    </span><span class="default">{</span><span class="number">2</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">3</span><span class="default">, </span><span class="number">0</span><span class="default">,},      </span><span class="comment">//110  //array[0]:ch38 -&gt; array[2]:ch39 -&gt; array[3]:stop -&gt; array[0] .....repeat</span>
+<a name="125"><font size=-1>125     </font></a><span class="comment">    </span><span class="default">{</span><span class="number">1</span><span class="default">, </span><span class="number">2</span><span class="default">, </span><span class="number">3</span><span class="default">, </span><span class="number">0</span><span class="default">,},      </span><span class="comment">//111  //array[0]:ch37 -&gt; array[1]:ch38 -&gt; array[2]:ch39 -&gt; array[3]:stop -&gt; array[0] .....repeat</span>
+<a name="126"><font size=-1>126     </font></a><span class="comment"></span><span class="default">};</span>
+<a name="127"><font size=-1>127     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_C.html#9985">Ch_ADV_Ch_Hop_Table</a>[</span><span class="number">4</span><span class="default">];</span>
+<a name="128"><font size=-1>128     </font></a><span class="default"></span>
+<a name="129"><font size=-1>129     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_T.html#9986">TAB_ZERO_128</a>[] =</span>
+<a name="130"><font size=-1>130     </font></a><span class="default">{</span>
+<a name="131"><font size=-1>131     </font></a><span class="default">    </span><span class="comment">// const</span>
+<a name="132"><font size=-1>132     </font></a><span class="comment">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="133"><font size=-1>133     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="134"><font size=-1>134     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="135"><font size=-1>135     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="136"><font size=-1>136     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="137"><font size=-1>137     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="138"><font size=-1>138     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="139"><font size=-1>139     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="140"><font size=-1>140     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="141"><font size=-1>141     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="142"><font size=-1>142     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="143"><font size=-1>143     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="144"><font size=-1>144     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="145"><font size=-1>145     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="146"><font size=-1>146     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="147"><font size=-1>147     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="148"><font size=-1>148     </font></a><span class="default">    </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">,</span>
+<a name="149"><font size=-1>149     </font></a><span class="default">};  </span><span class="comment">//Actually total 136 bytes.</span>
+<a name="150"><font size=-1>150     </font></a><span class="comment"></span>
+<a name="151"><font size=-1>151     </font></a><span class="comment"></span>
+<a name="152"><font size=-1>152     </font></a><span class="comment"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_L.html#9987">LL_Msg_AdvScnConn</a></span><span class="default">;</span>
+<a name="153"><font size=-1>153     </font></a><span class="default"></span><span class="preproc">#define <a href="dictionary_L.html#9988">LL_MSG_ADVSCNCONN_ADV_EN</a>                </span><span class="number">0x80</span>
+<a name="154"><font size=-1>154     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_L.html#9989">LL_MSG_ADVSCNCONN_SCN_EN</a>                </span><span class="number">0x40</span>
+<a name="155"><font size=-1>155     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_L.html#9990">LL_MSG_ADVSCNCONN_INIT_EN</a>               </span><span class="number">0x20</span>
+<a name="156"><font size=-1>156     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_L.html#9991">LL_MSG_ADVSCNCONN_ADV_CONT</a>              </span><span class="number">0x10</span>
+<a name="157"><font size=-1>157     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_L.html#9992">LL_MSG_ADVSCNCONN_SCN_CONT</a>              </span><span class="number">0x08</span>
+<a name="158"><font size=-1>158     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_L.html#9993">LL_MSG_ADVSCNCONN_INIT_CONT</a>             </span><span class="number">0x04</span>
+<a name="159"><font size=-1>159     </font></a><span class="number"></span>
+<a name="160"><font size=-1>160     </font></a><span class="number"></span>
+<a name="161"><font size=-1>161     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_M.html#9994">MAX_INTVL_ADV_CONSTI</a>                    </span><span class="number">80</span>
+<a name="162"><font size=-1>162     </font></a><span class="number"></span><span class="preproc">#define <a href="dictionary_M.html#9995">MAX_INTVL_ADV_DIRECT_H</a>                  </span><span class="number">10240</span>
+<a name="163"><font size=-1>163     </font></a><span class="number"></span>
+<a name="164"><font size=-1>164     </font></a><span class="number"><a href="dictionary_U.html#192">uint8_t</a> <a href="dictionary_R.html#9996">RF_Msg_RF0INT</a></span><span class="default">;</span>
+<a name="165"><font size=-1>165     </font></a><span class="default"></span><span class="keyword">extern void <a href="dictionary_R.html#5726">rafael_reset_phy_fsm_Isr</a></span><span class="default">(</span><span class="keyword">void</span><span class="default">);</span>
+<a name="166"><font size=-1>166     </font></a><span class="default"></span>
+<a name="167"><font size=-1>167     </font></a><span class="default"></span><span class="comment">/*******************************************************************</span>
+<a name="168"><font size=-1>168     </font></a><span class="comment"> *      Global Variable Defines</span>
+<a name="169"><font size=-1>169     </font></a><span class="comment"> *******************************************************************/</span>
+<a name="170"><font size=-1>170     </font></a><span class="comment"></span>
+<a name="171"><font size=-1>171     </font></a><span class="comment"></span>
+<a name="172"><font size=-1>172     </font></a><span class="comment">/*******************************************************************</span>
+<a name="173"><font size=-1>173     </font></a><span class="comment"> *      Function Prototype Decelaration</span>
+<a name="174"><font size=-1>174     </font></a><span class="comment"> *******************************************************************/</span>
+<a name="175"><font size=-1>175     </font></a><span class="comment"></span>
+<a name="176"><font size=-1>176     </font></a><span class="comment">/*******************************************************************</span>
+<a name="177"><font size=-1>177     </font></a><span class="comment"> *      Program Code</span>
+<a name="178"><font size=-1>178     </font></a><span class="comment"> *******************************************************************/</span>
+<a name="179"><font size=-1>179     </font></a><span class="comment"></span>
+<a name="180"><font size=-1>180     </font></a><span class="comment"></span><span class="keyword">void <a href="dictionary_L.html#13522">LL_ReleaseConnID</a></span><span class="default">(<a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_L.html#9998">LL_Conn_ID</a>)</span>
+<a name="181"><font size=-1>181     </font></a><span class="default">{</span>
+<a name="182"><font size=-1>182     </font></a><span class="default">    <a href="dictionary_L.html#3975">LL_Conn</a> *<a href="dictionary_P.html#9999">pLL_conn</a>;</span>
+<a name="183"><font size=-1>183     </font></a><span class="default">    </span><span class="keyword">extern <a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_M.html#4033">MBlk_depth_Remaining</a></span><span class="default">;</span>
+<a name="184"><font size=-1>184     </font></a><span class="default">    </span><span class="keyword">extern <a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_L.html#3982">LL_ConnID_Remaining</a></span><span class="default">;</span>
+<a name="185"><font size=-1>185     </font></a><span class="default"></span>
+<a name="186"><font size=-1>186     </font></a><span class="default">    <a href="dictionary_P.html#9999">pLL_conn</a> = &amp;<a href="dictionary_L.html#9955">LL_Conn_Para</a>[<a href="dictionary_L.html#9998">LL_Conn_ID</a>];</span>
+<a name="187"><font size=-1>187     </font></a><span class="default"></span>
+<a name="188"><font size=-1>188     </font></a><span class="default">    <a href="dictionary_K.html#10023">Knl_CodeCpy</a>(&amp;<a href="dictionary_P.html#9999">pLL_conn</a>-&gt;<a href="dictionary_L.html#4036">LE_Conn_Para</a>.<a href="dictionary_L.html#4038">LL_Conn_ID</a>, <a href="dictionary_T.html#9986">TAB_ZERO_128</a>, <a href="dictionary_L.html#4039">LEN_LE_CONN_PARA</a>);     </span><span class="comment">//initialization</span>
+<a name="189"><font size=-1>189     </font></a><span class="comment">    <a href="dictionary_I.html#988">InterruptDisable</a></span><span class="default">();</span>
+<a name="190"><font size=-1>190     </font></a><span class="default">    <a href="dictionary_P.html#9999">pLL_conn</a>-&gt;<a href="dictionary_L.html#4036">LE_Conn_Para</a>.<a href="dictionary_L.html#4038">LL_Conn_ID</a> = <a href="dictionary_L.html#4040">LL_CONN_ID_STBY</a>;                                 </span><span class="comment">//initialization</span>
+<a name="191"><font size=-1>191     </font></a><span class="comment">    <a href="dictionary_P.html#9999">pLL_conn</a></span><span class="default">-&gt;<a href="dictionary_L.html#4036">LE_Conn_Para</a>.<a href="dictionary_L.html#4041">LL_Tx_PHYS</a> = <a href="dictionary_L.html#4042">LL_TX_PHYS_1M_PHY</a>;                               </span><span class="comment">//initialization</span>
+<a name="192"><font size=-1>192     </font></a><span class="comment">    <a href="dictionary_P.html#9999">pLL_conn</a></span><span class="default">-&gt;<a href="dictionary_L.html#4036">LE_Conn_Para</a>.<a href="dictionary_L.html#4043">LL_Rx_PHYS</a> = <a href="dictionary_L.html#4044">LL_RX_PHYS_1M_PHY</a>;                               </span><span class="comment">//initialization</span>
+<a name="193"><font size=-1>193     </font></a><span class="comment">    <a href="dictionary_P.html#9999">pLL_conn</a></span><span class="default">-&gt;<a href="dictionary_L.html#4036">LE_Conn_Para</a>.<a href="dictionary_L.html#4045">LL_Rx_length_1M</a> = <a href="dictionary_L.html#4046">LEN_CONN_DATA_DEFAULT</a>;                      </span><span class="comment">//initialization</span>
+<a name="194"><font size=-1>194     </font></a><span class="comment">    <a href="dictionary_P.html#9999">pLL_conn</a></span><span class="default">-&gt;<a href="dictionary_L.html#4036">LE_Conn_Para</a>.<a href="dictionary_L.html#4047">LL_Rx_length_2M</a> = <a href="dictionary_L.html#4046">LEN_CONN_DATA_DEFAULT</a>;                      </span><span class="comment">//initialization</span>
+<a name="195"><font size=-1>195     </font></a><span class="comment">    <a href="dictionary_P.html#9999">pLL_conn</a></span><span class="default">-&gt;<a href="dictionary_L.html#4036">LE_Conn_Para</a>.<a href="dictionary_L.html#4048">LL_Tx_length_1M</a> = <a href="dictionary_L.html#4046">LEN_CONN_DATA_DEFAULT</a>;                      </span><span class="comment">//initialization</span>
+<a name="196"><font size=-1>196     </font></a><span class="comment">    <a href="dictionary_P.html#9999">pLL_conn</a></span><span class="default">-&gt;<a href="dictionary_L.html#4036">LE_Conn_Para</a>.<a href="dictionary_L.html#4049">LL_Tx_length_2M</a> = <a href="dictionary_L.html#4046">LEN_CONN_DATA_DEFAULT</a>;                      </span><span class="comment">//initialization</span>
+<a name="197"><font size=-1>197     </font></a><span class="comment"></span>
+<a name="198"><font size=-1>198     </font></a><span class="comment">    <a href="dictionary_I.html#992">InterruptEnable</a></span><span class="default">();</span>
+<a name="199"><font size=-1>199     </font></a><span class="default"></span>
+<a name="200"><font size=-1>200     </font></a><span class="default">}</span>
+<a name="201"><font size=-1>201     </font></a><span class="default"></span>
+<a name="202"><font size=-1>202     </font></a><span class="default"></span><span class="preproc">#pragma </span><span class="default">Otime</span>
+<a name="203"><font size=-1>203     </font></a><span class="default"></span>
+<a name="204"><font size=-1>204     </font></a><span class="default"></span><span class="preproc">#pragma </span><span class="default">Ospace</span>
+<a name="205"><font size=-1>205     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_I.html#4182">initLL</a></span><span class="default">(</span><span class="keyword">void</span><span class="default">)</span>
+<a name="206"><font size=-1>206     </font></a><span class="default">{</span>
+<a name="207"><font size=-1>207     </font></a><span class="default">    <a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_I.html#10001">i</a>;</span>
+<a name="208"><font size=-1>208     </font></a><span class="default"></span>
+<a name="209"><font size=-1>209     </font></a><span class="default">    </span><span class="keyword">for </span><span class="default">(<a href="dictionary_I.html#10001">i</a> = </span><span class="number">0</span><span class="default">; <a href="dictionary_I.html#10001">i</a> &lt; <a href="dictionary_M.html#3976">MAX_NUM_CONN_HDL</a>; <a href="dictionary_I.html#10001">i</a>++)</span>
+<a name="210"><font size=-1>210     </font></a><span class="default">    {</span>
+<a name="211"><font size=-1>211     </font></a><span class="default">        <a href="dictionary_L.html#13522">LL_ReleaseConnID</a>(<a href="dictionary_I.html#10001">i</a>);                                        </span><span class="comment">//initialization</span>
+<a name="212"><font size=-1>212     </font></a><span class="comment">    </span><span class="default">}</span>
+<a name="213"><font size=-1>213     </font></a><span class="default">    <a href="dictionary_L.html#9958">LL_ConnID_Remaining</a> = <a href="dictionary_M.html#3976">MAX_NUM_CONN_HDL</a>;                         </span><span class="comment">//initialization</span>
+<a name="214"><font size=-1>214     </font></a><span class="comment">    <a href="dictionary_L.html#9954">LL_Adv_Para</a></span><span class="default">.<a href="dictionary_L.html#976">Adv_Para</a>.<a href="dictionary_A.html#989">LL_AdvMap_ID</a> = </span><span class="number">0</span><span class="default">;                          </span><span class="comment">//initialization</span>
+<a name="215"><font size=-1>215     </font></a><span class="comment">    <a href="dictionary_L.html#9954">LL_Adv_Para</a></span><span class="default">.<a href="dictionary_L.html#976">Adv_Para</a>.<a href="dictionary_A.html#991">LL_AdvConn_ID</a> = <a href="dictionary_L.html#4051">LL_CONN_ID_SLAVE_RSV</a>;      </span><span class="comment">//initialization</span>
+<a name="216"><font size=-1>216     </font></a><span class="comment">    <a href="dictionary_L.html#9954">LL_Adv_Para</a></span><span class="default">.<a href="dictionary_L.html#976">Adv_Para</a>.<a href="dictionary_A.html#985">LL_ScanRsp_Data_Length</a> = </span><span class="number">0</span><span class="default">;                </span><span class="comment">//initialization</span>
+<a name="217"><font size=-1>217     </font></a><span class="comment">    <a href="dictionary_L.html#9954">LL_Adv_Para</a></span><span class="default">.<a href="dictionary_L.html#976">Adv_Para</a>.<a href="dictionary_A.html#983">LL_Adv_Data_Length</a> = <a href="dictionary_L.html#3998">LEN_BD_ADDR</a>;          </span><span class="comment">//initialization</span>
+<a name="218"><font size=-1>218     </font></a><span class="comment">    <a href="dictionary_L.html#9987">LL_Msg_AdvScnConn</a> </span><span class="default">= </span><span class="number">0</span><span class="default">;                                          </span><span class="comment">//initialization</span>
+<a name="219"><font size=-1>219     </font></a><span class="comment"></span>
+<a name="220"><font size=-1>220     </font></a><span class="comment">    <a href="dictionary_L.html#9954">LL_Adv_Para</a></span><span class="default">.<a href="dictionary_L.html#976">Adv_Para</a>.<a href="dictionary_A.html#4052">LL_Tx_PowerLevel</a> = <a href="dictionary_T.html#4053">TX_POWER_8_DBM</a>;</span>
+<a name="221"><font size=-1>221     </font></a><span class="default"></span>
+<a name="222"><font size=-1>222     </font></a><span class="default">    </span><span class="keyword">for </span><span class="default">(<a href="dictionary_I.html#10001">i</a> = </span><span class="number">0</span><span class="default">; <a href="dictionary_I.html#10001">i</a> &lt; <a href="dictionary_M.html#3987">MAX_TBLK_LL_NO</a>; <a href="dictionary_I.html#10001">i</a>++)</span>
+<a name="223"><font size=-1>223     </font></a><span class="default">    {</span>
+<a name="224"><font size=-1>224     </font></a><span class="default">        <a href="dictionary_T.html#9960">TmrBlk_LL</a>[<a href="dictionary_I.html#10001">i</a>].<a href="dictionary_T.html#4055">Next</a> = <a href="dictionary_I.html#10001">i</a> + </span><span class="number">1</span><span class="default">;                      </span><span class="comment">//initialization</span>
+<a name="225"><font size=-1>225     </font></a><span class="comment">    </span><span class="default">}</span>
+<a name="226"><font size=-1>226     </font></a><span class="default">    <a href="dictionary_T.html#9961">TBlk_Free_LL</a> = </span><span class="number">0</span><span class="default">;                                   </span><span class="comment">//initialization</span>
+<a name="227"><font size=-1>227     </font></a><span class="comment">    <a href="dictionary_T.html#9962">TBlk_InUse_LL</a> </span><span class="default">= <a href="dictionary_M.html#3987">MAX_TBLK_LL_NO</a>;                     </span><span class="comment">//initialization</span>
+<a name="228"><font size=-1>228     </font></a><span class="comment"></span>
+<a name="229"><font size=-1>229     </font></a><span class="comment">    <a href="dictionary_S.html#9965">status_LL_Tmr</a> </span><span class="default">= <a href="dictionary_L.html#4056">LL_INT_S0</a>;                          </span><span class="comment">//initialization</span>
+<a name="230"><font size=-1>230     </font></a><span class="comment">    <a href="dictionary_A.html#9966">anchor_LL_Tmr</a> </span><span class="default">= </span><span class="number">0</span><span class="default">;                                  </span><span class="comment">//initialization</span>
+<a name="231"><font size=-1>231     </font></a><span class="comment"></span>
+<a name="232"><font size=-1>232     </font></a><span class="comment">    <a href="dictionary_L.html#9957">LL_Para_Interval</a></span><span class="default">.<a href="dictionary_L.html#4058">LL_SMP_DataCh</a> = </span><span class="number">0</span><span class="default">;                 </span><span class="comment">//initialization</span>
+<a name="233"><font size=-1>233     </font></a><span class="comment"></span>
+<a name="234"><font size=-1>234     </font></a><span class="comment">    <a href="dictionary_K.html#10023">Knl_CodeCpy</a></span><span class="default">(<a href="dictionary_L.html#9959">LL_Ref_ChMap</a>, <a href="dictionary_L.html#9975">LL_CHMAP_DEFAUT</a>, <a href="dictionary_L.html#3984">LEN_LL_CH_MAP</a>);                          </span><span class="comment">//initialization</span>
+<a name="235"><font size=-1>235     </font></a><span class="comment"></span>
+<a name="236"><font size=-1>236     </font></a><span class="comment">    </span><span class="keyword">for </span><span class="default">(<a href="dictionary_I.html#10001">i</a> = </span><span class="number">0</span><span class="default">; <a href="dictionary_I.html#10001">i</a> &lt; <a href="dictionary_S.html#3979">SIZE_WHITE_LIST_ENTRIES</a>; <a href="dictionary_I.html#10001">i</a>++)</span>
+<a name="237"><font size=-1>237     </font></a><span class="default">    {</span>
+<a name="238"><font size=-1>238     </font></a><span class="default">        <a href="dictionary_L.html#9956">LL_WhiteList_Para</a>[<a href="dictionary_I.html#10001">i</a>].<a href="dictionary_L.html#4060">LE_WhiteList_Para</a>.<a href="dictionary_L.html#4062">AddrType</a> = <a href="dictionary_D.html#4063">DEF_EMPTY_WHITE_LIST</a>;         </span><span class="comment">//initialization</span>
+<a name="239"><font size=-1>239     </font></a><span class="comment">    </span><span class="default">}</span>
+<a name="240"><font size=-1>240     </font></a><span class="default">}</span>
+<a name="241"><font size=-1>241     </font></a><span class="default"></span>
+<a name="242"><font size=-1>242     </font></a><span class="default"></span>
+<a name="243"><font size=-1>243     </font></a><span class="default"></span><span class="preproc">#pragma </span><span class="default">Otime</span>
+<a name="244"><font size=-1>244     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_R.html#10006">RF_cmpFIFO_BDAddr</a>(<a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_H.html#10003">HeaderSts_Rx</a>, <a href="dictionary_M.html#4067">MBLK</a> *<a href="dictionary_P.html#10004">pMBlk</a>)</span>
+<a name="245"><font size=-1>245     </font></a><span class="default">{</span>
+<a name="246"><font size=-1>246     </font></a><span class="default">    </span><span class="keyword">if </span><span class="default">(<a href="dictionary_L.html#9954">LL_Adv_Para</a>.<a href="dictionary_L.html#976">Adv_Para</a>.<a href="dictionary_A.html#4068">LL_Own_Addr_Type</a> == </span><span class="number">0</span><span class="default">)</span>
+<a name="247"><font size=-1>247     </font></a><span class="default">    {</span>
+<a name="248"><font size=-1>248     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">((<a href="dictionary_H.html#10003">HeaderSts_Rx</a> &amp; <a href="dictionary_F.html#4069">FLD_MSK_LL_ADV_RXADDR_TYPE</a>))</span>
+<a name="249"><font size=-1>249     </font></a><span class="default">        {</span>
+<a name="250"><font size=-1>250     </font></a><span class="default">            </span><span class="keyword">return <a href="dictionary_F.html#4070">FAIL</a></span><span class="default">;</span>
+<a name="251"><font size=-1>251     </font></a><span class="default">        }</span>
+<a name="252"><font size=-1>252     </font></a><span class="default">        </span><span class="keyword">else</span>
+<a name="253"><font size=-1>253     </font></a><span class="keyword">        </span><span class="default">{</span>
+<a name="254"><font size=-1>254     </font></a><span class="default">            </span><span class="keyword">return <a href="dictionary_K.html#4404">Knl_MemComp_Isr</a></span><span class="default">(<a href="dictionary_B.html#9953">ble_device_param</a>.<a href="dictionary_B.html#652">ble_deviceAddr_param</a>.<a href="dictionary_B.html#1800">addr</a>, &amp;<a href="dictionary_P.html#10004">pMBlk</a>-&gt;<a href="dictionary_M.html#4073">Para</a>.<a href="dictionary_D.html#4075">Data</a>[<a href="dictionary_L.html#3998">LEN_BD_ADDR</a>], <a href="dictionary_L.html#3998">LEN_BD_ADDR</a>);</span>
+<a name="255"><font size=-1>255     </font></a><span class="default"></span>
+<a name="256"><font size=-1>256     </font></a><span class="default">        }</span>
+<a name="257"><font size=-1>257     </font></a><span class="default">    }</span>
+<a name="258"><font size=-1>258     </font></a><span class="default">    </span><span class="keyword">else</span>
+<a name="259"><font size=-1>259     </font></a><span class="keyword">    </span><span class="default">{</span>
+<a name="260"><font size=-1>260     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">((<a href="dictionary_H.html#10003">HeaderSts_Rx</a> &amp; <a href="dictionary_F.html#4069">FLD_MSK_LL_ADV_RXADDR_TYPE</a>))</span>
+<a name="261"><font size=-1>261     </font></a><span class="default">        {</span>
+<a name="262"><font size=-1>262     </font></a><span class="default">            </span><span class="keyword">return <a href="dictionary_K.html#4404">Knl_MemComp_Isr</a></span><span class="default">(<a href="dictionary_B.html#9969">BD_Rand_Addr</a>, &amp;<a href="dictionary_P.html#10004">pMBlk</a>-&gt;<a href="dictionary_M.html#4073">Para</a>.<a href="dictionary_D.html#4075">Data</a>[<a href="dictionary_L.html#3998">LEN_BD_ADDR</a>], <a href="dictionary_L.html#3998">LEN_BD_ADDR</a>);</span>
+<a name="263"><font size=-1>263     </font></a><span class="default">        }</span>
+<a name="264"><font size=-1>264     </font></a><span class="default">        </span><span class="keyword">else</span>
+<a name="265"><font size=-1>265     </font></a><span class="keyword">        </span><span class="default">{</span>
+<a name="266"><font size=-1>266     </font></a><span class="default">            </span><span class="keyword">return <a href="dictionary_F.html#4070">FAIL</a></span><span class="default">;</span>
+<a name="267"><font size=-1>267     </font></a><span class="default">        }</span>
+<a name="268"><font size=-1>268     </font></a><span class="default">    }</span>
+<a name="269"><font size=-1>269     </font></a><span class="default">}</span>
+<a name="270"><font size=-1>270     </font></a><span class="default"></span>
+<a name="271"><font size=-1>271     </font></a><span class="default"></span>
+<a name="272"><font size=-1>272     </font></a><span class="default"><a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_R.html#3909">RF_cmpFIFO_WhiteList</a>(<a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_H.html#10007">HeaderSts_Rx</a>, <a href="dictionary_M.html#4067">MBLK</a> *<a href="dictionary_P.html#10008">pMBlk</a>)</span>
+<a name="273"><font size=-1>273     </font></a><span class="default">{</span>
+<a name="274"><font size=-1>274     </font></a><span class="default">    <a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_J.html#10009">j</a>, <a href="dictionary_S.html#10010">status</a>;</span>
+<a name="275"><font size=-1>275     </font></a><span class="default"></span>
+<a name="276"><font size=-1>276     </font></a><span class="default">    <a href="dictionary_J.html#10009">j</a> = </span><span class="number">0</span><span class="default">;</span>
+<a name="277"><font size=-1>277     </font></a><span class="default">    </span><span class="keyword">if </span><span class="default">((<a href="dictionary_H.html#10007">HeaderSts_Rx</a> &amp; <a href="dictionary_F.html#4081">FLD_MSK_LL_ADV_TXADDR_TYPE</a>))</span>
+<a name="278"><font size=-1>278     </font></a><span class="default">    {</span>
+<a name="279"><font size=-1>279     </font></a><span class="default">        <a href="dictionary_J.html#10009">j</a> = <a href="dictionary_H.html#4082">HCI_ADDR_TYPE_RANDOM</a>;</span>
+<a name="280"><font size=-1>280     </font></a><span class="default">    }</span>
+<a name="281"><font size=-1>281     </font></a><span class="default">    </span><span class="keyword">for </span><span class="default">(<a href="dictionary_S.html#10010">status</a> = </span><span class="number">0</span><span class="default">; <a href="dictionary_S.html#10010">status</a> &lt; <a href="dictionary_S.html#3979">SIZE_WHITE_LIST_ENTRIES</a>; <a href="dictionary_S.html#10010">status</a>++)</span>
+<a name="282"><font size=-1>282     </font></a><span class="default">    {</span>
+<a name="283"><font size=-1>283     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_L.html#9956">LL_WhiteList_Para</a>[<a href="dictionary_S.html#10010">status</a>].<a href="dictionary_L.html#4060">LE_WhiteList_Para</a>.<a href="dictionary_L.html#4062">AddrType</a> == <a href="dictionary_J.html#10009">j</a>)</span>
+<a name="284"><font size=-1>284     </font></a><span class="default">        {</span>
+<a name="285"><font size=-1>285     </font></a><span class="default">            </span><span class="keyword">if </span><span class="default">(<a href="dictionary_K.html#4404">Knl_MemComp_Isr</a>(<a href="dictionary_P.html#10008">pMBlk</a>-&gt;<a href="dictionary_M.html#4073">Para</a>.<a href="dictionary_D.html#4075">Data</a>, &amp;(<a href="dictionary_L.html#9956">LL_WhiteList_Para</a>[<a href="dictionary_S.html#10010">status</a>].<a href="dictionary_L.html#4060">LE_WhiteList_Para</a>.<a href="dictionary_L.html#4083">Addr</a>)[</span><span class="number">0</span><span class="default">], <a href="dictionary_L.html#3998">LEN_BD_ADDR</a>) == <a href="dictionary_S.html#4084">SUCCESS</a>)</span>
+<a name="286"><font size=-1>286     </font></a><span class="default">            {</span>
+<a name="287"><font size=-1>287     </font></a><span class="default">                </span><span class="keyword">break</span><span class="default">;</span>
+<a name="288"><font size=-1>288     </font></a><span class="default">            }</span>
+<a name="289"><font size=-1>289     </font></a><span class="default">        }</span>
+<a name="290"><font size=-1>290     </font></a><span class="default">    }</span>
+<a name="291"><font size=-1>291     </font></a><span class="default">    </span><span class="keyword">if </span><span class="default">(<a href="dictionary_S.html#10010">status</a> == <a href="dictionary_S.html#3979">SIZE_WHITE_LIST_ENTRIES</a>)</span>
+<a name="292"><font size=-1>292     </font></a><span class="default">        </span><span class="keyword">return <a href="dictionary_F.html#4070">FAIL</a></span><span class="default">;</span>
+<a name="293"><font size=-1>293     </font></a><span class="default">    </span><span class="keyword">else</span>
+<a name="294"><font size=-1>294     </font></a><span class="keyword">        return <a href="dictionary_S.html#4084">SUCCESS</a></span><span class="default">;</span>
+<a name="295"><font size=-1>295     </font></a><span class="default">}</span>
+<a name="296"><font size=-1>296     </font></a><span class="default"></span>
+<a name="297"><font size=-1>297     </font></a><span class="default"></span>
+<a name="298"><font size=-1>298     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_L.html#13521">LL_TmrBlk_Rls</a></span><span class="default">(</span><span class="keyword">void</span><span class="default">)</span>
+<a name="299"><font size=-1>299     </font></a><span class="default">{</span>
+<a name="300"><font size=-1>300     </font></a><span class="default">    <a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_I.html#10012">i</a>;</span>
+<a name="301"><font size=-1>301     </font></a><span class="default"></span>
+<a name="302"><font size=-1>302     </font></a><span class="default">    <a href="dictionary_I.html#10012">i</a> = <a href="dictionary_T.html#9963">tblk_LL_pi</a>-&gt;<a href="dictionary_T.html#4055">Next</a>;</span>
+<a name="303"><font size=-1>303     </font></a><span class="default">    <a href="dictionary_T.html#9963">tblk_LL_pi</a>-&gt;<a href="dictionary_T.html#4055">Next</a> = <a href="dictionary_T.html#9961">TBlk_Free_LL</a>;</span>
+<a name="304"><font size=-1>304     </font></a><span class="default">    <a href="dictionary_T.html#9961">TBlk_Free_LL</a> = <a href="dictionary_T.html#9962">TBlk_InUse_LL</a>;</span>
+<a name="305"><font size=-1>305     </font></a><span class="default">    <a href="dictionary_T.html#9962">TBlk_InUse_LL</a> = <a href="dictionary_I.html#10012">i</a>;</span>
+<a name="306"><font size=-1>306     </font></a><span class="default">    </span><span class="keyword">if </span><span class="default">(<a href="dictionary_I.html#10012">i</a> == <a href="dictionary_M.html#3987">MAX_TBLK_LL_NO</a>)</span>
+<a name="307"><font size=-1>307     </font></a><span class="default">    {</span>
+<a name="308"><font size=-1>308     </font></a><span class="default">        <a href="dictionary_T.html#9963">tblk_LL_pi</a> = (<a href="dictionary_T.html#3986">TBLK_LLx</a> *)</span><span class="number">0</span><span class="default">;</span>
+<a name="309"><font size=-1>309     </font></a><span class="default">    }</span>
+<a name="310"><font size=-1>310     </font></a><span class="default">    </span><span class="keyword">else</span>
+<a name="311"><font size=-1>311     </font></a><span class="keyword">    </span><span class="default">{</span>
+<a name="312"><font size=-1>312     </font></a><span class="default">        <a href="dictionary_T.html#9963">tblk_LL_pi</a> = <a href="dictionary_T.html#9964">tblk_LL_pi2</a>;</span>
+<a name="313"><font size=-1>313     </font></a><span class="default">        <a href="dictionary_I.html#10012">i</a> = <a href="dictionary_T.html#9963">tblk_LL_pi</a>-&gt;<a href="dictionary_T.html#4055">Next</a>;</span>
+<a name="314"><font size=-1>314     </font></a><span class="default">    }</span>
+<a name="315"><font size=-1>315     </font></a><span class="default">    </span><span class="keyword">if </span><span class="default">(<a href="dictionary_I.html#10012">i</a> == <a href="dictionary_M.html#3987">MAX_TBLK_LL_NO</a>)</span>
+<a name="316"><font size=-1>316     </font></a><span class="default">    {</span>
+<a name="317"><font size=-1>317     </font></a><span class="default">        <a href="dictionary_T.html#9964">tblk_LL_pi2</a> = (<a href="dictionary_T.html#3986">TBLK_LLx</a> *)</span><span class="number">0</span><span class="default">;</span>
+<a name="318"><font size=-1>318     </font></a><span class="default">    }</span>
+<a name="319"><font size=-1>319     </font></a><span class="default">    </span><span class="keyword">else</span>
+<a name="320"><font size=-1>320     </font></a><span class="keyword">    </span><span class="default">{</span>
+<a name="321"><font size=-1>321     </font></a><span class="default">        <a href="dictionary_T.html#9964">tblk_LL_pi2</a> = &amp;<a href="dictionary_T.html#9960">TmrBlk_LL</a>[<a href="dictionary_I.html#10012">i</a>];</span>
+<a name="322"><font size=-1>322     </font></a><span class="default">    }</span>
+<a name="323"><font size=-1>323     </font></a><span class="default">}</span>
+<a name="324"><font size=-1>324     </font></a><span class="default"></span>
+<a name="325"><font size=-1>325     </font></a><span class="default"></span>
+<a name="326"><font size=-1>326     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_L.html#13525">LL_TmrBlk_Rls_Pair</a></span><span class="default">(</span><span class="keyword">void</span><span class="default">)</span>
+<a name="327"><font size=-1>327     </font></a><span class="default">{</span>
+<a name="328"><font size=-1>328     </font></a><span class="default">    <a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_I.html#10014">i</a>;</span>
+<a name="329"><font size=-1>329     </font></a><span class="default">    <a href="dictionary_U.html#3996">Uint16</a> <a href="dictionary_J.html#10015">j</a>;</span>
+<a name="330"><font size=-1>330     </font></a><span class="default"></span>
+<a name="331"><font size=-1>331     </font></a><span class="default">    <a href="dictionary_I.html#10014">i</a> = <a href="dictionary_T.html#9964">tblk_LL_pi2</a>-&gt;<a href="dictionary_T.html#4055">Next</a>;</span>
+<a name="332"><font size=-1>332     </font></a><span class="default">    <a href="dictionary_T.html#9964">tblk_LL_pi2</a>-&gt;<a href="dictionary_T.html#4055">Next</a> = <a href="dictionary_T.html#9961">TBlk_Free_LL</a>;</span>
+<a name="333"><font size=-1>333     </font></a><span class="default">    <a href="dictionary_T.html#9961">TBlk_Free_LL</a> = <a href="dictionary_T.html#9962">TBlk_InUse_LL</a>;</span>
+<a name="334"><font size=-1>334     </font></a><span class="default">    <a href="dictionary_T.html#9962">TBlk_InUse_LL</a> = <a href="dictionary_I.html#10014">i</a>;</span>
+<a name="335"><font size=-1>335     </font></a><span class="default">    <a href="dictionary_J.html#10015">j</a> = <a href="dictionary_T.html#9964">tblk_LL_pi2</a>-&gt;<a href="dictionary_T.html#4090">Ticks</a>;</span>
+<a name="336"><font size=-1>336     </font></a><span class="default"></span>
+<a name="337"><font size=-1>337     </font></a><span class="default">    </span><span class="keyword">if </span><span class="default">(<a href="dictionary_I.html#10014">i</a> == <a href="dictionary_M.html#3987">MAX_TBLK_LL_NO</a>)</span>
+<a name="338"><font size=-1>338     </font></a><span class="default">    {</span>
+<a name="339"><font size=-1>339     </font></a><span class="default">        <a href="dictionary_T.html#9963">tblk_LL_pi</a> = (<a href="dictionary_T.html#3986">TBLK_LLx</a> *)</span><span class="number">0</span><span class="default">;</span>
+<a name="340"><font size=-1>340     </font></a><span class="default">    }</span>
+<a name="341"><font size=-1>341     </font></a><span class="default">    </span><span class="keyword">else</span>
+<a name="342"><font size=-1>342     </font></a><span class="keyword">    </span><span class="default">{</span>
+<a name="343"><font size=-1>343     </font></a><span class="default">        <a href="dictionary_T.html#9963">tblk_LL_pi</a> = &amp;<a href="dictionary_T.html#9960">TmrBlk_LL</a>[<a href="dictionary_I.html#10014">i</a>];</span>
+<a name="344"><font size=-1>344     </font></a><span class="default">        <a href="dictionary_T.html#9963">tblk_LL_pi</a>-&gt;<a href="dictionary_T.html#4090">Ticks</a> = <a href="dictionary_T.html#9963">tblk_LL_pi</a>-&gt;<a href="dictionary_T.html#4090">Ticks</a> + <a href="dictionary_J.html#10015">j</a>;</span>
+<a name="345"><font size=-1>345     </font></a><span class="default">        <a href="dictionary_I.html#10014">i</a> = <a href="dictionary_T.html#9963">tblk_LL_pi</a>-&gt;<a href="dictionary_T.html#4055">Next</a>;</span>
+<a name="346"><font size=-1>346     </font></a><span class="default">    }</span>
+<a name="347"><font size=-1>347     </font></a><span class="default">    </span><span class="keyword">if </span><span class="default">(<a href="dictionary_I.html#10014">i</a> == <a href="dictionary_M.html#3987">MAX_TBLK_LL_NO</a>)</span>
+<a name="348"><font size=-1>348     </font></a><span class="default">    {</span>
+<a name="349"><font size=-1>349     </font></a><span class="default">        <a href="dictionary_T.html#9964">tblk_LL_pi2</a> = (<a href="dictionary_T.html#3986">TBLK_LLx</a> *)</span><span class="number">0</span><span class="default">;</span>
+<a name="350"><font size=-1>350     </font></a><span class="default">    }</span>
+<a name="351"><font size=-1>351     </font></a><span class="default">    </span><span class="keyword">else</span>
+<a name="352"><font size=-1>352     </font></a><span class="keyword">    </span><span class="default">{</span>
+<a name="353"><font size=-1>353     </font></a><span class="default">        <a href="dictionary_T.html#9964">tblk_LL_pi2</a> = &amp;<a href="dictionary_T.html#9960">TmrBlk_LL</a>[<a href="dictionary_I.html#10014">i</a>];</span>
+<a name="354"><font size=-1>354     </font></a><span class="default">    }</span>
+<a name="355"><font size=-1>355     </font></a><span class="default">}</span>
+<a name="356"><font size=-1>356     </font></a><span class="default"></span>
+<a name="357"><font size=-1>357     </font></a><span class="default"></span>
+<a name="358"><font size=-1>358     </font></a><span class="default"></span>
+<a name="359"><font size=-1>359     </font></a><span class="default"></span>
+<a name="360"><font size=-1>360     </font></a><span class="default"></span>
+<a name="361"><font size=-1>361     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_L.html#10011">LL_TmrBlk_Pt_PairRst</a></span><span class="default">(</span><span class="keyword">void</span><span class="default">)</span>
+<a name="362"><font size=-1>362     </font></a><span class="default">{</span>
+<a name="363"><font size=-1>363     </font></a><span class="default">    </span><span class="keyword">if </span><span class="default">(<a href="dictionary_T.html#9962">TBlk_InUse_LL</a> != <a href="dictionary_M.html#3987">MAX_TBLK_LL_NO</a>)</span>
+<a name="364"><font size=-1>364     </font></a><span class="default">    {</span>
+<a name="365"><font size=-1>365     </font></a><span class="default">        <a href="dictionary_T.html#9963">tblk_LL_pi</a> = &amp;<a href="dictionary_T.html#9960">TmrBlk_LL</a>[<a href="dictionary_T.html#9962">TBlk_InUse_LL</a>];</span>
+<a name="366"><font size=-1>366     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_T.html#9963">tblk_LL_pi</a>-&gt;<a href="dictionary_T.html#4055">Next</a> == <a href="dictionary_M.html#3987">MAX_TBLK_LL_NO</a>)</span>
+<a name="367"><font size=-1>367     </font></a><span class="default">        {</span>
+<a name="368"><font size=-1>368     </font></a><span class="default">            <a href="dictionary_T.html#9964">tblk_LL_pi2</a> = (<a href="dictionary_T.html#3986">TBLK_LLx</a> *)</span><span class="number">0</span><span class="default">;</span>
+<a name="369"><font size=-1>369     </font></a><span class="default">        }</span>
+<a name="370"><font size=-1>370     </font></a><span class="default">        </span><span class="keyword">else</span>
+<a name="371"><font size=-1>371     </font></a><span class="keyword">        </span><span class="default">{</span>
+<a name="372"><font size=-1>372     </font></a><span class="default">            <a href="dictionary_T.html#9964">tblk_LL_pi2</a> = &amp;<a href="dictionary_T.html#9960">TmrBlk_LL</a>[<a href="dictionary_T.html#9963">tblk_LL_pi</a>-&gt;<a href="dictionary_T.html#4055">Next</a>];</span>
+<a name="373"><font size=-1>373     </font></a><span class="default">        }</span>
+<a name="374"><font size=-1>374     </font></a><span class="default">    }</span>
+<a name="375"><font size=-1>375     </font></a><span class="default">}</span>
+<a name="376"><font size=-1>376     </font></a><span class="default"></span>
+<a name="377"><font size=-1>377     </font></a><span class="default"></span>
+<a name="378"><font size=-1>378     </font></a><span class="default"></span>
+<a name="379"><font size=-1>379     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_L.html#9997">LL_MsgBlk_LL_conn_Para_Rls</a></span><span class="default">(<a href="dictionary_U.html#340">Uint8</a> <a href="dictionary_C.html#10018">ConnID</a>)</span>
+<a name="380"><font size=-1>380     </font></a><span class="default">{</span>
+<a name="381"><font size=-1>381     </font></a><span class="default"></span>
+<a name="382"><font size=-1>382     </font></a><span class="default">}</span>
+<a name="383"><font size=-1>383     </font></a><span class="default"></span>
+<a name="384"><font size=-1>384     </font></a><span class="default"></span>
+<a name="385"><font size=-1>385     </font></a><span class="default"></span>
+<a name="386"><font size=-1>386     </font></a><span class="default"></span>
+<a name="387"><font size=-1>387     </font></a><span class="default"></span><span class="keyword">void <a href="dictionary_L.html#13537">LLTimer_TmrRefUpd_Isr</a></span><span class="default">(</span><span class="keyword">void</span><span class="default">)</span>
+<a name="388"><font size=-1>388     </font></a><span class="default">{</span>
+<a name="389"><font size=-1>389     </font></a><span class="default">    </span><span class="keyword">extern <a href="dictionary_U.html#181">uint32_t</a> <a href="dictionary_T.html#1716">Timeline24</a></span><span class="default">;</span>
+<a name="390"><font size=-1>390     </font></a><span class="default"></span>
+<a name="391"><font size=-1>391     </font></a><span class="default">    <a href="dictionary_T.html#9974">Tmr37</a> += <a href="dictionary_D.html#4095">DUR_LL_TMR_TICK_BASE</a> * </span><span class="number">125</span><span class="default">;</span>
+<a name="392"><font size=-1>392     </font></a><span class="default">    ((<a href="dictionary_U.html#192">uint8_t</a> *)&amp;<a href="dictionary_T.html#9974">Tmr37</a>)[</span><span class="number">4</span><span class="default">] &amp;= </span><span class="number">0x1F</span><span class="default">;</span>
+<a name="393"><font size=-1>393     </font></a><span class="default"></span>
+<a name="394"><font size=-1>394     </font></a><span class="default">    <a href="dictionary_T.html#1716">Timeline24</a> += <a href="dictionary_D.html#4095">DUR_LL_TMR_TICK_BASE</a>;</span>
+<a name="395"><font size=-1>395     </font></a><span class="default">    </span><span class="keyword">if </span><span class="default">(((<a href="dictionary_U.html#192">uint8_t</a> *)&amp;<a href="dictionary_T.html#1716">Timeline24</a>)[</span><span class="number">3</span><span class="default">] &gt; </span><span class="number">0xEF</span><span class="default">)</span>
+<a name="396"><font size=-1>396     </font></a><span class="default">    {</span>
+<a name="397"><font size=-1>397     </font></a><span class="default">        ((<a href="dictionary_U.html#192">uint8_t</a> *)&amp;<a href="dictionary_T.html#1716">Timeline24</a>)[</span><span class="number">3</span><span class="default">] &amp;= </span><span class="number">0x0F</span><span class="default">;</span>
+<a name="398"><font size=-1>398     </font></a><span class="default">    }</span>
+<a name="399"><font size=-1>399     </font></a><span class="default">}</span>
+<a name="400"><font size=-1>400     </font></a><span class="default"></span>
+<a name="401"><font size=-1>401     </font></a><span class="default"></span>
+<a name="402"><font size=-1>402     </font></a><span class="default"></span>
+<a name="403"><font size=-1>403     </font></a><span class="default"></span><span class="preproc">#pragma </span><span class="default">pop</span>
+<a name="404"><font size=-1>404     </font></a><span class="default"></span>
+<a name="405"><font size=-1>405     </font></a><span class="default"></span>
+</pre></body></html>
